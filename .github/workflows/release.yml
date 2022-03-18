@@ -1,0 +1,27 @@
+name: "Release"
+
+on:
+  push:
+    branches: [ latest ]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          cd src && zip -r ../data.zip .
+      - name: Set build timestamp
+        run: |
+          echo "{\"timestamp\":$(date +%s)}" > build.json
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: latest
+          files: |
+            data.zip
+            build.json
