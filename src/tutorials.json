@@ -1,0 +1,63 @@
+{
+  "tutorials": {
+    "type": "group",
+    "id": "tutorials",
+    "label": "TUTORIALS",
+    "args": {
+      "withBorder": true,
+      "initialIsOpen": true
+    },
+    "children": {
+      "redis_stack": {
+        "type": "group",
+        "id": "redis_stack",
+        "label": "Redis Stack",
+        "args": {
+          "initialIsOpen": false
+        },
+        "children": {
+          "working_with_json": {
+            "type": "internal-link",
+            "id": "working_with_json",
+            "label": "Working with JSON",
+            "args": {
+              "path": "/tutorials/redis_stack/working_with_json.md"
+            }
+          },
+          "vss": {
+            "type": "internal-link",
+            "id": "vector_similarity_search",
+            "label": "Vector Similarity Search",
+            "args": {
+              "path": "/tutorials/redis_stack/vector_similarity_search.md"
+            }
+          },
+          "timeseries": {
+            "type": "internal-link",
+            "id": "redis_for_time_series",
+            "label": "Redis for time series",
+            "args": {
+              "path": "/tutorials/redis_stack/redis_for_time_series.md"
+            }
+          },
+          "graph": {
+            "type": "internal-link",
+            "id": "working_with_graphs",
+            "label": "Working with graphs",
+            "args": {
+              "path": "/tutorials/redis_stack/working_with_graphs.md"
+            }
+          },
+          "bloom": {
+            "type": "internal-link",
+            "id": "probabilistic_data_structures",
+            "label": "Probabilistic data structures",
+            "args": {
+              "path": "/tutorials/redis_stack/probabilistic_data_structures.md"
+            }
+          }
+        }
+      }
+    }
+  }
+}
