@@ -59,5 +59,13 @@
         }
       }
     }
+  },
+  "manual": {
+    "type": "code-button",
+    "id": "manual",
+    "label": "Manual",
+    "args": {
+      "path": "/_scripts/manual.txt"
+    }
   }
 }
