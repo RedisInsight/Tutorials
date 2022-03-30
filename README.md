@@ -135,8 +135,6 @@ EA tutorials auto-update flow:
     * **Linux**: In the `/home/<your-username>/.redisinsight-v2/tutorials` directory.
 4. Open Enablement area on UI
 
-![tutorials-autoupdate-flow](docs/tutorials-auto-update-flow.png)
-
 ## Development
 Let's imagine that we need to add a new group (Streams) with 2 pages (Basics, Getting data).
 
