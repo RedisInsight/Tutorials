@@ -85,7 +85,7 @@ A Node can be represented by various UI components and is specified by `type` pr
 }
 ```
 ## Pages
-By using **"internal-link"** node we can open some [Markdown Guides](https://www.markdownguide.org/) located in [statics](https://github.com/RedisInsight/Tutorials/tree/main/src) folder.
+By using **“internal-link”** node we can open other pages inside of Tutorials. To display more pages, add relevant files to the [src](https://github.com/RedisInsight/Tutorials/tree/main/src) folder.
 
 These tutorials may contain the following elements:
 * Plain text
