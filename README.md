@@ -127,8 +127,8 @@ A button that inserts Redis code into the Code Editor. The syntax is almost the 
 Our application supports the ability to quickly update the static files of the Enablement area so that we can provide users with up-to-date information.
 
 EA tutorials auto-update flow:
-1. Push commit with updates to `/tutorials` repository branch
-2. Approve tutorials release in CircleCI. In the background, new files will be loaded to Cloud Storage (AWS S3)
+1. Push commit with updates to the main branch
+2. Wait until changes are merged into the latest branch
 3. Reopen the Redisinsight with a working internet connection. In the background, new files will be downloaded to the user's local home directory:
     * **Mac**: In the `/Users/<your-username>/.redisinsight-v2/tutorials` directory.
     * **Windows**: In the `C:\Users\<your-username>\.redisinsight-v2/tutorials` directory.
