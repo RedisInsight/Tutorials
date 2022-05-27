@@ -147,8 +147,8 @@ FT.CREATE idx:bikes_vss
         "TYPE" FLOAT32
         "DIM" 768
         "DISTANCE_METRIC" "L2"
-        "INITIAL_CAP" 20
-        "BLOCK_SIZE"  20
+        "INITIAL_CAP" 111
+        "BLOCK_SIZE"  111
 ```
 
 ## Running Vector Similarity Search
