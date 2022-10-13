@@ -147,6 +147,45 @@ The code syntax is the same as for the manually executed buttons, just indicate 
  ```
 ````
 
+###### Auto-execute button parameters
+
+You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
+the configuration set in RedisInsight. If not specified - the behaviour will be defined by parameters set in RedisInsight.
+To specify the parameters, insert them after the `redis-auto:` and add the parameters in square brackets separated with a semicolon (`;`) in
+the following way:
+
+```
+redis-auto:[<parameter1>;<parameter2>;<...>;<parameterN>]
+```
+
+Ensure that all the parameters are listed **without spaces**, ordering does not matter.
+
+_Supported parameters:_
+
+| Name     | Values                   | Notes                                     | Description                                                                                                                                              |
+|----------|--------------------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| results  | * _single_<br/>* _group_ | If enabled, then pipeline mode is ignored | Enable/disable the group mode to display the command results in a batch or as separate ones. |
+| mode     | * _ascii_<br/>* _raw_    |                                           | Enable/disable the raw mode to display command results.                                                                                                                        |
+| pipeline | any integer number       |                                           | Configure the number of commands in the pipeline. 0 or 1 pipelines every command.                                                     |
+
+
+_Notes:_
+
+* Ensure that there are no spaces
+* All the parameters with mistakes will be ignored
+
+_Examples:_
+
+```
+redis-auto:[results=single]
+redis-auto:[mode=raw]
+redis-auto:[pipeline=1]
+redis-auto:[results=single;mode=raw]
+redis-auto:[results=single;pipeline=4]
+redis-auto:[results=group;mode=ascii]
+redis-auto:[pipeline=8;mode=raw;results=single;]
+```
+
 ## Autoupdate
 Our application supports the ability to quickly update the static files of the Enablement area so that we can provide users with up-to-date information.
 
