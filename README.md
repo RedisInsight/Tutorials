@@ -127,27 +127,7 @@ the only difference is that you must specify `redis` as language and the label n
  ```
 ````
 
-###### Auto-execute button
-![img.png](docs/tutorials-redis-auto-code-block.png)
-
-A button that automatically executes the Redis commands (without inserting it into the Editor). Such buttons will be displayed with the "Play" icon inside.
-The code syntax is the same as for the manually executed buttons, just indicate the `redis-auto` (instead of `redis`) before the button.
-
-````
- ```redis-auto Create
-    // Let's add three documents as Hashes.
-    // Each document represents a building permit.
-
-    HSET permit:1 "description" "To reconstruct a single detached house with a front covered veranda." "construction_value" 42000 "building_type" "single detached house" "address_city" "Lisbon" "work_type" "demolition,reconstruction" "permit_timestamp" "1602156878" "address_street" "R. Da Palma" "location" "38.717746, -9.135839"
-
-    HSET permit:2 "description" "To construct a loft" "construction_value" 53000 "building_type" "apartment" "address_city" "Porto" "work_type" "construction" "permit_timestamp" "1556546400" "address_street" "Rua da Boavista" "location" "41.155854, -8.616721"
-
-    HSET permit:3 "description" "New house build" "construction_value" 260000 "building_type" "house" "address_city" "Lagos" "work_type" "construction;design" "permit_timestamp" "1612947600" "address_street" "R. Antonio Gedeao" "location" "37.114864, -8.668521"
-
- ```
-````
-
-###### Auto-execute button parameters
+###### Button parameters
 
 You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
 the configuration set in RedisInsight. If not specified - the behaviour will be defined by parameters set in RedisInsight.
@@ -155,7 +135,7 @@ To specify the parameters, insert them after the `redis-auto:` and add the param
 the following way:
 
 ```
-redis-auto:[<parameter1>;<parameter2>;<...>;<parameterN>]
+redis:[<parameter1>;<parameter2>;<...>;<parameterN>]
 ```
 
 Ensure that all the parameters are listed **without spaces**, ordering does not matter.
@@ -164,9 +144,10 @@ _Supported parameters:_
 
 | Name     | Values                   | Notes                                     | Description                                                                                                                                              |
 |----------|--------------------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| results  | * _single_<br/>* _group_ | If enabled, then pipeline mode is ignored | Enable/disable the group mode to display the command results in a batch or as separate ones. |
+| results  | * _single_<br/>* _group_<br/>* _silent_ | If enabled, then pipeline mode is ignored | * _single_ - Disable the group mode to display the command results in a batch or as separate ones.<br/>* _group_ - Enable the group mode <br/>* _silent_:  <br/>&emsp; 1. Enable the group mode <br/>&emsp; 2. Auto collapse the result <br/>&emsp; 3. Show only error commands in the results|
 | mode     | * _ascii_<br/>* _raw_    |                                           | Enable/disable the raw mode to display command results.                                                                                                                        |
 | pipeline | any integer number       |                                           | Configure the number of commands in the pipeline. 0 or 1 pipelines every command.                                                     |
+| auto | * _true_<br/>* _false_       |                                           | Configure the auto execute commands after click on the button |
 
 
 _Notes:_
@@ -177,14 +158,30 @@ _Notes:_
 _Examples:_
 
 ```
-redis-auto:[results=single]
-redis-auto:[mode=raw]
-redis-auto:[pipeline=1]
-redis-auto:[results=single;mode=raw]
-redis-auto:[results=single;pipeline=4]
-redis-auto:[results=group;mode=ascii]
-redis-auto:[pipeline=8;mode=raw;results=single;]
+redis:[results=single]
+redis:[auto=true;mode=raw]
+redis:[pipeline=1]
+redis:[results=silent;mode=raw]
+redis:[results=single;pipeline=4]
+redis:[results=group;mode=ascii]
+redis:[auto=true;pipeline=8;mode=raw;results=single;]
 ```
+
+###### Auto-execute button
+![img.png](docs/tutorials-redis-auto-code-block.png)
+
+A button that automatically executes the Redis commands (without inserting it into the Editor). Such buttons will be displayed with the "Play" icon inside.
+The code syntax is the same as for the manually executed buttons, just insert parameter `[auto=true]` with any other parameters before the button.
+
+````
+ ```redis:[auto=true;mode=raw] Create
+    // Let's add three documents as Hashes.
+    // Each document represents a building permit.
+    HSET permit:1 "description" "To reconstruct a single detached house with a front covered veranda." "construction_value" 42000 "building_type" "single detached house" "address_city" "Lisbon" "work_type" "demolition,reconstruction" "permit_timestamp" "1602156878" "address_street" "R. Da Palma" "location" "38.717746, -9.135839"
+    HSET permit:2 "description" "To construct a loft" "construction_value" 53000 "building_type" "apartment" "address_city" "Porto" "work_type" "construction" "permit_timestamp" "1556546400" "address_street" "Rua da Boavista" "location" "41.155854, -8.616721"
+    HSET permit:3 "description" "New house build" "construction_value" 260000 "building_type" "house" "address_city" "Lagos" "work_type" "construction;design" "permit_timestamp" "1612947600" "address_street" "R. Antonio Gedeao" "location" "37.114864, -8.668521"
+ ```
+````
 
 ## Autoupdate
 Our application supports the ability to quickly update the static files of the Enablement area so that we can provide users with up-to-date information.
