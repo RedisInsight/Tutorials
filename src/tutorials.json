@@ -48,12 +48,28 @@
               "path": "/redis_stack/working_with_graphs.md"
             }
           },
+          "algorithms": {
+            "type": "internal-link",
+            "id": "working_with_path_algorithms",
+            "label": "Working with path algorithms",
+            "args": {
+              "path": "/redis_stack/working_with_path_algorithms.md"
+            }
+          },
           "bloom": {
             "type": "internal-link",
-            "id": "probabilistic_data_structures",
-            "label": "Probabilistic data structures",
+            "id": "working_with_bloom_filter",
+            "label": "Working with Bloom filter",
             "args": {
-              "path": "/redis_stack/probabilistic_data_structures.md"
+              "path": "/redis_stack/working_with_bloom_filter.md"
+            }
+          },
+          "tdigest": {
+            "type": "internal-link",
+            "id": "working_with_tdigest",
+            "label": "Working with t-digest",
+            "args": {
+              "path": "/redis_stack/working_with_tdigest.md"
             }
           }
         }
