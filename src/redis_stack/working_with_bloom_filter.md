@@ -1,20 +1,42 @@
-Learn how to use a Bloom filter to reduce heavy calls to the relational database or memory.
+RedisBloom is developed by Redis Inc., and adds probabilistic data structures, including a Bloom filter, to Redis. To install RedisBloom on top of an existing Redis, download and run [Redis Stack](https://redis.io/docs/stack/get-started/install/), which includes RedisBloom and other capabilities. Also check out [RedisBloom commands](https://redis.io/commands/?group=bf).
 
 A Bloom filter is a probabilistic data structure that enables you to check if an element is present in a set using a very small memory space of a fixed size. When it responds that an element is not present in a set (a negative answer), you can be sure that indeed is the case. However, false-positive matches are possible.
 
-Even though it looks unusual at a first glance, a negative answer prevents costly operations.
+If you receive unhelpful queries from the clients to the database because no keys are matched in Redis, you can use a Bloom filter to filter such queries.
 
-How can a Bloom filter be used for our bike shop? For starters, you could keep a Bloom filter that stores all usernames of people who've already registered with our service. That way, when someone creates a new account, you can very quickly check if that username is free. If the answer is yes, you still have to go and check the main database for the precise result, but if the answer is no, you can skip that call and continue with the registration. 
+These guidelines help you learn how to use a Bloom filter to reduce heavy calls to the relational database or memory.
 
-Another, perhaps more interesting example, is showing better and more relevant ads to users. You can keep a Bloom filter per user with all the products they bought from the shop, and when you get a list of products from your suggestion engine, you can check it against this filter.
+## Avoiding cache penetration
 
-```redis Add all bought product ids in the Bloom filter
-BF.MADD user:778:bought_products  4545667 9026875 3178945 4848754 1242449
-```
+* Before checking the cache, implement some logic (e.g., IP range filtering). If the same unacceptable addresses are queried repeatedly, you may consider storing these addresses in Redis with an empty string value.
+* If you need to store millions of invalid keys, indeed, you may consider using a Bloom filter.
+* Create a Bloom filter using `BF.RESERVE` and add invalid addresses using `BF.ADD`. To determine if an invalid address has been seen before, use `BF.EXISTS`. The answer `1` means that, with high probability, the value has been seen before. An `0` means that it definitely wasn't seen before.
 
-Just before you try to show an ad to a user, you can first check if that product id is already in their _bought products_ Bloom filter. If the answer is yes, you can choose to check the main database, or you might skip to the next recommendation from your list. But if the answer is no, then you know for sure that your user did not buy that product:
+## Handling incoming requests
 
-```redis Has a user bought this product?
-BF.EXISTS  user:778:bought_products 1234567  // No, the user has not bought this product
-BF.EXISTS  user:778:bought_products 3178945  // The user might have bought this product
-```
+Because false-positive matches are possible with a Bloom filter (BF), you can use these options to better handle incoming requests.
+
+### Store all valid keys in a BF upfront
+
+* Add all valid keys to the BF.
+* When a request is received, search in the Bloom filter.
+* If found in the BF, it is, with high probability, a valid key. Try to fetch it from the DB. If not found in the DB (low probability) it was a false positive.
+* If not found in the BF, it is necessarily an invalid key.
+
+### Store valid keys in a BF on the fly
+
+* When a request is received, search in the Bloom filter.
+* If found in the BF, it is, with high probability, a valid key that was already seen. Try to fetch it from the DB. If not found in the DB (low probability) it was a false positive.
+* If not found in the BF - it is either a first-time valid key or an invalid key. Check, and if valid - add to the BF.
+
+
+### Store invalid keys in a BF
+
+* When a request is received, search in the Bloom filter.
+* If found in the BF, it is, with high probability, an invalid key. Note that it may be a valid key (low probability) and you will ignore it, but that's a price you should be ready to pay if you go this way.
+* If not found in the BF, it is either a valid key or a first-time invalid key. Check and, if invalid, add it to the BF.
+
+## Notes
+
+* You don't need to add an item to a BF more than once. There is no benefit, but also no harm.
+* You can't delete keys from a BF, but you can use a Cuckoo filter instead, which supports deletions but has some disadvantages compared to BF. RedisBloom supports Cuckoo filters as well.
