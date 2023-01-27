@@ -106,3 +106,20 @@ GRAPH.QUERY bikes_graph 'MATCH p=(u1:User {Name: "Andrea"})-[f:FOLLOWS]->(u2:Use
 ```redis All users who I follow who reviewed this bike with more than 3 stars
 GRAPH.QUERY bikes_graph 'MATCH p=(u1:User {Name: "Andrea"})-[f:FOLLOWS]->(u2:User)-[r:REVIEWED]->(b:Bike {Model: "Hillcraft"}) WHERE r.Stars>3  return p'
 ```
+
+## Use Bloom to check if username is free 
+
+Wonder how a Bloom filter can be used for your bike shop? For starters, you could keep a Bloom filter that stores all usernames of people who've already registered with your service. That way, when someone creates a new account, you can very quickly check if that username is free. If the answer is yes, you still have to go and check the main database for the precise result. But, if the answer is no, you can skip that call and continue with the registration. 
+
+Another, perhaps more interesting example, is showing better and more relevant ads to users. You can keep a Bloom filter per user with all the products they bought from the shop, and when you get a list of products from your suggestion engine, you can check it against this filter.
+
+```redis Add all bought product ids in the Bloom filter
+BF.MADD user:778:bought_products  4545667 9026875 3178945 4848754 1242449
+```
+
+Just before you try to show an ad to a user, you can first check if that product id is already in their `bought products` Bloom filter. If the answer is yes, you can choose to check the main database, or you might skip to the next recommendation from your list. But if the answer is no, then you know for sure that your user did not buy that product:
+
+```redis Has a user bought this product?
+BF.EXISTS  user:778:bought_products 1234567  // No, the user has not bought this product
+BF.EXISTS  user:778:bought_products 3178945  // The user might have bought this product
+```
