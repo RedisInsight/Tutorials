@@ -1,6 +1,6 @@
-Learn how to use a Bloom filter to reduce heavy calls to the relational database or memory compared to using sets or hashes.
+Learn how to use a Bloom filter to reduce heavy calls to the relational database or memory.
 
-A Bloom filter is a probabilistic data structure that enables you to check if an element is present in a set using a very small memory space of a fixed size. It can guarantee the absence of an element from a set, but it can only give an estimation about its presence. So, when it responds that an element is not present in a set (a negative answer), you can be sure that indeed is the case. However, one out of every N positive answers will be wrong.
+A Bloom filter is a probabilistic data structure that enables you to check if an element is present in a set using a very small memory space of a fixed size. When it responds that an element is not present in a set (a negative answer), you can be sure that indeed is the case. However, false-positive matches are possible.
 
 Even though it looks unusual at a first glance, a negative answer prevents costly operations.
 
