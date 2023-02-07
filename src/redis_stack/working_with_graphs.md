@@ -1,4 +1,13 @@
-Redis Stack offers native graph capabilities. You can use graphs for highly interconnected data, like relationships between people, organizations, groups, documents, or places they have access to and so on.
+Redis Stack offers a labeled property graph data structure. The Labeled Property Graph data model is a modern generic NoSQL data model. 
+Basically, it utilizes the graph mathematical structure to represent and query data. 
+As a mathematical structure, a graph is a collection of vertices (also called nodes) and _edges_. As a data structure, in a labeled property graph, the graph vertices represent _entities_. 
+Entities are physical, conceptual, virtual, or fictional particulars or endurants, while the _graph edges_ represent relationships. 
+Each relationship is basically an association or an interaction between a pair of entities. 
+Each entity can have a set of labels, for example `Person`, `Police officer`, and `Bank Account`, and each relationship must have a type, for example `owns` or `member of`. 
+Each node and each relationship can also have a set of properties, where each property is a key-value pair. 
+For example, you can have a `name` property for a `Person` entity, or a `start date` property for an `owns` relationship.
+
+You can use graphs for highly interconnected data, like relationships between people, organizations, groups, documents, or places they have access to, and so on.
 
 Suppose you want to track which bikes users bought so you can suggest them based on the fact that their friends have also bought them. 
 
