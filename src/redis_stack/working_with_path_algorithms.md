@@ -95,13 +95,13 @@ GRAPH.QUERY city_graph "MATCH
     ORDER BY pathWeight"
 ```
 
-## Find N time-bound shortest paths from A to G
+## Find N time-bounded shortest paths from A to G
 
 Which two shortest paths (in kilometers) can you take from A to G, where you can reach G in up to 12 minutes?
 
 For queries where you need to find the shortest paths bounded by one of the relationships' properties, you can use the `costProp` input argument:
 
-```redis Find N time-bound shortest paths from A to G
+```redis Find N time-bounded shortest paths from A to G
 GRAPH.QUERY city_graph "MATCH 
     (a:City{Name:'A'}),(g:City{Name:'G'}) 
     CALL algo.SPpaths({
@@ -138,11 +138,11 @@ GRAPH.QUERY city_graph "MATCH
 
 In the query above, you specified `maxLen: 4`, limiting the number of hops between nodes.
 
-## Find time-bound possible shortest paths from A
+## Find time-bounded possible shortest paths from A
 
 Which paths can you take from A if you limit the trip to 8 minutes?
 
-```redis Find time-bound shortest paths from A
+```redis Find time-bounded shortest paths from A
 GRAPH.QUERY city_graph "MATCH 
     (a:City{Name:'A'}) 
     CALL algo.SSpaths({
