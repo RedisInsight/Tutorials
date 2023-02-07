@@ -6,7 +6,7 @@ For both algorithms, you can set:
 
 * The relationships' property whose sum you want to minimize (weight).
 
-* A optional relationships' property whose sum you want to bound (cost) and the optional bound (maxCost).
+* An optional relationships' property whose sum you want to bound (cost) and the optional bound (maxCost).
 
 * An optional bound on the path length - the number of relationships along the path (maxLen).
 
