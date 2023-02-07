@@ -1,6 +1,6 @@
 RedisBloom is developed by Redis Inc., and adds probabilistic data structures, including a Bloom filter, to Redis. To install RedisBloom on top of an existing Redis, download and run [Redis Stack](https://redis.io/docs/stack/get-started/install/), which includes RedisBloom and other capabilities. Also check out [RedisBloom commands](https://redis.io/commands/?group=bf).
 
-A Bloom filter is a probabilistic data structure that enables you to check if an element is present in a set using a very small memory space of a fixed size. When it responds that an element is not present in a set (a negative answer), you can be sure that indeed is the case. However, false-positive matches are possible.
+A Bloom filter is a probabilistic data structure that enables you to check if an element is present in a set using a very small memory space of a fixed size. It can guarantee the absence of an element from a set by giving a Boolean response about its presence. So, when it responds that an element is not present in a set ('false`), you can be sure that indeed is the case. However, false positive matches are possible. Controllable tradeoffs between accuracy and memory consumption from a Bloom filter are possible via the `error_rate` argument of the `BF.RESERVE` command.
 
 If you receive unhelpful queries from the clients to the database because no keys are matched in Redis, you can use a Bloom filter to filter such queries.
 
