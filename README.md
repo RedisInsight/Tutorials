@@ -11,10 +11,15 @@ This document provides an overview of the Tutorials structure, its elements and 
 
 ## Navigation
 
-1. [Structure](#Structure)
-2. [Pages](#Pages)
-3. [Autoupdate Flow](#Autoupdate)
-4. [Development Flow](#Development)
+1. Example
+2. [Structure](#Structure)
+3. [Pages](#Pages)
+4. [Autoupdate Flow](#Autoupdate)
+5. [Development Flow](#Development)
+
+## Example
+Download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in Workbench to see them in RedisInsight.
+[Tutorials.zip](https://github.com/RedisInsight/Tutorials/files/10911806/Tutorials.zip)
 
 ## Structure
 Tutorials allows you to render recursive objects, such as a file directory.
