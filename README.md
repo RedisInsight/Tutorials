@@ -20,7 +20,8 @@ Tutorials should be combined into a .zip archive that contains the following:
 ## Examples
 If you would like to start with Tutorials, download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in RedisInsight Workbench so you can view and understand the overall logic.
 
-[Redis Stack Tutorials.zip](https://github.com/RedisInsight/Tutorials/files/10911840/Redis.Stack.Tutorials.zip)
+[Redis-Tutorials.zip](https://github.com/RedisInsight/Tutorials/files/11092920/Redis-Tutorials.zip)
+
 
 ## Markdown files
 
