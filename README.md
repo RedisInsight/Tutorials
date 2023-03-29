@@ -4,6 +4,8 @@ It is a perfect tool to present your use cases and experience using RedisInsight
 
 This page provides an overview of the Tutorials structure, its elements and contains instructions, recommendations, and best practices for updating and sharing Tutorials.
 
+If you want to share your own tutorials - add the `redis-tutorials` label to your GitHub repository and other GitHub users will be able to see and share your experience!
+
 ## Navigation
 
 1. [Structure](#Structure)
