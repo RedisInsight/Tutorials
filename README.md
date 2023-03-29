@@ -14,7 +14,7 @@ This page provides an overview of the Tutorials structure, its elements and cont
 
 Tutorials should be combined into a .zip archive that contains the following:
 1. [Markdown files](#Markdown) with the content of Tutorials
-2. [Manifest.json](#Manifest) that describes the structure and behavior of Tutorials
+2. [manifest.json](#Manifest) that describes the structure and behavior of Tutorials
 
 ## Examples
 If you would like to start with Tutorials, download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in RedisInsight Workbench so you can view and understand the overall logic.
