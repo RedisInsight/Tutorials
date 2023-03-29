@@ -8,22 +8,20 @@ This page provides an overview of the Tutorials structure, its elements and cont
 
 1. [Structure](#Structure)
 2. [Examples](#Examples)
-3. [Pages](#Pages)
-4. [Advanced button parameters](#Advanced)
+3. [Advanced button parameters](#Advanced)
 
 ## Structure
 
 Tutorials should be combined into a .zip archive that contains the following:
-1. [Markdown files](#Markdown) with content of Tutorials
-2. [manifest.json](#manifest.json) that describes the structure and befavior of Tutorials
+1. [Markdown files](#Markdown) with the content of Tutorials
+2. [Manifest.json](#Manifest) that describes the structure and behavior of Tutorials
 
 ## Examples
 If you would like to start with Tutorials, download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in RedisInsight Workbench so you can view and understand the overall logic.
 
 [Redis-Tutorials.zip](https://github.com/RedisInsight/Tutorials/files/11092920/Redis-Tutorials.zip)
 
-
-## Markdown files
+## Markdown
 
 In short, Tutorials support the basic [Markdown syntax](https://www.markdownguide.org/basic-syntax/) that you can use to specify your information.
 If you would like to add a button that will insert Redis commands to the Workbench Editor, use Redis Code block that is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), but you need to specify `redis` as language and the label next to it (see the `Create` button example below).
@@ -42,7 +40,7 @@ If you would like to add a button that will insert Redis commands to the Workben
  ```
 ````
 
-## manifest.json
+## Manifest
 
 Manifest.json is not required and can be skipped, in the case of missing manifest.json, RedisInsight will:
 1. Take the Tutorial name from the .zip archive
@@ -84,7 +82,7 @@ A Node can be represented by various UI components and is specified by `type` pr
 > _**!Note.** All **"internal-link"** nodes located in the same **"group"** will be connected to each other. And using pagination (created dynamically) you can go directly from one page to another. Therefore, it is better to combine elements into groups related to the same topic._
 
 
-## Advanced button parameters
+## Advanced
 
 You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
 the configuration set in RedisInsight. If not specified - the behaviour will be defined by parameters set in RedisInsight.
@@ -123,5 +121,3 @@ redis:[results=single;pipeline=4]
 redis:[results=group;mode=ascii]
 redis:[auto=true;pipeline=8;mode=raw;results=single;]
 ```
-
-
