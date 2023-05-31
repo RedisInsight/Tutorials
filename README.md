@@ -10,8 +10,8 @@ If you want to share your own tutorials - add the `redis-tutorials` label to you
 
 1. [Structure](#structure)
 2. [Examples](#examples)
-3. [Advanced button parameters](#advanced)
 3. [Bulk Upload From Tutorials](#bulk-upload-from-tutorials)
+4. [Advanced button parameters](#advanced)
 
 ## Structure
 
@@ -85,6 +85,61 @@ A Node can be represented by various UI components and is specified by `type` pr
 > _**!Note.** All **"internal-link"** nodes located in the same **"group"** will be connected to each other. And using pagination (created dynamically) you can go directly from one page to another. Therefore, it is better to combine elements into groups related to the same topic._
 
 
+## Bulk Upload From Tutorials
+
+You can upload sample data sets in bulk from your custom RedisInsight tutorials.
+To do so, you will need to:
+- create a text file with the list of Redis commands
+- add this file to the archive with your custom tutorials
+- create a special `redis-upload` button described in this section to execute all the Redis commands from custom tutorials
+
+This button works similarly to the Bulk Upload in Browser, so all the Redis commands specified in the file will be executed.
+
+The following syntax describes the `redis-upload` button:
+
+````
+
+```redis-upload:[{relative_path_to_the_text_file}] Upload data
+```
+
+````
+**Notes:**
+
+* use only a relative path to the text file inside the tutorial folder
+* it is recommended to start the folder name with the text file from a dot (*.*) or underscore (*_*), so in the cases when the manifest file is automatically generated, RedisInsight will ignore this folder and not display it in your custom tutorial
+* all the files included in your custom tutorials will be stored inside the RedisInsight folder as long as the tutorials exist in RedisInsight, so instead of including large text files in your custom tutorials, consider using Bulk Upload in Browser
+
+**Example:**
+
+For example, with the following structure of a custom tutorial:
+
+```
+ _data // a folder with the file to upload in bulk
+    upload.txt
+ folder_1 // a folder with custom tutorials
+    my-tutorial.md
+ manifest.json
+```
+
+Use one of the following examples to specify the `redis-upload` button in `my-tutorial.md`:
+
+````
+```redis-upload:[../_data/upload.txt] Upload data
+```
+````
+
+as a relative path from `folder_1`
+
+or
+
+````
+```redis-upload:[./_data/upload.txt] Upload data
+```
+````
+
+as an absolute path from the tutorial folder.
+
+
 ## Advanced
 
 You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
@@ -124,49 +179,4 @@ redis:[results=single;pipeline=4]
 redis:[results=group;mode=ascii]
 redis:[auto=true;pipeline=8;mode=raw;results=single;]
 ```
-
-## Bulk Upload From Tutorials
-
-You can specify a special button for the Bulk Upload, upon clicking which, 
-a text file with redis commands will be loaded and executed. It works the same as Bulk Upload in Browser.
-
-To specify bulk upload button, you have to use the following syntax:
-
-````
-
-```redis-upload:[{path_to_file}] Upload data
-```
-
-````
-_Notes:_
-
-* You can use a relative path to text file inside the tutorial folder
-* If manifest is not specified, folder with bulk upload text files should start with *.* or *_*
-* Text files included into tutorial will be stored as long as tutorial
-
-_Example_:
-For example, we have the following structure of tutorial:
-```
- _data // folder with bulk upload text file
-    upload.txt
- folder_1 // folder with tutorial
-    my-tutorial.md 
- manifest.json
-```
-
-In *my-tutorial.md* `redis-upload` button can be specified as:
-
-````
-```redis-upload:[../_data/upload.txt] Upload data
-```
-````
-as relative path from current folder_1
-
-or 
-````
-```redis-upload:[./_data/upload.txt] Upload data
-```
-````
-as absolute path from tutorial folder
-
 
