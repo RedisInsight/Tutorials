@@ -10,7 +10,10 @@ If you want to share your own tutorials - add the `redis-tutorials` label to you
 
 1. [Structure](#Structure)
 2. [Examples](#Examples)
-3. [Advanced button parameters](#Advanced)
+3. [Markdown](#Markdown)
+4. [Images](#Images)
+5. [Manifest](#Manifest)
+6. [Advanced button parameters](#Advanced)
 
 ## Structure
 
@@ -41,6 +44,24 @@ If you would like to add a button that will insert Redis commands to the Workben
 
  ```
 ````
+
+## Images
+Basic [markdown syntax](https://www.markdownguide.org/basic-syntax/#images-1) provides the ability to render images.
+
+To render images, you need to provide either an external URL to these images or a relative path to a folder inside of your tutorials.
+The folder with images can have any name, but it is recommended to start it with an underscore (_) or a dot (.) to avoid displaying it in Workbench when the [manifest](#Manifest) is automatically generated.
+
+Use the following logic to specify a relative path:
+
+- `./` means the current directory;
+- `../` means the parent of the current directory.
+
+For example:
+
+```
+![RedisInsight Browser screenshot](./_images/aggregations.png)
+```
+
 
 ## Manifest
 
