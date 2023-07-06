@@ -41,14 +41,6 @@
         },
         {
           "type": "internal-link",
-          "id": "working_with_graphs",
-          "label": "Working with graphs",
-          "args": {
-            "path": "/redis_stack/working_with_graphs.md"
-          }
-        },
-        {
-          "type": "internal-link",
           "id": "probabilistic_data_structures",
           "label": "Probabilistic data structures",
           "args": {
