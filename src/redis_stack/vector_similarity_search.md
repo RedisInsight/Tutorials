@@ -1,5 +1,5 @@
 Redis Stack supports Vector Similarity Search - a new feature that is going to help to search unstructured data, like text and images. 
-Vector Similarity Search supports both hashes and JSON.
+Vector Similarity Search supports both hashes and JSON data structures.
 
 To be able to run these queries you need to have a vector representation of your text, or image, also called **vector embeddings**. They are done by a machine learning model and stored in Redis. Let's look at an example query:
 
