@@ -46,6 +46,14 @@
           "args": {
             "path": "/redis_stack/probabilistic_data_structures.md"
           }
+        },
+        {
+          "type": "internal-link",
+          "id": "general_data_structures",
+          "label": "General data structures",
+          "args": {
+            "path": "/redis_stack/general_data_structures.md"
+          }
         }
       ]
     }
