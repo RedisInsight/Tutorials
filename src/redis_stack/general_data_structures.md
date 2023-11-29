@@ -4,7 +4,7 @@ The essence of a key-value store is the ability to store some data (value) and a
 
 ## Strings
 
-As a first example, use the [SET](https://redis.io/commands/set/) command to store the value "Process 123" at key "bike:1".
+As a first example, use the [SET](https://redis.io/commands/set/) command to store the value "Deimos" at key "bike:1".
 
 ```redis Create a new key
 SET bike:1 "Deimos"
