@@ -16,7 +16,7 @@ Redis will store the `bike:1` data permanently. You can retrieve the data using 
 GET bike:1
 ```
 
-To see if key exists, use the [EXISTS](https://redis.io/commands/exists) command.
+To see if a key exists, use the [EXISTS](https://redis.io/commands/exists) command.
 
 ```redis Do these keys exist?
 EXISTS bike:1
