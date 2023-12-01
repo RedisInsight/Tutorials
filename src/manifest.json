@@ -9,6 +9,72 @@
   "children": [
     {
       "type": "group",
+      "id": "redis",
+      "label": "Redis",
+      "args": {
+        "initialIsOpen": false
+      },
+      "children": [
+        {
+          "type": "internal-link",
+          "id": "introduction",
+          "label": "Introduction",
+          "args": {
+            "path": "/redis/introduction.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "working_with_strings",
+          "label": "Working with strings",
+          "args": {
+            "path": "/redis/working_with_strings.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "working_with_lists",
+          "label": "Working with lists",
+          "args": {
+            "path": "/redis/working_with_lists.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "working_with_sets",
+          "label": "Working with sets",
+          "args": {
+            "path": "/redis/working_with_sets.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "working_with_sorted_sets",
+          "label": "Working with sorted sets",
+          "args": {
+            "path": "/redis/working_with_sorted_sets.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "working_with_hashes",
+          "label": "Working with hashes",
+          "args": {
+            "path": "/redis/working_with_hashes.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "learn_more",
+          "label": "Learn more",
+          "args": {
+            "path": "/redis/learn_more.md"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
       "id": "redis_stack",
       "label": "Redis Stack",
       "args": {
@@ -45,14 +111,6 @@
           "label": "Probabilistic data structures",
           "args": {
             "path": "/redis_stack/probabilistic_data_structures.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "general_data_structures",
-          "label": "General data structures",
-          "args": {
-            "path": "/redis_stack/general_data_structures.md"
           }
         }
       ]
