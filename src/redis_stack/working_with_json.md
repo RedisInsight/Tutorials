@@ -1,8 +1,8 @@
-In this tutorial, we will go through an example of a bike shop. We will show the different capabilities of Redis Stack.
-
+This tutorial will demonstrate Redis Stack's JSON capabilities using the bike shop use case.
 
 ## Storing and managing JSON
-Let's examine the query for creating a single bike:
+
+Here's a query that creates a JSON document describing a single bike.
 
 ```redis Create a bike
 JSON.SET bikes:1 $ '{
@@ -18,7 +18,7 @@ JSON.SET bikes:1 $ '{
     }' 
 ```
 
-You can use [JSONPath](https://goessner.net/articles/JsonPath/) to access any part of the stored JSON document:
+You can use [JSONPath](https://goessner.net/articles/JsonPath/) to access any part of the stored JSON document.
 
 ```redis Get specific fields
 JSON.GET bikes:1 $.model
@@ -29,7 +29,7 @@ JSON.GET bikes:1 $.specs.material
 JSON.SET bikes:1 $.model '"Hyperion1"'
 ```
 
-Now let's load a lot more bikes so we can play around with the queries:
+Next, load more bike documents so you can practice querying against them.
 
 ```redis Load more bikes
 JSON.SET bikes:0 $ '{"model": "Deimos", "brand": "Ergonom", "price": 4972, "type": "Enduro bikes", "specs": {"material": "alloy", "weight": 14.0}, "description": "Redesigned for the 2020 model year, this bike impressed our testers and is the best all-around trail bike we\'ve ever tested. It has a lightweight frame and all-carbon fork, with cables routed internally. It\u2019s for the rider who wants both efficiency and capability."}' 
@@ -135,7 +135,8 @@ JSON.SET bikes:99 $ '{"model": "Europa", "brand": "Eva", "price": 4621, "type": 
 ```
 
 ## Indexing and querying
-In addition to storing and managing JSON, Redis Stack provides the capability to index and query it. After we specify what we want to be indexed, the indexing happens automatically (and synchronously) when new data is saved.
+
+In addition to storing and managing JSON, Redis Stack provides for indexing and querying JSON documents. After specifying what you want to be indexed, the indexing happens automatically (and synchronously) for existing data that matches the given `PREFIX` and new data as it's added.
 
 ```redis Create an index
 FT.CREATE idx:bikes
@@ -151,7 +152,7 @@ FT.CREATE idx:bikes
    $.description as description TEXT
 ```
 
-Now that we have our data indexed, it's really easy to run full-text searches on it and filter by number, tag and even geo position.
+Now that your data is indexed, it's straightforward to run full-text searches on it and filter it by number and tag.
 
 ```redis Query by type
 FT.SEARCH idx:bikes "@type:{eBikes}"
@@ -190,4 +191,4 @@ FT.AGGREGATE idx:bikes "*"
     SORTBY 1 @weight
 ```
 
-
+You can read more about the JSON data type [here](https://redis.io/docs/data-types/json/). See [here](https://redis.io/commands/?group=json) for the complete list of JSON commands.

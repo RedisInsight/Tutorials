@@ -1,10 +1,11 @@
-Among other things, Redis Stack provides you with a native time series data structure. Let's see how a time series might
-be useful in our bike shop.
+This tutorial will demonstrate Redis Stack's ability to store time series data using the bike shop use case.
 
-As we have multiple physical shops too, alongside our online shop, it could be helpful to have an overview of the sales
-volume. We will create one time series per shop tracking the total amount of all sales. In addition, we will mark the
-time series with the appropriate region label, `east` or `west`. This kind of representation will allow us to easily
-query bike sales performance per certain time periods, per shop, per region or across all shops.
+The bike shop company consists of multiple physical stores and an online presense. It would be helpful to have an aggregate view of sales volume across the physical and online stores.
+
+In the following example, a time series key is created for each of the five shops to track total sales. Each key is marked with an appropriate region label, `east` or `west`. This kind of representation will allows you to easily
+query bike sales performance certain time periods on a per shop, per region, or across all shops.
+
+Notice the `DUPLICATE_POLICY SUM`
 
 ```redis Create time series per shop
 TS.CREATE bike_sales_1 DUPLICATE_POLICY SUM LABELS region east compacted no
@@ -14,12 +15,10 @@ TS.CREATE bike_sales_4 DUPLICATE_POLICY SUM LABELS region west compacted no
 TS.CREATE bike_sales_5 DUPLICATE_POLICY SUM LABELS region west compacted no
 ```
 
-In the above query, we make the shop id (1,2,3,4,5) a part of the time series name. You might also notice
-the `DUPLICATE_POLICY SUM` argument; this describes what should be done when two events in the same time series share
-the same timestamp: In this case, it would mean that two sales happened at exactly the same time, so the resulting value
-should be a sum of the two sales amounts.
+Notice the `DUPLICATE_POLICY SUM` arguments; these describe how Redis should behave when two events in the same store and region have
+the same timestamp. In this case, two sales that happen at exactly the same time in a particular store and region are added together.
 
-Since the metrics are collected with a millisecond timestamp, we can compact our time series into sales per hour:
+Time series data is collected using millisecond timestamps. You can compact time series data and make it available in various sized aggregations. Here's an example of aggregating data by day:
 
 ```redis Time series compaction
 TS.CREATE bike_sales_1_per_day LABELS region east compacted yes
@@ -714,7 +713,7 @@ TS.RANGE bike_sales_1 - + AGGREGATION avg 3600000
 TS.RANGE bike_sales_2 - + AGGREGATION avg 86400000
 ```
 
-```redis Get sales per day, across west region
+```redis Get sales per day for the west region
 // Get sales per day, across all shops in the west region
 TS.MRANGE - + AGGREGATION sum 86400000 FILTER region=west compacted=no
 ```
@@ -727,9 +726,7 @@ TS.MRANGE - + FILTER region=(east,west) compacted=no GROUPBY region REDUCE sum
 TS.MRANGE - + AGGREGATION avg 86400000 FILTER region=(east,west) compacted=no GROUPBY region REDUCE sum
 ```
 
-Remember that compacted version of the time series we created at the beginning of this section? This last one is exactly the kind
-of queries we might need it for. Instead of doing the aggregation on all the data points, we can simply run this query
-on the compacted time series:
+The next two queries show how useful compacted time series can be to reduce the data set size needed for aggregated queries.
 
 ```redis All sales per region, compacted
 TS.MRANGE - + FILTER region=(east,west) compacted=yes GROUPBY region REDUCE sum
@@ -739,3 +736,4 @@ TS.MRANGE - + FILTER region=(east,west) compacted=yes GROUPBY region REDUCE sum
 TS.RANGE bike_sales_3_per_day - + FILTER_BY_VALUE 3000 5000
 ```
 
+You can read more about time series and use cases [here](https://redis.io/docs/data-types/timeseries/). See [here](https://redis.io/commands/?group=timeseries) for the complete list of time series commands.
