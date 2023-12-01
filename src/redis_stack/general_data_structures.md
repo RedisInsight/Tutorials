@@ -83,7 +83,7 @@ SET bike:2:lock_status "LOCKED"
 TTL bike:2:lock_status
 ```
 
-`EXPIRE` and `TTL` operate in seconds, but there are analogous commands that operation in milliseconds. They are [PEXPIRE](https://redis.io/commands/pexpire) and [PTTL](https://redis.io/commands/pttl).
+`EXPIRE` and `TTL` operate in seconds, but there are analogous commands that operate in milliseconds. They are [PEXPIRE](https://redis.io/commands/pexpire) and [PTTL](https://redis.io/commands/pttl).
 
 The `SET` command can take additional arguments, one of which allows you to set the value of a key and its time to live value directly in a single, atomic operation. The `EX` and `PX` arguments allow you to specify the TTL value as either seconds or milliseconds, respectively.
 
@@ -136,7 +136,7 @@ Next, an element is added to the beginning of the list.
 LPUSH bike:colors "Red"
 ```
 
-When creating a list, there's a short cut to the above examples. Both `LPUSH` and `RPUSH` accept a variable number of argments (variadic), so you can create the entire list with a single command. The number of added elements is returned.
+When creating a list, there's a short cut to the above examples. Both `LPUSH` and `RPUSH` accept a variable number of arguments (variadic), so you can create the entire list with a single command. The number of added elements is returned.
 
 ```redis Add multiple elements
 DEL bike:colors
@@ -191,7 +191,7 @@ Redis [sets](https://redis.io/docs/data-types/sets/) are similar to lists, excep
 - Represent relations (e.g., the set of all users with a specified role).
 - Perform common set operations such as intersection, union, and difference.
 
-Here are some of the important set commands:
+Here are some important set commands:
 
 - [SADD](https://redis.io/commands/sadd)
 - [SREM](https://redis.io/commands/srem)
@@ -199,7 +199,7 @@ Here are some of the important set commands:
 - [SMEMBERS](https://redis.io/commands/smembers)
 - [SUNION](https://redis.io/commands/sunion)
 
-Use `SADD` to create and update a set. Each `SADD` command will return the number of added members. If you try to add a member that is already present in the set, `0` is returned.
+Use `SADD` to create and update a set. Each `SADD` command will return the number of added members. If you try to add a member that is already in the set, `0` is returned.
 
 ```redis Create a set
 SADD bike:1:addons "whitewall tires"
@@ -209,7 +209,7 @@ SADD bike:1:addons "bell"
 
 Notice that the `SADD` command is variadic.
 
-`SREM` is used to remove members of a list. It returns `1` if the member is present in the set, or `0` if it is not.
+`SREM` is used to remove members of a list. It returns `1` if the member is in the set, or `0` if it is not.
 
 ```redis Remove set members
 SREM bike:1:addons "bell"
@@ -254,9 +254,7 @@ See [here](https://redis.io/commands/?group=set) for the entire list of Redis se
 
 ## Sorted sets
 
-While handy, Redis sets are unsorted, which limits their usefulness. It is for this reason that Redis sorted sets were added to its stable of data types.
-
-Sorted sets are similar to sets, except each unique member has an associated score.
+While handy, Redis sets are unsorted, which limits their usefulness. Sorted sets are similar to sets, except each unique member has an associated score.
 
 You can use sorted sets to create, for example, a set of bike brands named after famous computer programmers, where the score element, the programmer's birth year, is used to sort the set.
 
@@ -283,7 +281,7 @@ See [here](https://redis.io/commands/?group=sorted-set) for the entire list of R
 
 ## Hashes
 
-Lists, sets, and sorted sets cover a lot of ground in terms of use cases, but the [hash](https://redis.io/docs/data-types/hashes) data type is on a higher level. Redis hashes are maps (sequences of key-value pairs) and are used to represent objects in Redis. Consider the following example that shows how to create a hash key using the [HSET](https://redis.io/commands/hset) command.
+Lists, sets, and sorted sets are great for many use cases, but the [hash](https://redis.io/docs/data-types/hashes) data type is on a higher level. Redis hashes are maps (sequences of key-value pairs) and are used to represent objects in Redis. Consider the following example that shows how to create a hash key using the [HSET](https://redis.io/commands/hset) command.
 
 ```redis Create a hash
 HSET bike:1 model Deimos brand Ergonom type "Enduro bikes" price 4972
