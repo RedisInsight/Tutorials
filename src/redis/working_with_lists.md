@@ -1,11 +1,17 @@
-A Redis [list](https://redis.io/docs/data-types/lists) is a data type that contains a series of ordered values. You interact with lists using commands such as:
+A Redis list is a data type that contains a series of ordered string values. Use cases include
 
-- [RPUSH](https://redis.io/commands/rpush) - adds items to the end of a list.
-- [LPUSH](https://redis.io/commands/lpush) - adds items to the beginning of a list.
-- [LLEN](https://redis.io/commands/llen) - retrieves the length of a list.
-- [LRANGE](https://redis.io/commands/lrange) - retrieves list items from a specified range.
-- [LPOP](https://redis.io/commands/lpop) - removes and returns an item from the beginning of a list.
-- [RPOP](https://redis.io/commands/rpop) - removes and returns an item from the end of a list.
+- implementing stacks (LIFO data structures)
+- implementing queues (FIFO data structures)
+- implementing producer-consumer patterns
+
+You interact with lists using commands such as:
+
+- RPUSH - adds items to the end of a list.
+- LPUSH - adds items to the beginning of a list.
+- LLEN - retrieves the length of a list.
+- LRANGE - retrieves list items from a specified range.
+- LPOP - removes and returns an item from the beginning of a list.
+- RPOP - removes and returns an item from the end of a list.
 
 You can begin working with a list without first creating its key, simply by adding values to the key. This works as long as the key doesn't already exist as a different type.
 
@@ -72,4 +78,4 @@ KEYS bike:colors
 **Note**:
 > `LRANGE` will return an empty (null) list if a key no longer exists.
 
-See [here](https://redis.io/commands/?group=list) for the entire set of Redis list-related commands.
+See [here](https://redis.io/docs/data-types/list) for the list type reference page, and [here](https://redis.io/commands/?group=list) for the entire set of Redis list commands.

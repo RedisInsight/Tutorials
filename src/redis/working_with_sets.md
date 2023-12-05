@@ -1,4 +1,4 @@
-Redis [sets](https://redis.io/docs/data-types/sets/) are similar to lists, except they are unordered, and each element must be unique. You can use sets to:
+Redis sets are similar to lists, except they are unordered, and each element must be unique. You can use sets to:
 
 - Track unique items (e.g., track all unique IP addresses accessing a given blog post).
 - Represent relations (e.g., the set of all users with a specified role).
@@ -6,11 +6,11 @@ Redis [sets](https://redis.io/docs/data-types/sets/) are similar to lists, excep
 
 Here are some important set commands:
 
-- [SADD](https://redis.io/commands/sadd)
-- [SREM](https://redis.io/commands/srem)
-- [SISMEMBER](https://redis.io/commands/sismember)
-- [SMEMBERS](https://redis.io/commands/smembers)
-- [SUNION](https://redis.io/commands/sunion)
+- `SADD`
+- `SREM`
+- `SISMEMBER`
+- `SMEMBERS`
+- `SUNION`
 
 Use `SADD` to create and update a set. Each `SADD` command will return the number of added members. If you try to add a member that is already in the set, `0` is returned.
 
@@ -22,7 +22,7 @@ SADD bike:1:addons "bell"
 
 Notice that the `SADD` command is variadic.
 
-`SREM` is used to remove members of a list. It returns `1` if the member is in the set, or `0` if it is not.
+`SREM` is used to remove members of a set. It returns `1` if the member is in the set, or `0` if it is not.
 
 ```redis Remove set members
 SREM bike:1:addons "bell"
@@ -51,8 +51,8 @@ SUNION bike:1:addons bike:1:special_addons
 
 Sets have two ways to return one or more random members of a set:
 
-- [SPOP](https://redis.io/commands/spop)
-- [SRANDMEMBER](https://redis.io/commands/srandmember)
+- `SPOP`
+- `SRANDMEMBER`
 
 Each command takes a key and, optionally, a count as arguments. `SPOP` removes and returns a random member, whereas `SRANDMEMBER` just returns the randomly selected members without removing them.
 
@@ -63,4 +63,4 @@ SPOP bike:1:addons
 SMEMBERS bike:1:addons
 ```
 
-See [here](https://redis.io/commands/?group=set) for the entire list of Redis set-related commands.
+See [here](https://redis.io/docs/data-types/sets) for the set type reference page, and [here](https://redis.io/commands/?group=set) for the entire list of Redis set commands.

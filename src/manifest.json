@@ -9,8 +9,8 @@
   "children": [
     {
       "type": "group",
-      "id": "redis",
-      "label": "Redis",
+      "id": "redis_basic",
+      "label": "Basic data structures",
       "args": {
         "initialIsOpen": false
       },
@@ -75,8 +75,8 @@
     },
     {
       "type": "group",
-      "id": "redis_stack",
-      "label": "Redis Stack",
+      "id": "redis_advanced",
+      "label": "Advanced data structures",
       "args": {
         "initialIsOpen": false
       },
