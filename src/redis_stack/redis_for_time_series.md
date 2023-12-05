@@ -2,10 +2,7 @@ This tutorial will demonstrate Redis Stack's ability to store time series data u
 
 The bike shop company consists of multiple physical stores and an online presense. It would be helpful to have an aggregate view of sales volume across the physical and online stores.
 
-In the following example, a time series key is created for each of the five shops to track total sales. Each key is marked with an appropriate region label, `east` or `west`. This kind of representation will allows you to easily
-query bike sales performance certain time periods on a per shop, per region, or across all shops.
-
-Notice the `DUPLICATE_POLICY SUM`
+The following example creates a time series key for five bike shops to track the total sales for each. Each key has an appropriate region label, `east` or `west`. This kind of representation will allow you to easily query bike sales performance over specific periods on a per-shop or per-region basis.
 
 ```redis Create time series per shop
 TS.CREATE bike_sales_1 DUPLICATE_POLICY SUM LABELS region east compacted no
@@ -18,7 +15,7 @@ TS.CREATE bike_sales_5 DUPLICATE_POLICY SUM LABELS region west compacted no
 Notice the `DUPLICATE_POLICY SUM` arguments; these describe how Redis should behave when two events in the same store and region have
 the same timestamp. In this case, two sales that happen at exactly the same time in a particular store and region are added together.
 
-Time series data is collected using millisecond timestamps. You can compact time series data and make it available in various sized aggregations. Here's an example of aggregating data by day:
+Time series data are collected at a millisecond resolution. You can compact time series data and make it available in various sized aggregations. Here's an example of aggregating data by day:
 
 ```redis Time series compaction
 TS.CREATE bike_sales_1_per_day LABELS region east compacted yes

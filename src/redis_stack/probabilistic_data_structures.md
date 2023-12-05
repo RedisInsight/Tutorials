@@ -1,16 +1,15 @@
-This tutorial will demonstrate Redis Stack's probabilistic data structure capabilities using the bike shop use case.
-
-Redis Stack supports the following probabilistic data structures:
+In addition to a comprehensive set of basic data structures, Redis supports the following probabilistic data structures:
 
 - Bloom filter
 - Cuckoo filter
 - Count-min sketch
 - Top-K
 - t-digest
+- Hyperloglog
 
-Probabilistic data structures, in general, provide results that are "close enough" in a much shorter time and by using significantly less memory than other data types such as sets or hashes. Here, you'll learn how to use a Bloom filter.
+In this tutorial you will learn how to use a Bloom filter, a resource efficient data structure, in a bike shop use case.
 
-A Bloom filter allows you to check if an element is present in a set using a very small, fixed-size amount of memory. A query will return one of two possible answers:
+A Bloom filter allows you to check if an element is present in a set in a memory-efficient and scalable way. A query will return one of two possible answers:
 
 1. the element *might* be in the set
 2. the element is definitely not in the set
