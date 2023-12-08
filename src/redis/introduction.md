@@ -1,7 +1,24 @@
-In this set of tutorials, you will be introduced to the following set of Redis data structure types using a hypothetical bike shop use case:
+Redis is a data structure server that provides a collection of native data types that help you solve a variety of problems, from caching to queuing to event processing.
+In this set of tutorials, you will be introduced to basic Redis data structures using a hypothetical bike shop use case.
 
-- strings - used for storing sequences of bytes, including text, images, and serialized objects.
-- lists - ordered linked lists of string values that can be used to implement stacks (LIFO), queues (FIFO), producer-consumer patterns, and more.
-- sets - unordered collections of unique strings that can be used to represent relations and track unique items.
-- sorted sets - collections of unique strings, which are ordered by an associated score, that can be used for rate limiters and game leaderboards.
-- hashes - record types, structured as collections of field-value pairs, used to represent objects.
+### Strings
+
+Strings store sequences of bytes, including text, serialized objects, and binary arrays. Strings are the simplest type of value you can associate with a Redis key.
+
+### Hashes
+
+Redis hashes are record types, structured as collections of field-value pairs. You can use hashes to represent basic objects and to store groupings of counters, among other things.
+
+### Lists
+
+Lists are ordered linked lists of string values that can be used to implement stacks (LIFO), queues (FIFO), producer-consumer patterns, and more.
+
+### Sets
+
+A Set is an unordered collection of unique strings. You can use Redis sets to efficiently track unique items, represent relations, and perform common set operations such as intersections, unions, and differences.
+
+### Sorted sets
+
+A Sorted set is a collection of unique strings, which are ordered by an associated score. Use cases for sorted sets include rate limiters and game leaderboards.
+
+Click **Next** below to learn more about each data structure.
