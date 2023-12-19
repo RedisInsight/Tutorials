@@ -9,108 +9,406 @@
   "children": [
     {
       "type": "group",
-      "id": "redis_basic",
-      "label": "Basic data structures",
+      "id": "ds",
+      "label": "Data structures explained",
+      "args": {
+        "initialIsOpen": false
+      },
+      "children": [
+        {
+          "type": "group",
+          "id": "ds-json",
+          "label": "JSON",
+          "args": {
+            "initialIsOpen": false
+          },
+          "children": [
+            {
+              "type": "internal-link",
+              "id": "ds-json-intro",
+              "label": "Introduction",
+              "args": {
+                "path": "/ds/json/introduction.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-create",
+              "label": "Create documents",
+              "args": {
+                "path": "/ds/json/create.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-modify",
+              "label": "Modify documents",
+              "args": {
+                "path": "/ds/json/modify.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-arrays",
+              "label": "Use JSON arrays",
+              "args": {
+                "path": "/ds/json/arrays.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-objects",
+              "label": "Use JSON objects",
+              "args": {
+                "path": "/ds/json/objects.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-adv-jsonpath",
+              "label": "Advanced JSONPath",
+              "args": {
+                "path": "/ds/json/adv-jsonpath.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-more-adv-jsonpath",
+              "label": "More advanced JSONPath",
+              "args": {
+                "path": "/ds/json/more-adv-jsonpath.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-json-learn-more",
+              "label": "Learn more",
+              "args": {
+                "path": "/ds/json/learn-more.md"
+              }
+            }
+          ]
+        },
+        {
+          "type": "internal-link",
+          "id": "ds-strings",
+          "label": "Strings",
+          "args": {
+            "path": "/ds/strings.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "ds-hashes",
+          "label": "Hashes",
+          "args": {
+            "path": "/ds/hashes.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "ds-lists",
+          "label": "Lists",
+          "args": {
+            "path": "/ds/lists.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "ds-sets",
+          "label": "Sets",
+          "args": {
+            "path": "/ds/sets.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "ds-sorted-sets",
+          "label": "Sorted sets",
+          "args": {
+            "path": "/ds/sorted_sets.md"
+          }
+        },
+        {
+          "type": "group",
+          "id": "ds-ts",
+          "label": "Time series",
+          "args": {
+            "initialIsOpen": false
+          },
+          "children": [
+            {
+              "type": "internal-link",
+              "id": "ds-ts-intro",
+              "label": "Introduction",
+              "args": {
+                "path": "/ds/ts/intro.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-ts-create-alter",
+              "label": "Create and alter time series",
+              "args": {
+                "path": "/ds/ts/create-alter.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-ts-add-mod-del",
+              "label": "Add, modify, and delete samples",
+              "args": {
+                "path": "/ds/ts/add-mod-del.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-ts-ret-compact",
+              "label": "Retention and compactions",
+              "args": {
+                "path": "/ds/ts/ret-compact.md"
+              }
+            },
+            {
+              "type": "group",
+              "id": "ds-ts-ret-agg",
+              "label": "Retrieve and aggregate samples",
+              "args": {
+                "initialIsOpen": false
+              },
+              "children": [
+                {
+                  "type": "internal-link",
+                  "id": "ds-ts-ret-agg-ret",
+                  "label": "Retrieve samples",
+                  "args": {
+                    "path": "/ds/ts/ret-agg/ret.md"
+                  }
+                },
+                {
+                  "type": "internal-link",
+                  "id": "ds-ts-ret-agg-single",
+                  "label": "Single-key aggregations",
+                  "args": {
+                    "path": "/ds/ts/ret-agg/single-key.md"
+                  }
+                },
+                {
+                  "type": "internal-link",
+                  "id": "ds-ts-ret-agg-cross",
+                  "label": "Cross-key aggregations",
+                  "args": {
+                    "path": "/ds/ts/ret-agg/cross-key.md"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-ts-learn-more",
+              "label": "Learn more",
+              "args": {
+                "path": "/ds/ts/learn-more.md"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "id": "ds-prob",
+          "label": "Probabilistic",
+          "args": {
+            "initialIsOpen": false
+          },
+          "children": [
+            {
+              "type": "internal-link",
+              "id": "ds-prob-intro",
+              "label": "Introduction",
+              "args": {
+                "path": "/ds/prob/intro.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-prob-hyperloglog",
+              "label": "Cardinality estimation (HyperLogLog)",
+              "args": {
+                "path": "/ds/prob/hyperloglog.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-prob-count-min-sketch",
+              "label": "Frequency estimation (count-min sketch)",
+              "args": {
+                "path": "/ds/prob/count-min-sketch.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-prob-bloom-cuckoo",
+              "label": "Probabilistic set membership (Bloom and cuckoo filters)",
+              "args": {
+                "path": "/ds/prob/bloom-cuckoo.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-prob-top-k",
+              "label": "Probabilistic most frequent items (Top-K)",
+              "args": {
+                "path": "/ds/prob/top-k.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-prob-t-digest",
+              "label": "Percentiles estimation (t-digest)",
+              "args": {
+                "path": "/ds/prob/t-digest.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-prob-learn-more",
+              "label": "Learn more",
+              "args": {
+                "path": "/ds/prob/learn-more.md"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "sq",
+      "label": "How to query your data",
       "args": {
         "initialIsOpen": false
       },
       "children": [
         {
           "type": "internal-link",
-          "id": "introduction",
+          "id": "sq-intro",
           "label": "Introduction",
           "args": {
-            "path": "/redis/introduction.md"
+            "path": "/sq/introduction.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "working_with_strings",
-          "label": "Working with strings",
+          "id": "sq-exact-match",
+          "label": "Exact match (TAG queries)",
           "args": {
-            "path": "/redis/working_with_strings.md"
+            "path": "/sq/exact-match.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "working_with_lists",
-          "label": "Working with lists",
+          "id": "sq-full-text",
+          "label": "Full-text search (fuzzy, wildcards, synonyms, language support)",
           "args": {
-            "path": "/redis/working_with_lists.md"
+            "path": "/sq/full-text.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "working_with_sets",
-          "label": "Working with sets",
+          "id": "sq-range",
+          "label": "Range queries (geo and numeric)",
           "args": {
-            "path": "/redis/working_with_sets.md"
+            "path": "/sq/range.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "working_with_sorted_sets",
-          "label": "Working with sorted sets",
+          "id": "sq-geospatial",
+          "label": "Geospatial queries (GEOPOINT and GEOSHAPE)",
           "args": {
-            "path": "/redis/working_with_sorted_sets.md"
+            "path": "/sq/geospatial.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "working_with_hashes",
-          "label": "Working with hashes",
+          "id": "sq-combined",
+          "label": "Combined queries (text + tag + numeric + geo)",
           "args": {
-            "path": "/redis/working_with_hashes.md"
+            "path": "/sq/combined.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "learn_more",
+          "id": "sq-vector",
+          "label": "Vector search (range and KNN)",
+          "args": {
+            "path": "/sq/vector.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "sq-aggregations",
+          "label": "Analytic and transformative (aggregations, load, groupby, sortby, apply, and filter)",
+          "args": {
+            "path": "/sq/aggregations.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "sq-semantic",
+          "label": "Semantic search (pre-filtering + vectors)",
+          "args": {
+            "path": "/sq/semantic.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "sq-learn-more",
           "label": "Learn more",
           "args": {
-            "path": "/redis/learn_more.md"
+            "path": "/sq/learn-more.md"
           }
         }
       ]
     },
     {
       "type": "group",
-      "id": "redis_advanced",
-      "label": "Advanced data structures",
+      "id": "tf",
+      "label": "Triggers and functions explained",
       "args": {
         "initialIsOpen": false
       },
       "children": [
         {
           "type": "internal-link",
-          "id": "working_with_json",
-          "label": "Working with JSON",
+          "id": "tf-intro",
+          "label": "Introduction",
           "args": {
-            "path": "/redis_stack/working_with_json.md"
+            "path": "/tf/intro.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "vector_similarity_search",
-          "label": "Vector Similarity Search",
+          "id": "tf-load",
+          "label": "Load a library",
           "args": {
-            "path": "/redis_stack/vector_similarity_search.md"
+            "path": "/tf/load.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "redis_for_time_series",
-          "label": "Redis for time series",
+          "id": "tf-triggers",
+          "label": "Keyspace triggers",
           "args": {
-            "path": "/redis_stack/redis_for_time_series.md"
+            "path": "/tf/triggers.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "probabilistic_data_structures",
-          "label": "Probabilistic data structures",
+          "id": "tf-learn-more",
+          "label": "Learn more",
           "args": {
-            "path": "/redis_stack/probabilistic_data_structures.md"
+            "path": "/tf/learn-more.md"
           }
         }
       ]
