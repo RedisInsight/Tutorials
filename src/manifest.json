@@ -316,7 +316,7 @@
         {
           "type": "internal-link",
           "id": "sq-range",
-          "label": "Range queries (geo and numeric)",
+          "label": "Range queries (numeric)",
           "args": {
             "path": "/sq/range.md"
           }
