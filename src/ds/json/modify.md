@@ -98,11 +98,12 @@ JSON.DEL bicycle:1 $.newkey
 JSON.GET bicycle:1
 ```
 
-The `JSON.CLEAR` command will empty all arrays and set all numeric values to zero.
+The `JSON.CLEAR` command will empty all arrays and set all numeric values to zero. A simple example will illustrate how this works.
 
-```redis Clear out bicycle:1
-JSON.CLEAR bicycle:1
-JSON.GET bicycle:1
+```redis JSON.CLEAR usage
+JSON.SET doc $ '{"obj":{"a":1, "b":2}, "arr":[1,2,3], "str": "foo", "bool": true, "int": 42, "float": 3.14}'
+JSON.CLEAR doc $.*
+JSON.GET doc $
 ```
 
 As with all Redis keys, you can use the `DEL` command to delete keys entirely.

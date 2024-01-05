@@ -31,7 +31,7 @@ For example, `-1` mean the last element and `-2` means the second to last elemen
 - `JSON.ARRTRIM` - trim an array so that it contains only the specified inclusive range of elements.
 
 ```redis Trim $.a to just the first 3 elements
-JSON.TRIM doc $.a 0 2
+JSON.ARRTRIM doc $.a 0 2
 JSON.GET doc
 ```
 
@@ -42,7 +42,7 @@ JSON.SET doc $ '{"a": [10, 20, 30, 40, 50]}'
 ```
 
 ```redis Trim to the last two values
-JSON.TRIM doc $.a -2 -1
+JSON.ARRTRIM doc $.a -2 -1
 JSON.GET doc
 ```
 
