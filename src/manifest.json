@@ -170,38 +170,28 @@
               }
             },
             {
-              "type": "group",
-              "id": "ds-ts-ret-agg",
-              "label": "Retrieve and aggregate samples",
+              "type": "internal-link",
+              "id": "ds-ts-retrieve",
+              "label": "Retrieve samples",
               "args": {
-                "initialIsOpen": false
-              },
-              "children": [
-                {
-                  "type": "internal-link",
-                  "id": "ds-ts-ret-agg-ret",
-                  "label": "Retrieve samples",
-                  "args": {
-                    "path": "/ds/ts/ret-agg/ret.md"
-                  }
-                },
-                {
-                  "type": "internal-link",
-                  "id": "ds-ts-ret-agg-single",
-                  "label": "Single-key aggregations",
-                  "args": {
-                    "path": "/ds/ts/ret-agg/single-key.md"
-                  }
-                },
-                {
-                  "type": "internal-link",
-                  "id": "ds-ts-ret-agg-cross",
-                  "label": "Cross-key aggregations",
-                  "args": {
-                    "path": "/ds/ts/ret-agg/cross-key.md"
-                  }
-                }
-              ]
+                "path": "/ds/ts/retrieve.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-ts-agg-single",
+              "label": "Single-key aggregations",
+              "args": {
+                "path": "/ds/ts/single-key.md"
+              }
+            },
+            {
+              "type": "internal-link",
+              "id": "ds-ts-agg-cross",
+              "label": "Cross-key aggregations",
+              "args": {
+                "path": "/ds/ts/cross-key.md"
+              }
             },
             {
               "type": "internal-link",
