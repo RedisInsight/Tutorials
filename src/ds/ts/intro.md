@@ -16,8 +16,8 @@ You can ingest and query millions of samples and events at the speed of Redis.
 
 ### Prerequisites
 
-[Redis Stack Server](https://redis.io/download) >=6.2.0-v0 \
+[Redis Stack Server](https://redis.io/download) >=7.2.0-v7 \
 OR \
-[RedisTimeSeries](https://oss.redis.com/redistimeseries/) >=1.0 \
+[RedisTimeSeries](https://oss.redis.com/redistimeseries/) >=1.10.11 \
 OR \
 A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_timeseries_guide "Redis Cloud").

@@ -10,8 +10,8 @@ Common examples of **Triggers and Functions**:
 
 ### Prerequisites
 
-[Redis Stack Server](https://redis.io/download/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide) >= 7.2.0-RC2 \
+[Redis Stack Server](https://redis.io/download/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide) >= 7.2.0-v7 \
 OR \
-[Triggers and Functions](https://redis.io/docs/interact/programmability/triggers-and-functions/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide) >=2.0 \
+[Triggers and Functions](https://redis.io/docs/interact/programmability/triggers-and-functions/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide) >=2.0-M17 \
 OR \
-A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide "Redis Cloud") in Google Cloud Asia Pacific (Tokyo) or AWS Asia Pacific (Singapore) in a Fixed subscription plan.
+A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide "Redis Cloud") with a region that supports Triggers and Functions.

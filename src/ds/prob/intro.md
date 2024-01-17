@@ -33,8 +33,8 @@ The following data structures trade perfect accuracy for extreme memory efficien
 
 ### Prerequisites
 
-[Redis Stack Server](https://redis.io/download) >=6.2.0-v0 \
+[Redis Stack Server](https://redis.io/download) >=7.2.0-v7 \
 OR \
-[RedisBloom](https://oss.redis.com/redisbloom/) >=2.0 \
+[RedisBloom](https://oss.redis.com/redisbloom/) >=2.6.10 \
 OR \
 A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_probabilistic_guide "Redis Cloud").

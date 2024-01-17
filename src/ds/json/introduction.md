@@ -7,3 +7,12 @@ Primary features include:
 - [JSONPath](https://goessner.net/articles/JsonPath/) syntax for selecting/updating elements inside documents.
 - Documents are stored as binary data in a tree structure, allowing fast access to sub-elements.
 - Typed atomic operations for all JSON value types.
+
+### PRE-REQUISITES
+**You will need:**
+
+[Redis Stack](https://redis.io/download) >=7.2.0-v7 \
+OR \
+[RedisJSON](https://github.com/RedisJSON/RedisJSON/) >=2.6.8 \
+OR \
+A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_vecsim_guide "Redis Cloud").

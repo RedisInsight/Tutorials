@@ -1,1 +1,14 @@
-You can read more about the JSON data type [here](https://redis.io/docs/data-types/json/). See [here](https://redis.io/commands/?group=json) for the complete list of JSON commands.
+### Documentation
+
+* [JSON capability home](https://redis.io/docs/data-types/json/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+
+### Social
+
+* [JSON capability on GitHub](https://github.com/RedisJSON/RedisJSON/)
+* [JSON capability on Discord](https://discord.com/channels/697882427875393627/1187464817745862786)
+
+### Blogs
+
+* [RedisJSON: Public Preview & Performance Benchmarking](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/)
+* [Indexing, Querying, and Full-Text Search of JSON Documents with Redis](https://redis.com/blog/index-and-query-json-docs-with-redis/)
+
