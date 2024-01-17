@@ -1,6 +1,6 @@
 ### Documentation
 
-* [Search and Query home](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [Search and query home](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
 
 ### Social
 

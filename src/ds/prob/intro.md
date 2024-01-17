@@ -30,7 +30,6 @@ The following data structures trade perfect accuracy for extreme memory efficien
 * Provide notification when an element is removed from the top k list.
 * Discards older approaches like "count-all" and "admit-all-count-some" in favor of a "count-with-exponential-decay" strategy.
 
-
 ### Prerequisites
 
 [Redis Stack Server](https://redis.io/download) >=7.2.0-v7 \

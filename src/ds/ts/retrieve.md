@@ -83,7 +83,7 @@ There are optional arguments for each of the `RANGE` commands:
 - `FILTER_BY_VALUE` - filter by a range of values.
 - `COUNT` - when used without `AGGREGATION`, it limits the number of reported samples. When used with `AGGREGATION` it limits the number of reported buckets.
 - `ALIGN` - is a time bucket alignment control for `AGGREGATION`. It controls the time bucket timestamps by changing the reference timestamp on which a bucket is defined. See the manual page for more information.
-- `AGGREGATION` - the same set of aggregator functions you've already seen are available for the `RANGE` commands.
+- `AGGREGATION` - the same set of aggregator functions you've already seen with `TS.CREATERULE` are available for the `RANGE` commands.
 - `BUCKETTIMESTAMP` - controls how bucket timestamps are reported. See the manual page for more information.
 - `EMPTY` - is a flag, which, when specified, reports aggregations for empty buckets. See the manual page for more information.
 
@@ -102,10 +102,6 @@ TS.RANGE bike_sales_3_per_day - + FILTER_BY_VALUE 3000 5000
 
 ```redis COUNT in action
 TS.RANGE bike_sales_3 - + COUNT 10
-```
-
-```redis AGGREGATION in action
-TS.RANGE bike_sales_1 - + AGGREGATION avg 86400000
 ```
 
 ### `TS.MRANGE` and `TS.MREVRANGE`

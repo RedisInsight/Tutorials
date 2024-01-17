@@ -14,8 +14,7 @@ The search and query features of Redis Stack allow you to use Redis as a:
 - Secondary index
 - Search engine
 
-### PRE-REQUISITES
-**You will need:**
+### Prerequisites
 
 [Redis Stack](https://redis.io/download) >=7.2.0-v7 \
 OR \

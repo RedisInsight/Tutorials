@@ -8,8 +8,7 @@ Primary features include:
 - Documents are stored as binary data in a tree structure, allowing fast access to sub-elements.
 - Typed atomic operations for all JSON value types.
 
-### PRE-REQUISITES
-**You will need:**
+### Prerequisites
 
 [Redis Stack](https://redis.io/download) >=7.2.0-v7 \
 OR \
