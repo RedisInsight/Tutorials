@@ -27,6 +27,7 @@
               "type": "internal-link",
               "id": "ds-json-intro",
               "label": "Introduction",
+              "summary": "Store, update, and retrieve JSON values in a Redis database, similar to any other Redis data type.",
               "args": {
                 "path": "/ds/json/introduction.md"
               }
@@ -93,6 +94,7 @@
           "type": "internal-link",
           "id": "ds-strings",
           "label": "Strings",
+          "summary": "Strings are the most basic Redis data type , often used for caching, and more.",
           "args": {
             "path": "/ds/strings.md"
           }
@@ -101,6 +103,7 @@
           "type": "internal-link",
           "id": "ds-hashes",
           "label": "Hashes",
+          "summary": "Use hashes to represent basic objects and to store groupings of counters, among other things.",
           "args": {
             "path": "/ds/hashes.md"
           }
@@ -109,6 +112,7 @@
           "type": "internal-link",
           "id": "ds-lists",
           "label": "Lists",
+          "summary": "Redis lists are lists of strings sorted by insertion order, used e.g. to implement stacks and queues.",
           "args": {
             "path": "/ds/lists.md"
           }
@@ -117,6 +121,7 @@
           "type": "internal-link",
           "id": "ds-sets",
           "label": "Sets",
+          "summary": "Sets are unordered collections of unique strings that act like the sets from your favorite programming language.",
           "args": {
             "path": "/ds/sets.md"
           }
@@ -125,6 +130,7 @@
           "type": "internal-link",
           "id": "ds-sorted-sets",
           "label": "Sorted sets",
+          "summary": "Sorted sets are collections of unique strings ordered by an associated score.",
           "args": {
             "path": "/ds/sorted_sets.md"
           }
@@ -141,6 +147,7 @@
               "type": "internal-link",
               "id": "ds-ts-intro",
               "label": "Introduction",
+              "summary": "Time series simplifies the use of Redis for time-series use cases like IoT, stock prices, and telemetry.",
               "args": {
                 "path": "/ds/ts/intro.md"
               }
@@ -215,6 +222,7 @@
               "type": "internal-link",
               "id": "ds-prob-intro",
               "label": "Introduction",
+              "summary": "Probabilistic data structures are very useful for solving streaming analytics problems at scale.",
               "args": {
                 "path": "/ds/prob/intro.md"
               }
@@ -283,6 +291,7 @@
           "type": "internal-link",
           "id": "sq-intro",
           "label": "Introduction",
+          "summary": "Try real-time searching and perform complex structured queries without compromising the database performance.",
           "args": {
             "path": "/sq/introduction.md"
           }
@@ -373,6 +382,7 @@
           "type": "internal-link",
           "id": "tf-intro",
           "label": "Introduction",
+          "summary": "Trigger and execute JavaScript functions in the Redis process.",
           "args": {
             "path": "/tf/intro.md"
           }
