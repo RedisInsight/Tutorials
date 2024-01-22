@@ -27,7 +27,7 @@
               "type": "internal-link",
               "id": "ds-json-intro",
               "label": "Introduction",
-              "summary": "Store, update, and retrieve JSON values in a Redis database, similar to any other Redis data type.",
+              "summary": "A Redis JSON is a Redis data structure for storing, querying, and manipulating a single JSON document.",
               "args": {
                 "path": "/ds/json/introduction.md"
               }
@@ -94,7 +94,7 @@
           "type": "internal-link",
           "id": "ds-strings",
           "label": "Strings",
-          "summary": "Strings are the most basic Redis data type , often used for caching, and more.",
+          "summary": "A Redis string, the most basic Redis data type, holds a sequence of bytes.",
           "args": {
             "path": "/ds/strings.md"
           }
@@ -103,7 +103,7 @@
           "type": "internal-link",
           "id": "ds-hashes",
           "label": "Hashes",
-          "summary": "Use hashes to represent basic objects and to store groupings of counters, among other things.",
+          "summary": "A Redis hash is a collection of fields, where each field is a name-value pair. Both name and value are strings.",
           "args": {
             "path": "/ds/hashes.md"
           }
@@ -112,7 +112,7 @@
           "type": "internal-link",
           "id": "ds-lists",
           "label": "Lists",
-          "summary": "Redis lists are lists of strings sorted by insertion order, used e.g. to implement stacks and queues.",
+          "summary": "A Redis list is a linked list of string values, often used to implement stacks and queues.",
           "args": {
             "path": "/ds/lists.md"
           }
@@ -121,7 +121,7 @@
           "type": "internal-link",
           "id": "ds-sets",
           "label": "Sets",
-          "summary": "Sets are unordered collections of unique strings that act like the sets from your favorite programming language.",
+          "summary": "A Redis set is an unordered collection of unique strings.",
           "args": {
             "path": "/ds/sets.md"
           }
@@ -130,7 +130,7 @@
           "type": "internal-link",
           "id": "ds-sorted-sets",
           "label": "Sorted sets",
-          "summary": "Sorted sets are collections of unique strings ordered by an associated score.",
+          "summary": "A Redis sorted set is a collection of unique strings, ordered by each string's associated score.",
           "args": {
             "path": "/ds/sorted_sets.md"
           }
