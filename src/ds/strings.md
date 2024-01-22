@@ -106,4 +106,4 @@ PERSIST bike:1:lock_status
 TTL bike:1:lock_status
 ```
 
-See [here](https://redis.io/docs/data-types/strings) for the string type reference page, and [here](https://redis.io/commands/?group=string) for the entire set of Redis string commands.
+See [here](https://redis.io/docs/data-types/strings?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the string type reference page, and [here](https://redis.io/commands/?group=string&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis string commands.

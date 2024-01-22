@@ -14,4 +14,4 @@
 
 ### Tutorials
 
-* [Examples](https://redis.io/docs/interact/search-and-query/query/)
+* [Examples](https://redis.io/docs/interact/search-and-query/query/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)

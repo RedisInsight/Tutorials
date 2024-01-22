@@ -16,7 +16,7 @@ The search and query features of Redis Stack allow you to use Redis as a:
 
 ### Prerequisites
 
-[Redis Stack](https://redis.io/download) >=7.2.0-v7 \
+[Redis Stack](https://redis.io/download?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) >=7.2.0-v7 \
 OR \
 [RediSearch]([https://github.com/RedisJSON/RedisJSON/](https://github.com/RediSearch/RediSearch/) >=2.8.11 \
 OR \

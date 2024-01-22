@@ -63,4 +63,4 @@ SPOP bike:1:addons
 SMEMBERS bike:1:addons
 ```
 
-See [here](https://redis.io/docs/data-types/sets) for the set type reference page, and [here](https://redis.io/commands/?group=set) for the entire list of Redis set commands.
+See [here](https://redis.io/docs/data-types/sets?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the set type reference page, and [here](https://redis.io/commands/?group=set&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire list of Redis set commands.

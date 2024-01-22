@@ -44,4 +44,4 @@ HINCRBY bike:1 price 100
 HINCRBY bike:1 price -100
 ```
 
-See [here](https://redis.io/docs/data-types/hashes) for the hash type reference page, and [here](https://redis.io/commands/?group=hash) for the entire set of Redis hash commands.
+See [here](https://redis.io/docs/data-types/hashes?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the hash type reference page, and [here](https://redis.io/commands/?group=hash?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis hash commands.

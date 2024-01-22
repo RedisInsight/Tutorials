@@ -44,4 +44,4 @@ You can get the rank of any sorted set member using the `ZRANK` command. Note: t
 ZRANK bike:brands "Claude Shannon" WITHSCORE
 ```
 
-See [here](https://redis.io/docs/data-types/sorted-sets) for the sorted set type reference page, and [here](https://redis.io/commands/?group=sorted-set) for the entire list of Redis sorted set commands.
+See [here](https://redis.io/docs/data-types/sorted-sets?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the sorted set type reference page, and [here](https://redis.io/commands/?group=sorted-set&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire list of Redis sorted set commands.

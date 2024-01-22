@@ -16,7 +16,7 @@ How can a Bloom filter be helpful to an online bike shop service? For starters, 
 Another use case is targeting ads to users. A per-user Bloom filter can be created and populated with all the products each user has purchased from the shop. When the shop's ad suggestion engine provides a list of possible ads to show a user, it can check each item against the user's Bloom filter. Each item that is not part of the filter are good targets. For each item that might already be part of the filter, a second query can be made to the primary database to confirm. If the second confirmation is negative, then that ad can be added to the target list.
 
 First, create a bloom filter and configure an acceptable false positive rate for your use case.
-You can also specify an initial capacity; the size of the dataset that you expect to add to the filter. Bloom filters can be configured to expand when this capacity is reached - [see the `BF.RESERVE` documentation for details](https://redis.io/commands/bf.reserve/).
+You can also specify an initial capacity; the size of the dataset that you expect to add to the filter. Bloom filters can be configured to expand when this capacity is reached - [see the `BF.RESERVE` documentation for details](https://redis.io/commands/bf.reserve/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
 
 ```redis Create a Bloom filter
 BF.RESERVE user:778:bought_products 0.001 50 // create new bloom filter at key "user:778:bought_products" with a desired false positive rate of 0.1% (0.001) and anticipated data set size of 50 entries
@@ -50,7 +50,7 @@ BF.INSERT newBloomFilter CAPACITY 10000 ITEMS hello waves goodbye // creates the
 BF.INSERT bloomF NOCREATE ITEMS foo bar // tries to add 2 items to a filter with an error if the filter does not already exist
 ```
 
-You can read more about Bloom filters and their use cases [here](https://redis.io/docs/data-types/probabilistic/bloom-filter/). See [here](https://redis.io/commands/?group=bf) for the complete list of Bloom filter commands.
+You can read more about Bloom filters and their use cases [here](https://redis.io/docs/data-types/probabilistic/bloom-filter/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials). See [here](https://redis.io/commands/?group=bf&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the complete list of Bloom filter commands.
 
 ## Cuckoo Filters
 

@@ -78,4 +78,4 @@ KEYS bike:colors
 **Note**:
 > `LRANGE` will return an empty (null) list if a key no longer exists.
 
-See [here](https://redis.io/docs/data-types/list) for the list type reference page, and [here](https://redis.io/commands/?group=list) for the entire set of Redis list commands.
+See [here](https://redis.io/docs/data-types/list?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the list type reference page, and [here](https://redis.io/commands/?group=list&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis list commands.
