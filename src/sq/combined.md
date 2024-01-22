@@ -9,7 +9,7 @@ A combined query is a combination of several query types, such as:
 You can use logical query operators to combine query expressions for numeric, tag, and text fields. For vector fields, you can combine a KNN query with a pre-filter.
 
 **Note**:
-The operators are interpreted slightly differently depending on the query dialect used. The default dialect is `DIALECT 1`; see [this article](/docs/interact/search-and-query/basic-constructs/configuration-parameters/#default_dialect) for information on how to change the dialect version. This article uses the second version of the query dialect, `DIALECT 2`, and uses additional brackets (`(...)`) to help clarify the examples. Further details can be found in the [query syntax documentation](/docs/interact/search-and-query/advanced-concepts/query_syntax/).
+The operators are interpreted slightly differently depending on the query dialect used. The default dialect is `DIALECT 1`; see [this article](https://redis.io/docs/interact/search-and-query/basic-constructs/configuration-parameters/#default_dialect) for information on how to change the dialect version. This article uses the second version of the query dialect, `DIALECT 2`, and uses additional brackets (`(...)`) to help clarify the examples. Further details can be found in the [query syntax documentation](https://redis.io/docs/interact/search-and-query/advanced-concepts/query_syntax/).
 
 The examples in this article use the following schema:
 
@@ -134,4 +134,4 @@ FT.SEARCH idx:bicycle "@price:[500 1000] -@condition:{new}"
 FT.SEARCH index "expr" FILTER numeric_field start end
 ```
 
-Please see the [range query article](/docs/interact/search-and-query/query/range) to learn more about numeric range queries and such filters.
+Please see the [range query article](https://redis.io/docs/interact/search-and-query/query/range) to learn more about numeric range queries and such filters.

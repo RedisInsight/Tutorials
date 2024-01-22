@@ -16,7 +16,7 @@ TS.GET bike_sales_3_per_day LATEST // 500.78
 
 ### The `TS.MGET` command
 
-`TS.MGET' works like `TS.GET` except that it takes a `FILTER` argument that allows you to retrieve the sample with the highest timestamp from each time series matching a specified filter.
+`TS.MGET' works like `TS.GET` except that it takes a `FILTER` argument in place of a `KEY` argument that allows you to retrieve the sample with the highest timestamp from each time series matching a specified filter.
 
 Each filter expression has one of the following syntaxes:
 
@@ -59,8 +59,7 @@ TS.MGET WITHLABELS FILTER region=east
 
 ### `TS.RANGE` and `TS.REVRANGE`
 
-Use the `TS.RANGE` or `TS.REVRANGE` commands to retrieve samples in forward or reverse order, respectively, with or without aggregation.
-These commands are useful for ad hoc queries and for aggregations using a different aggregator than what you've used in your aggregation rules.
+Use the `TS.RANGE` or `TS.REVRANGE` commands to retrieve samples in forward or reverse order, respectively, with or without aggregation. These commands are useful for ad hoc queries.
 
 The range commands require three arguments:
 
@@ -106,7 +105,9 @@ TS.RANGE bike_sales_3 - + COUNT 10
 
 ### `TS.MRANGE` and `TS.MREVRANGE`
 
-`TS.MRANGE` and `TS.MREVRANGE` are nearly identical to their `RANGE` counterparts, except: (1) they require a label-based `FILTER` argument and (2) they may optionally take a `GROUPBY/REDUCE` argument.
+`TS.MRANGE` and `TS.MREVRANGE` are nearly identical to their `RANGE` counterparts, except: (1) they do not have a key argument (they apply to all keys, (2) they require a label-based `FILTER` argument, and (3) they may optionally take a `GROUPBY/REDUCE` argument.
+
+The `GROUPBY/REDUCE` arguments allow you to group results by a specific label and then apply a reducer, which is another level of aggregation.
 
 The `GROUPBY` syntax is: `GROUPBY label REDUCE reducer`. The available reducer functions is a subset of the available aggregators:
 
@@ -122,5 +123,5 @@ The `GROUPBY` syntax is: `GROUPBY label REDUCE reducer`. The available reducer f
 - `var.s`
 
 ```redis TS.MRANGE with GROUPBY/REDUCE
-TS.MRANGE - + WITHLABELS COUNT 5 FILTER region=(east,west) GROUPBY region REDUCE sum
+TS.MRANGE - + WITHLABELS COUNT 5 FILTER region=(east) GROUPBY region REDUCE sum
 ```

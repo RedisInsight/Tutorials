@@ -17,19 +17,17 @@ JSON.SET arr1 $ [1,2,3]
 JSON.SET arrmap $ '[{"a":1}, {"b":2}]'
 ```
 
-The returned value of a JSONPath expression is a JSON string with a top-level array of JSON serialized strings.
-
 **Note**:
->A JSONPath query can resolve to several locations in a JSON document. When more than one location is identified, the JSON commands apply the operation to every possible location.
+>A JSONPath query can resolve to multiple absolute path matches. When more than one matching path is identified, the JSON commands apply the operation to every possible path.
 
 ## JSONPath syntax
 
 | Syntax&nbsp;element | Description |
 |----------------|-------------|
 | `$` | The root (outermost JSON element), starts the path. |
-| `.` or `[]` | Selects a child element. |
+| `.` | Selects a child element. |
 | `..` | Recursively descends through the JSON document. |
-| `*` | Wildcard, returns all elements. |
+| `*` | If current node is an array, `*` resolves to all array elements. If current node is an object, `*` resolves to all the object's members |
 | `[]` | Subscript operator, accesses an array element. |
 | `[,]` | Union, selects multiple elements. |
 | `[start:end:step]` | Array slice where `start`, `end`, and `step` are indexes. |
@@ -135,25 +133,25 @@ JSON.GET obj2 $.b[0]
 JSON.GET obj2 $.*[0]
 ```
 
-Redis Stack also supports slice syntax for arrays: `[start:`end`:`step`]`, where `start`, ``end``, and ``step`` are indexes.
+Redis Stack also supports slice syntax for arrays: `[start:`end`:`step`]`, where `start`, `end`, and `step` are indexes.
+If the current node is an array, an array containing elements extracted from an array are returned, based on a `start` index, an `end` index, and a `step` index.
+Array indexes are zero-based; the first element is index 0. Start Index is inclusive; End index is not inclusive.
 The following rules apply:
 
-- If the current node is an array, an array containing elements extracted from an array are returned, based on a start index, an `end` index, and a `step` index.
-Array indexes are 0-based. Start Index is inclusive; End index is not inclusive.
-The following rules apply:
-
-  - If `start` is specified, it must be an integer.
-  - if `start` is omitted, it is replaced with 0.
-  - if `start` < 0, it is replaced with min(0, `start` + array-length).
-  - if `start` > array-length, an empty array is returned.
-  - if `end` is specified, it must be an integer.
-  - If `end` is omitted, it is replaced with array-length.
-  - If `end` ≥ array-length, it is replaced with array-length.
-  - if `end` < 0, it is replaced with min(0, `end` + array-length).
-  - If `end` ≤ `start` (after normalization), an empty array is returned.
-  - if `step` is specified, it must be a positive integer.
-  - if `step` is omitted, it is replaced with 1.
-  - If the current node in not an array, an empty array is returned.
+| Predicate | Rule |
+| --------- | ---- |
+| If `start` is specified | it must be an integer |
+| if `start` is omitted | it is replaced with 0 |
+| if `start` < 0 | it is replaced with min(0, `start` + array-length) |
+| if `start` > array-length | an empty array is returned |
+| if `end` is specified | it must be an integer |
+| If `end` is omitted | it is replaced with array-length |
+| If `end` ≥ array-length | it is replaced with array-length |
+| if `end` < 0 | it is replaced with min(0, `end` + array-length) |
+| If `end` ≤ `start` (after normalization) | an empty array is returned |
+| If `step` is specified | it must be a positive integer |
+| If `step` is omitted | it is replaced with 1 |
+| If the current node in not an array | an empty array is returned |
 
 ```redis Array slice examples
 JSON.GET arr1 $[:]

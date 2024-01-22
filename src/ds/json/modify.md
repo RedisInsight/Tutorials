@@ -4,39 +4,32 @@ Here are some examples.
 
 ## Extend documents
 
-```redis Add a new key:value pair to an existing document
-JSON.SET bicycle:1 $.newkey '"value"'
+```redis Add a new name-value pair to an existing document
+JSON.SET bicycle:1 $.newmember '"value"'
 ```
 
-You could also use `JSON.MSET` to create or update multiple documents at the same time. First, delete `$.newkey` from `bicycle:1` using `JSON.DEL`.
+You could also use `JSON.MSET` to create or update multiple documents at the same time. First, delete `$.newmember` from `bicycle:1` using `JSON.DEL`.
 
-```redis Delete $.newkey from bicycle:1
-JSON.DEL bicycle:1 $.newkey
+```redis Delete $.newmember from bicycle:1
+JSON.DEL bicycle:1 $.newmember
 ```
 
-Next, add `$.newkey` to all three bicycles:
+Next, add `$.newmember` to all three bicycles:
 
-```redis Add $.newkey too all three bicycles using JSON.MSET
-JSON.MSET bicycle:1 $.newkey '"value1"' bicycle:2 $.newkey '"value2"' bicycle:3 $.newkey '"value3"'
-JSON.MGET bicycle:1 bicycle:2 bicycle:3 $.newkey
+```redis Add a member named newmember too all three bicycles using JSON.MSET
+JSON.MSET bicycle:1 $.newmember '"value1"' bicycle:2 $.newmember '"value2"' bicycle:3 $.newmember '"value3"'
+JSON.MGET bicycle:1 bicycle:2 bicycle:3 $.newmember
 ```
 
 ## Manipulate numeric values
 
-There are two commands that allow you to perform arithmetic operations on components of documents:
-
-- `JSON.NUMINCRBY` - adds a value to a numeric field.
+The `JSON.NUMINCRBY` command allows you to perform arithmetic operations on numeric fields of documents.
+Use positive numbers to increment and negative numbers to decrement.
 
 ```redis Decrease the price of bicycle:1
 JSON.GET bicycle:1 $.price
 JSON.NUMINCRBY bicycle:1 $.price -10
 JSON.GET bicycle:1 $.price
-```
-
-- `JSON.NUMMULTBY` - multiply a numeric field by a value.
-
-```redis Discount bicycle:1 by 10%
-JSON.NUMMULTBY bicycle:1 $.price 0.9
 ```
 ## Manipulate string and boolean values
 
@@ -61,8 +54,8 @@ As you saw earlier, the `JSON.MERGE` command can be used to create new documents
 
 - Create a non-existant path-value:
 
-```redis Add a new field-value pair to bicycle:1
-JSON.MERGE bicycle:1 $.newkey2 '"value 2 1"'
+```redis Add a new name-value pair to bicycle:1
+JSON.MERGE bicycle:1 $.newmember2 '"value 2 1"'
 JSON.GET bicycle:1
 ```
 
@@ -75,8 +68,8 @@ JSON.GET bicycle:1 $.model
 
 - Delete an existing value:
 
-```redis Delete newkey2 from bicycle:1
-JSON.MERGE bicycle:1 $ '{"newkey2": null}'
+```redis Delete newmember2 from bicycle:1
+JSON.MERGE bicycle:1 $ '{"newmember2": null}'
 JSON.GET bicycle:1
 ```
 
@@ -91,10 +84,10 @@ JSON.GET bicycle:1 $.addons
 
 ## Delete information
 
-You can delete field-value pairs using the `JSON.DEL` or `JSON.FORGET` commands:
+You can delete name-value pairs using the `JSON.DEL` or `JSON.FORGET` commands:
 
-```redis Delete newkey from bicycle:1
-JSON.DEL bicycle:1 $.newkey
+```redis Delete newmember from bicycle:1
+JSON.DEL bicycle:1 $.newmember
 JSON.GET bicycle:1
 ```
 

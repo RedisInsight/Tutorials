@@ -5,6 +5,8 @@ The following data structures trade perfect accuracy for extreme memory efficien
 * Cuckoo filter
 * Count-Min sketch
 * Top-k
+* t-digest
+* Hyperloglog
 
 **Bloom filter:**
 * Enables you to check if an element is present in a set using a fixed size (sublinear) memory space, sacrificing some precision.
@@ -29,6 +31,20 @@ The following data structures trade perfect accuracy for extreme memory efficien
 * Optimized for large flows; biased on small flows.
 * Provide notification when an element is removed from the top k list.
 * Discards older approaches like "count-all" and "admit-all-count-some" in favor of a "count-with-exponential-decay" strategy.
+
+**t-digest**
+* Used for estimating percentiles from a data stream or a large dataset using a compact sketch.
+* Compresses the dataset into a small number of 'centroids,' each representing a weighted average of data points.
+* Particularly useful for calculating accurate approximations of percentiles and medians.
+* The precision of the digest can be controlled during creation, trading off accuracy for memory usage.
+* Provides a space-efficient summary of large data sets with a focus on distribution tails.
+
+**HyperLogLog**
+* Efficiently estimates the cardinality (the number of distinct elements) of large datasets.
+* Uses a small, fixed amount of memory, regardless of the size of the data set.
+* HyperLogLog counts unique items by observing the patterns of zeros in hashed values of inputs.
+* Not suitable for counting exact numbers but provides a good approximation with a standard error rate.
+* Especially useful in scenarios like network traffic monitoring, where counting unique visitors or IP addresses is needed without storing them.
 
 ### Prerequisites
 

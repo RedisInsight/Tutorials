@@ -9,6 +9,6 @@
 
 ### Blogs
 
-* [RedisJSON: Public Preview & Performance Benchmarking](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/)
+* [RedisJSON: Public Preview & Performance Benchmarking](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
 * [Indexing, Querying, and Full-Text Search of JSON Documents with Redis](https://redis.com/blog/index-and-query-json-docs-with-redis/)
 

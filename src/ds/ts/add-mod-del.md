@@ -27,9 +27,9 @@ TS.GET bike_sales_1 // gets the last sample in the time series
 TS.MGET FILTER region=east // returns the last sample from all time series with region=east
 ```
 
-You can also update an existing time series using the `TS.ADD` command.
+You can also add to or update an existing time series using the `TS.ADD` command.
 
-```redis Update a time series datum
+```redis Update a time series sample
 TS.ADD // use TS.ADD to update an existing sample
     bike_sales_1 // key name for the time series you would like to update
     1000 // existing timestamp

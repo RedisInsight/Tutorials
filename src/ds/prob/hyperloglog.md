@@ -1,9 +1,9 @@
 In this tutorial you will learn how to use the HyperLogLog (HLL) probabilistic data structure in a bike shop use case.
 
-HyperLogLog is a probabilistic data structure that estimates the cardinality of a set. As a probabilistic data structure, HLL trades perfect accuracy for efficient space utilization.
+HyperLogLog is a probabilistic data structure that estimates the number of unique elements (cardinality) of a set. As a probabilistic data structure, HLL trades perfect accuracy for efficient space utilization.
 The Redis HLL implementation uses at most 12 KB of memory and provides a standard error of 0.81%.
 
-A common use case for HLLs is to track the number anonymous unique visits to a web resource. HLLs help answer questions like:
+A common use case for HLLs is to track the number unique visits to a web resource. HLLs help answer questions like:
 
 - How many unique visits has this page had on this day?
 - How many unique users have played this song?

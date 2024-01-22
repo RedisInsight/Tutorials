@@ -26,7 +26,7 @@ By default, `FT.SEARCH` returns only the first ten results. The `LIMIT` argument
 FT.SEARCH index "@field:[start end]" SORTBY field LIMIT page_start page_end
 ```
 
-You can find further details about using the `LIMIT` and `SORTBY` in the [`FT.SEARCH` command reference](/commands/ft.search/).
+You can find further details about using the `LIMIT` and `SORTBY` in the [`FT.SEARCH` command reference](https://redis.io/commands/ft.search/).
 
 ## Examples
 
@@ -88,4 +88,4 @@ FT.SEARCH idx:bicycle "@price:[-inf 2000] SORTBY price LIMIT 0 5"
 
 ## Non-numeric range queries
 
-You can learn more about non-numeric range queries, such as [geospatial](/docs/interact/search-and-query/query/geo-spatial) or [vector search](/docs/interact/search-and-query/query/vector-search) queries, in their dedicated articles.
+You can learn more about non-numeric range queries, such as [geospatial](https://redis.io/docs/interact/search-and-query/query/geo-spatial) or [vector search](https://redis.io/docs/interact/search-and-query/query/vector-search) queries, in their dedicated articles.

@@ -54,7 +54,7 @@ You can read more about Bloom filters and their use cases [here](https://redis.i
 
 ## Cuckoo Filters
 
-[Cuckoo filters](https://en.wikipedia.org/wiki/Cuckoo_filter), which are similar to Bloom filters, are used to determine, with a high degree of certainty, whether or not an element is a member of a set. Unlike Bloom filters, you can delete items from a cuckoo filter.
+[Cuckoo filters](https://en.wikipedia.org/wiki/Cuckoo_filter), which are similar to Bloom filters, are used to determine, with a high degree of certainty, whether or not an element is a member of a filter. Unlike Bloom filters, you can delete items from a cuckoo filter. Unlike Bloom filters, you can add the same element multiple times to a Cuckoo filter (see the `CF.COUNT` example below).
 
 To begin, create a cuckoo filter with estimated capacity, defined bucket size (the number of items in each bucket), and maximum number of iterations (number of attempts to swap items between buckets).
 
@@ -62,14 +62,17 @@ To begin, create a cuckoo filter with estimated capacity, defined bucket size (t
 CF.RESERVE bikes:models 100 BUCKETSIZE 10 MAXITERATIONS 2 // creates a “cuckoo” filter for the initial amount of 100 items, 10 items per bucket and 2 iterations to swap items before creating an additional filter
 ```
 
+**Note:**
+> `BUCKETSIZE`, `MAXITERATIONS`, and `EXPANSION` are optional arguments and default to `2`, `20`, `1`, respectively.
+
 Next, add items to the cuckoo filter.
 Note that `CF.ADD` creates a new filter if one doesn't already exist.
 
 ```redis Add Items
-CMS.ADD bikes:models "Smokey Mountain Striker"
-CMS.ADD bikes:models "Cloudy City Cruiser"
-CMS.ADD bikes:models "Rocky Mountain Racer"
-CMS.ADD bikes:models "Smokey Mountain Striker" // second addition of Smokey...
+CF.ADD bikes:models "Smokey Mountain Striker"
+CF.ADD bikes:models "Cloudy City Cruiser"
+CF.ADD bikes:models "Rocky Mountain Racer"
+CF.ADD bikes:models "Smokey Mountain Striker" // second addition of Smokey...
 ```
 
 Use the `CF.EXISTS` command to determine whether or not an item may exist in the cuckoo filter.

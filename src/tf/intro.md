@@ -4,9 +4,9 @@ To use triggers and functions, you need to write functions that describe how the
 
 Common examples of **Triggers and Functions**:
 
-* [Automatic Expire](https://redis.io/docs/interact/programmability/triggers-and-functions/examples/#automatic-expiration?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide)
-* [Enrich and transform data](https://redis.io/docs/interact/programmability/triggers-and-functions/examples/#enrich-and-transform-data?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide)
-* [Batch operations](https://redis.io/docs/interact/programmability/triggers-and-functions/examples/#batch-operations?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide)
+* [Automatic Expire](https://redis.io/docs/interact/programmability/triggers-and-functions/examples/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials#automatic-expiration)
+* [Enrich and transform data](https://redis.io/docs/interact/programmability/triggers-and-functions/examples/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials#enrich-and-transform-data)
+* [Batch operations](https://redis.io/docs/interact/programmability/triggers-and-functions/examples/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials#batch-operations)
 
 ### Prerequisites
 

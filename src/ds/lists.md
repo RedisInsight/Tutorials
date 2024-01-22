@@ -13,7 +13,7 @@ You interact with lists using commands such as:
 - LPOP - removes and returns an item from the beginning of a list.
 - RPOP - removes and returns an item from the end of a list.
 
-You can begin working with a list without first creating its key, simply by adding values to the key. This works as long as the key doesn't already exist as a different type.
+You can begin using with a list without first creating its key, simply by adding values to the key. This works as long as the key doesn't already exist as a different type.
 
 **Note**:
 > This is generally true for every Redis data structure, though there are a few exceptions.
@@ -55,7 +55,7 @@ LRANGE bike:colors 1 2
 LRANGE bike:colors 1 -2
 ```
 
-To find out how many elements are in a list, use the `LLEN` command.
+To retrieve the number of elements in a list, use the `LLEN` command.
 
 ```redis LLEN usage
 LLEN bike:colors

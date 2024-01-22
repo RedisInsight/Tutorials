@@ -16,10 +16,10 @@ JSON.OBJKEYS doc $.o
 
 - `JSON.OBJLEN` - get the number of fields of a JSON object.
 
-```redis Get the number of fields in the doc object
+```redis Get the number of members of the object at the root of document doc
 JSON.OBJLEN doc
 ```
 
-```redis Get the number of fields in the $.o object
+```redis Get the number of members of the $.o object of document doc
 JSON.OBJLEN doc $.o
 ```

@@ -29,7 +29,7 @@
               "label": "Introduction",
               "summary": "A Redis JSON is a Redis data structure for storing, querying, and manipulating a single JSON document.",
               "args": {
-                "path": "/ds/json/introduction.md"
+                "path": "/ds/json/intro.md"
               }
             },
             {
@@ -230,7 +230,7 @@
             {
               "type": "internal-link",
               "id": "ds-prob-hyperloglog",
-              "label": "Cardinality estimation (HyperLogLog)",
+              "label": "Cardinality estimation",
               "args": {
                 "path": "/ds/prob/hyperloglog.md"
               }
@@ -238,7 +238,7 @@
             {
               "type": "internal-link",
               "id": "ds-prob-count-min-sketch",
-              "label": "Frequency estimation (count-min sketch)",
+              "label": "Frequency estimation",
               "args": {
                 "path": "/ds/prob/count-min-sketch.md"
               }
@@ -246,7 +246,7 @@
             {
               "type": "internal-link",
               "id": "ds-prob-bloom-cuckoo",
-              "label": "Probabilistic set membership (Bloom and cuckoo filters)",
+              "label": "Probabilistic set membership",
               "args": {
                 "path": "/ds/prob/bloom-cuckoo.md"
               }
@@ -254,7 +254,7 @@
             {
               "type": "internal-link",
               "id": "ds-prob-top-k",
-              "label": "Probabilistic most frequent items (Top-K)",
+              "label": "Probabilistic most frequent items",
               "args": {
                 "path": "/ds/prob/top-k.md"
               }
@@ -262,7 +262,7 @@
             {
               "type": "internal-link",
               "id": "ds-prob-t-digest",
-              "label": "Percentiles estimation (t-digest)",
+              "label": "Percentiles estimation",
               "args": {
                 "path": "/ds/prob/t-digest.md"
               }
@@ -293,13 +293,13 @@
           "label": "Introduction",
           "summary": "Try real-time searching and perform complex structured queries without compromising the database performance.",
           "args": {
-            "path": "/sq/introduction.md"
+            "path": "/sq/intro.md"
           }
         },
         {
           "type": "internal-link",
           "id": "sq-exact-match",
-          "label": "Exact match (TAG queries)",
+          "label": "Exact match",
           "args": {
             "path": "/sq/exact-match.md"
           }
@@ -307,7 +307,7 @@
         {
           "type": "internal-link",
           "id": "sq-full-text",
-          "label": "Full-text search (fuzzy, wildcards, synonyms, language support)",
+          "label": "Full-text search",
           "args": {
             "path": "/sq/full-text.md"
           }
@@ -315,7 +315,7 @@
         {
           "type": "internal-link",
           "id": "sq-range",
-          "label": "Range queries (numeric)",
+          "label": "Range queries",
           "args": {
             "path": "/sq/range.md"
           }
@@ -323,7 +323,7 @@
         {
           "type": "internal-link",
           "id": "sq-geospatial",
-          "label": "Geospatial queries (GEOPOINT and GEOSHAPE)",
+          "label": "Geospatial queries",
           "args": {
             "path": "/sq/geospatial.md"
           }
@@ -331,33 +331,17 @@
         {
           "type": "internal-link",
           "id": "sq-combined",
-          "label": "Combined queries (text + tag + numeric + geo)",
+          "label": "Combined queries",
           "args": {
             "path": "/sq/combined.md"
           }
         },
         {
           "type": "internal-link",
-          "id": "sq-vector",
-          "label": "Vector search (range and KNN)",
-          "args": {
-            "path": "/sq/vector.md"
-          }
-        },
-        {
-          "type": "internal-link",
           "id": "sq-aggregations",
-          "label": "Analytic and transformative (aggregations, load, groupby, sortby, apply, and filter)",
+          "label": "Analytic and transformative queries",
           "args": {
             "path": "/sq/aggregations.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "sq-semantic",
-          "label": "Semantic search (pre-filtering + vectors)",
-          "args": {
-            "path": "/sq/semantic.md"
           }
         },
         {
