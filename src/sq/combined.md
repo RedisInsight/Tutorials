@@ -19,7 +19,7 @@ The examples in this article use the following schema:
 | `condition`   | `TAG`        |
 | `price`       | `NUMERIC`    |
 
-```redis Create the bike shop idx:bicycle
+```redis:[run_confirmation=true] Create the bike shop idx:bicycle
 FT.CREATE idx:bicycle                                 // idx:bicycle name
     ON JSON                                           // the type of data to idx:bicycle
         PREFIX 1 bicycle:                             // the prefix of the keys to be idx:bicycleed
@@ -32,7 +32,7 @@ FT.CREATE idx:bicycle                                 // idx:bicycle name
                                                       //    comma-separated tags
 ```
 
-```redis Load the JSON data
+```redis:[run_confirmation=true] Load the JSON data
 JSON.SET "bicycle:0" "." "{\"brand\": \"Velorim\", \"model\": \"Jigger\", \"price\": 270, \"description\": \"Small and powerful, the Jigger is the best ride for the smallest of tikes! This is the tiniest kids\\u2019 pedal bike on the market available without a coaster brake, the Jigger is the vehicle of choice for the rare tenacious little rider raring to go.\", \"condition\": \"new\"}"
 JSON.SET "bicycle:1" "." "{\"brand\": \"Bicyk\", \"model\": \"Hillcraft\", \"price\": 1200, \"description\": \"Kids want to ride with as little weight as possible. Especially on an incline! They may be at the age when a 27.5\\\" wheel bike is just too clumsy coming off a 24\\\" bike. The Hillcraft 26 is just the solution they need!\", \"condition\": \"used\"}"
 JSON.SET "bicycle:2" "." "{\"brand\": \"Nord\", \"model\": \"Chook air 5\", \"price\": 815, \"description\": \"The Chook Air 5  gives kids aged six years and older a durable and uberlight mountain bike for their first experience on tracks and easy cruising through forests and fields. The lower  top tube makes it easy to mount and dismount in any situation, giving your kids greater safety on the trails.\", \"condition\": \"used\"}"
