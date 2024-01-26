@@ -6,7 +6,7 @@ Only JSONPath will be discussed in this tutorial.
 You've already seen several examples of JSONPath in previous parts of this tutorial. The next sections will describe JSONPath in more complete detail.
 Some simple JSON documents will be used to demonstrate JSONPath's features.
 
-```redis Load documents
+```redis:[run_confirmation=true] Load documents
 JSON.SET lit1 $ 5
 JSON.SET lit2 $ '"abc"'
 JSON.SET lit3 $ true
@@ -56,7 +56,7 @@ JSON.GET obj2 '$.["a"]' // note the use of single quotes in this expression; the
 
 It is possible to use `$` as part of a field name.
 
-```redis Using $ as part of a field name
+```redis:[run_confirmation=true] Using $ as part of a field name
 JSON.SET d $ '{"$":5, "$$":6}'
 JSON.GET d $.$ // returns "[5]"
 ```

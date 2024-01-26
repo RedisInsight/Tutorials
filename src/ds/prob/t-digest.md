@@ -12,11 +12,11 @@ A full discussion of compression is beyond the scope of this tutorial. See the *
 
 Once a t-digest has been created, you can use the `TDIGEST.ADD` command to add observations to it.
 
-```redis Create a t-digest
+```redis:[run_confirmation=true] Create a t-digest
 TDIGEST.CREATE bike:sales COMPRESSION 1000 // 1000 provides for very accurate estimations
 ```
 
-```redis Add bike sales data to the t-digest
+```redis:[run_confirmation=true] Add bike sales data to the t-digest
 TDIGEST.ADD bike:sales 0
 TDIGEST.ADD bike:sales 1028.24
 TDIGEST.ADD bike:sales 1034.63

@@ -5,7 +5,7 @@ Redis sets are unsorted, which limits their usefulness. Sorted sets are similar 
 
 The following example creates a set of bike brands named for famous computer programmers, using their birth year as the score element to sort the set.
 
-```redis Create a sorted set
+```redis:[run_confirmation=true] Create a sorted set
 ZADD bike:brands 1940 "Alan Kay"
 ZADD bike:brands 1906 "Grace Hopper"
 ZADD bike:brands 1953 "Richard Stallman"
@@ -24,7 +24,7 @@ ZRANGE bike:brands 2 4
 
 To delete members from a sorted set, use the `ZREM` command.
 
-```redis Remove the Alan Turing model and score
+```redis:[run_confirmation=true] Remove the Alan Turing model and score
 ZREM bike:brands "Alan Turing"
 ```
 

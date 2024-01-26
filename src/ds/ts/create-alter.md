@@ -14,7 +14,7 @@ You create time series using the `TS.CREATE` command. `TS.CREATE` requires one a
 
 The following example creates a time series key for each of five bike shops that will track the total sales for each. Each key has an appropriate region label, `east` or `west`, and also a label indicating that the time series is not compacted. The labels allow you to query bike sales performance over specific periods on a per-shop or per-region basis.
 
-```redis Create time series for each shop
+```redis:[run_confirmation=true] Create time series for each shop
 TS.CREATE bike_sales_1 DUPLICATE_POLICY SUM LABELS region east compacted no
 TS.CREATE bike_sales_2 DUPLICATE_POLICY SUM LABELS region east compacted no
 TS.CREATE bike_sales_3 DUPLICATE_POLICY SUM LABELS region west compacted no
@@ -42,14 +42,14 @@ You can use the `TS.ALTER` command to modify time series post-creation. `TS.ALTE
 
 Here are a couple of examples.
 
-```redis Alter labels incorrectly
+```redis:[run_confirmation=true] Alter labels incorrectly
 TS.ALTER bike_sales_1 LABELS region west // change the region from east to west, but forgetting to include the other label
 TS.INFO bike_sales_1 // note how the compacted/no label-value pair was dropped
 TS.ALTER bike_sales_1 LABELS region east compacted no // change it back
 TS.INFO bike_sales_1
 ```
 
-```redis Alter the duplicate policy
+```redis:[run_confirmation=true] Alter the duplicate policy
 TS.MADD bike_sales_1 1000 1 bike_sales_1 1000 2 bike_sales_1 1000 3 // first add some samples; more about this later
 TS.GET bike_sales_1 // because DUPLICATE POLICY is set to SUM, the returned value is 6
 TS.ALTER bike_sales_1 DUPLICATE_POLICY MIN

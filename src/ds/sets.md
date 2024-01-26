@@ -14,7 +14,7 @@ Here are some important set commands:
 
 Use `SADD` to create and update a set. Each `SADD` command will return the number of added members. If you try to add a member that is already in the set, `0` is returned.
 
-```redis Create a set
+```redis:[run_confirmation=true] Create a set
 SADD bike:1:addons "whitewall tires"
 SADD bike:1:addons "bell" "reflectors"
 SADD bike:1:addons "bell"
@@ -24,7 +24,7 @@ Notice that the `SADD` command is variadic.
 
 `SREM` is used to remove members of a set. It returns `1` if the member is in the set, or `0` if it is not.
 
-```redis Remove set members
+```redis:[run_confirmation=true] Remove set members
 SREM bike:1:addons "bell"
 SREM bike:1:addons "sissy bar"
 ```
@@ -44,7 +44,7 @@ SMEMBERS bike:1:addons
 
 `SUNION` combines two or more sets and returns all their elements.
 
-```redis SUNION usage
+```redis:[run_confirmation=true] SUNION usage
 SADD bike:1:special_addons "sparkle coat finish" "banana seat"
 SUNION bike:1:addons bike:1:special_addons
 ```
@@ -56,7 +56,7 @@ Sets have two ways to return one or more random members of a set:
 
 Each command takes a key and, optionally, a count as arguments. `SPOP` removes and returns a random member, whereas `SRANDMEMBER` just returns the randomly selected members without removing them.
 
-```redis SPOP/SRANDMEMBER usage
+```redis:[run_confirmation=true] SPOP/SRANDMEMBER usage
 SMEMBERS bike:1:addons
 SRANDMEMBER bike:1:addons
 SPOP bike:1:addons

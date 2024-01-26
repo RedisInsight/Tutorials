@@ -2,7 +2,7 @@ Lists, sets, and sorted sets are great for many use cases, but the hash data typ
 
 Redis hashes are record types that are structured as name-value pairs. Consider the following example that shows how to create a hash key using the `HSET` command.
 
-```redis Create a hash
+```redis:[run_confirmation=true] Create a hash
 HSET bike:1 model Deimos brand Ergonom type "Enduro bikes" price 4972
 ```
 
@@ -22,13 +22,13 @@ HGET bike:1 price
 
 You can update fields in a hash using `HSET` by specifying a subset of its name-value pairs.
 
-```redis Update an existing hash
+```redis:[run_confirmation=true] Update an existing hash
 HSET bike:1 model "Kraken" price 3000
 ```
 
 Use the `HDEL` command to delete one or more fields from a hash. Once all fields are removed, the hash key itself will be deleted.
 
-```redis Delete hash fields and keys
+```redis:[run_confirmation=true] Delete hash fields and keys
 HDEL bike:1 model
 HGETALL bike:1
 HDEL bike:1 brand type price

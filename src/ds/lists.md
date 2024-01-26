@@ -22,20 +22,20 @@ If a key's values are removed entirely, the key will be removed from the keyspac
 
 In the following example, a list key is created and then a second element is added to it using the `RPUSH` command. The length of the list is returned after each command.
 
-```redis Create a list with two elements
+```redis:[run_confirmation=true] Create a list with two elements
 RPUSH bike:colors "Blue"
 RPUSH bike:colors "White"
 ```
 
 Next, an element is added to the beginning of the list.
 
-```redis Prepend a new element
+```redis:[run_confirmation=true] Prepend a new element
 LPUSH bike:colors "Red"
 ```
 
 When creating a list, there's a shortcut to the above examples. Both `LPUSH` and `RPUSH` accept a variable number of arguments (variadic), so you can create the entire list with a single command. The number of added elements is returned.
 
-```redis Add multiple elements
+```redis:[run_confirmation=true] Add multiple elements
 DEL bike:colors
 RPUSH bike:colors "Red" "Blue" "White" "Yellow"
 ```
@@ -65,7 +65,7 @@ The `LPOP` and `RPOP` commands will remove and return one or more elements from 
 
 In this next example, you will remove a single element from the beginning of the list, then a single element from the end of the list, and, finally, the remaining items using a `count` argument.
 
-```redis LPOP/RPOP usage
+```redis:[run_confirmation=true] LPOP/RPOP usage
 LPOP bike:colors
 LRANGE bike:colors 0 -1
 RPOP bike:colors
