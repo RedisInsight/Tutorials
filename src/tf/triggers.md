@@ -4,7 +4,7 @@ For the full list of supported events, see the [Redis Key Space notifications pa
 
 The following code creates a new key space trigger that adds a new field to a hash with the latest update time. 
 
-```redis Load keyspace example
+```redis:[run_confirmation=true] Load keyspace example
 TFUNCTION LOAD REPLACE "#!js name=myFirstLibrary api_version=1.0\n 
     function addLastUpdatedField(client, data) {
         if(data.event == 'hset') {
@@ -18,7 +18,7 @@ TFUNCTION LOAD REPLACE "#!js name=myFirstLibrary api_version=1.0\n
 
 Add a new hash with the required prefix to trigger our function.
 
-```redis Create an example hash
+```redis:[run_confirmation=true] Create an example hash
 HSET bike:1
     model "Deimos"
     brand "Ergonom"
