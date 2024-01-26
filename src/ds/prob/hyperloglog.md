@@ -17,19 +17,19 @@ The `PFADD` command is used to create and add items to a HLL key. There are a fe
 - When a key name and one or more elements are passed, a new HLL will be created and the elements will be added to it.
 If the cardinality is changed as a result of the operation, `1` is returned; otherwise, `0` is returned.
 
-```redis Create a new HLL set
+```redis:[run_confirmation=true] Create a new HLL set
 PFADD bikes // returns 1
 ```
 
-```redis Try to re-create bikes
+```redis:[run_confirmation=true] Try to re-create bikes
 PFADD bikes // returns 0
 ```
 
-```redis Add elements to bikes
+```redis:[run_confirmation=true] Add elements to bikes
 PFADD bikes Hyperion Deimos Phoebe Quaoar // returns 1
 ```
 
-```redis Try to duplicate an item already present on bikes
+```redis:[run_confirmation=true] Try to duplicate an item already present on bikes
 PFADD bikes Deimos // returns 0
 ```
 
@@ -41,7 +41,7 @@ PFCOUNT bikes
 
 Now create another HLL called `commuter_bikes`.
 
-```redis Create a new HLL set
+```redis:[run_confirmation=true] Create a new HLL set
 PFADD commuter_bikes Salacia Mimas Quaoar
 ```
 
@@ -51,7 +51,7 @@ PFCOUNT bikes commuter_bikes // returns 6 because Quaoar was present on both HLL
 
 Use the `PFMERGE` command to merge two HLLs into a single HLL. Note: if the destination key already contains a HLL, it's data will be part of the merged data.
 
-```redis Merge bikes and commuter_bikes
+```redis:[run_confirmation=true] Merge bikes and commuter_bikes
 PFMERGE all_bikes bikes commuter_bikes
 ```
 
