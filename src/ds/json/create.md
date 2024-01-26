@@ -2,7 +2,7 @@
 
 Here's a query that creates a JSON document describing a single bike.
 
-```redis Create a JSON document
+```redis:[run_confirmation=true] Create a JSON document
 JSON.SET bicycle:1 $ '{
     "model": "Jigger",
     "brand": "Velorim",
@@ -49,7 +49,7 @@ JSON.GET bicycle:1 $.addons[0]
 
 You can create multiple documents in a single command using `JSON.MSET`:
 
-```redis Add two more documents using JSON.MGET
+```redis:[run_confirmation=true] Add two more documents using JSON.MGET
 JSON.MSET "bicycle:2" $ "{\"model\": \"Hillcraft\", \"brand\": \"Bicyk\", \"price\": 1200, \"type\": \"Kids Mountain Bikes\", \"specs\": {\"material\": \"carbon\", \"weight\": \"11\"}, \"description\": \"A light mountain bike for kids.\", \"addons\": [\"reflectors\", \"safety lights\"],\"helmet_included\": false}" "bicycle:3" $ "{\"model\": \"Chook air 5\", \"brand\": \"Nord\", \"price\": 815, \"type\": \"Kids Mountain Bikes\", \"specs\": {\"material\": \"alloy\", \"weight\": \"9.1\"}, \"description\": \"A lighter, more durable mountain bike for six years and older.\", \"addons\": [\"reflectors\", \"safety lights\"],\"helmet_included\": false}"
 ```
 
