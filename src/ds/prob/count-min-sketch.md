@@ -4,7 +4,7 @@ A count-min sketch is used to determine the frequency of distinct values in a st
 
 You can initialize the count-min sketch and specify a width (the number of counters in each array) and depth (the number of counter-arrays).
 
-```redis Initialize a sketch with dimensions
+```redis:[run_confirmation=true] Initialize a sketch with dimensions
 CMS.INITBYDIM bikes:profits 2000 5 // initializes a count-min sketch with 2000 counters in each array and 5 counter-arrays
 
 ```
@@ -12,13 +12,13 @@ CMS.INITBYDIM bikes:profits 2000 5 // initializes a count-min sketch with 2000 c
 You can also initialize a count-min sketch by providing an acceptable error rate and probability for inflated (over) count for your use case:
 
 
-```redis Initialize a sketch with tolerances
+```redis:[run_confirmation=true] Initialize a sketch with tolerances
 CMS.INITBYPROB bikes:profits 0.001 0.01 // initializes the count-min sketch with 0.1% estimation of error and 1% desired probability for inflated count
 ```
 
 You can increase the frequency associated with an item by a supplied increment:
 
-```redis Update
+```redis:[run_confirmation=true] Update
 CMS.INCRBY bikes:profit "Smokey Mountain Striker" 100
 CMS.INCRBY bikes:profit "Rocky Mountain Racer" 200 "Cloudy City Cruiser" 150
 ```
