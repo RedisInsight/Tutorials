@@ -4,17 +4,17 @@ When you create a new time series, you have the option to specify a retention pe
 A retention period is the maximum age for samples compared to the highest reported timestamp, in milliseconds.
 Samples are expired based on the difference between their timestamps and the timestamps passed to subsequent `TS.ADD` commands.
 
-```redis Create a time series with RETENTION
+```redis:[run_confirmation=true] Create a time series with RETENTION
 TS.CREATE ts RETENTION 86400000 // samples expire after one full day
 ```
 
 When `RETENTION` set to 0, samples never expire. When `RETENTION` is not specified, the option is set to the global `RETENTION_POLICY` configuration of the database, which by default is zero.
 
-```redis Add a sample to ts
+```redis:[run_confirmation=true] Add a sample to ts
 TS.ADD ts 1640995200000 1000.0
 ```
 
-```redis Add a sample with a much later timestamp
+```redis:[run_confirmation=true] Add a sample with a much later timestamp
 TS.ADD ts 1672560000000 2000.0 // the previous sample will be deleted
 ```
 
@@ -63,7 +63,7 @@ Note the following:
 
 Create time series for each of the five bike shops you've seen previously.
 
-```redis Create time series for each bike shop
+```redis:[run_confirmation=true] Create time series for each bike shop
 TS.CREATE bike_sales_1 DUPLICATE_POLICY SUM LABELS region east
 TS.CREATE bike_sales_2 DUPLICATE_POLICY SUM LABELS region east
 TS.CREATE bike_sales_3 DUPLICATE_POLICY SUM LABELS region west
@@ -73,7 +73,7 @@ TS.CREATE bike_sales_5 DUPLICATE_POLICY SUM LABELS region west
 
 Next, create compaction rules for each shop that will aggregate total daily bike sales using the `sum` aggregator.
 
-```redis Create compaction rules
+```redis:[run_confirmation=true] Create compaction rules
 TS.CREATERULE
     bike_sales_1 // source key
     bike_sales_1_per_day // destination key
@@ -94,7 +94,7 @@ TS.CREATERULE bike_sales_5 bike_sales_5_per_day AGGREGATION sum 86400000
 
 Next, add a bunch of data.
 
-```redis Bulk load bike shop data
+```redis:[run_confirmation=true] Bulk load bike shop data
 TS.ADD bike_sales_1 1640995200000 0
 TS.ADD bike_sales_2 1640995200000 0
 TS.ADD bike_sales_3 1640995200000 0
