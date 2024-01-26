@@ -2,7 +2,7 @@ Lists, sets, and sorted sets are great for many use cases, but the hash data typ
 
 Redis hashes are record types that are structured as name-value pairs. Consider the following example that shows how to create a hash key using the `HSET` command.
 
-```redis Create a hash
+```redis:[run_confirmation=true] Create a hash
 HSET bike:1 model Deimos brand Ergonom type "Enduro bikes" price 4972
 ```
 
