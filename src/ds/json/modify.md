@@ -4,19 +4,19 @@ Here are some examples.
 
 ## Extend documents
 
-```redis Add a new name-value pair to an existing document
+```redis:[run_confirmation=true] Add a new name-value pair to an existing document
 JSON.SET bicycle:1 $.newmember '"value"'
 ```
 
 You could also use `JSON.MSET` to create or update multiple documents at the same time. First, delete `$.newmember` from `bicycle:1` using `JSON.DEL`.
 
-```redis Delete $.newmember from bicycle:1
+```redis:[run_confirmation=true] Delete $.newmember from bicycle:1
 JSON.DEL bicycle:1 $.newmember
 ```
 
 Next, add `$.newmember` to all three bicycles:
 
-```redis Add a member named newmember too all three bicycles using JSON.MSET
+```redis:[run_confirmation=true] Add a member named newmember too all three bicycles using JSON.MSET
 JSON.MSET bicycle:1 $.newmember '"value1"' bicycle:2 $.newmember '"value2"' bicycle:3 $.newmember '"value3"'
 JSON.MGET bicycle:1 bicycle:2 bicycle:3 $.newmember
 ```
@@ -26,7 +26,7 @@ JSON.MGET bicycle:1 bicycle:2 bicycle:3 $.newmember
 The `JSON.NUMINCRBY` command allows you to perform arithmetic operations on numeric fields of documents.
 Use positive numbers to increment and negative numbers to decrement.
 
-```redis Decrease the price of bicycle:1
+```redis:[run_confirmation=true] Decrease the price of bicycle:1
 JSON.GET bicycle:1 $.price
 JSON.NUMINCRBY bicycle:1 $.price -10
 JSON.GET bicycle:1 $.price
@@ -35,14 +35,14 @@ JSON.GET bicycle:1 $.price
 
 Appending information to JSON strings is straightforward.
 
-```redis Append a string bicycle:1's model
+```redis:[run_confirmation=true] Append a string bicycle:1's model
 JSON.STRAPPEND bicycle:1 $.model '"naut"'
 JSON.GET bicycle:1 $.model
 ```
 
 The `JSON.TOGGLE` command can be used to toggle boolean values.
 
-```redis Toggle the value of bicycle:1's helmet_included value
+```redis:[run_confirmation=true] Toggle the value of bicycle:1's helmet_included value
 JSON.GET bicycle:1 $.helmet_included
 JSON.TOGGLE bicycle:1 $.helmet_included
 JSON.GET bicycle:1 $.helmet_included
@@ -54,28 +54,28 @@ As you saw earlier, the `JSON.MERGE` command can be used to create new documents
 
 - Create a non-existant path-value:
 
-```redis Add a new name-value pair to bicycle:1
+```redis:[run_confirmation=true] Add a new name-value pair to bicycle:1
 JSON.MERGE bicycle:1 $.newmember2 '"value 2 1"'
 JSON.GET bicycle:1
 ```
 
 - Replace an existing value:
 
-```redis Change bicycle:1's model back to Jigger
+```redis:[run_confirmation=true] Change bicycle:1's model back to Jigger
 JSON.MERGE bicycle:1 $.model '"Jigger"'
 JSON.GET bicycle:1 $.model
 ```
 
 - Delete an existing value:
 
-```redis Delete newmember2 from bicycle:1
+```redis:[run_confirmation=true] Delete newmember2 from bicycle:1
 JSON.MERGE bicycle:1 $ '{"newmember2": null}'
 JSON.GET bicycle:1
 ```
 
 - Replace an array:
 
-```redis Replace bicycle:1's addons
+```redis:[run_confirmation=true] Replace bicycle:1's addons
 JSON.MERGE bicycle:1 $.addons '["reflectors", "rainbow seat"]'
 JSON.GET bicycle:1 $.addons
 ```
@@ -86,14 +86,14 @@ JSON.GET bicycle:1 $.addons
 
 You can delete name-value pairs using the `JSON.DEL` or `JSON.FORGET` commands:
 
-```redis Delete newmember from bicycle:1
+```redis:[run_confirmation=true] Delete newmember from bicycle:1
 JSON.DEL bicycle:1 $.newmember
 JSON.GET bicycle:1
 ```
 
 The `JSON.CLEAR` command will empty all arrays and set all numeric values to zero. A simple example will illustrate how this works.
 
-```redis JSON.CLEAR usage
+```redis:[run_confirmation=true] JSON.CLEAR usage
 JSON.SET doc $ '{"obj":{"a":1, "b":2}, "arr":[1,2,3], "str": "foo", "bool": true, "int": 42, "float": 3.14}'
 JSON.CLEAR doc $.*
 JSON.GET doc $
