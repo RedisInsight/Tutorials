@@ -2,7 +2,7 @@ Redis strings are used to store strings, numbers, images, serialized objects, an
 
 As a first example, use the `SET` command to store the value "Deimos", a type of bike, at key "bike:1".
 
-```redis Create a new key
+```redis:[run_confirmation=true] Create a new key
 SET bike:1 "Deimos"
 ```
 
@@ -23,7 +23,7 @@ The `EXISTS` command returns `1` when a key exists and `0` when it does not exis
 
 Use the `DEL` to delete a key and its data.
 
-```redis Delete bike:1
+```redis:[run_confirmation=true] Delete bike:1
 DEL bike:1
 EXISTS bike:1
 ```
@@ -37,24 +37,24 @@ If you store integer data in a string key, you can use these commands to increme
 - `DECR` - decrement a number stored in a key by `2`.
 - `DECRBY` - decrement a number stored in a key by a specific positive or negative amount.
 
-```redis INCR usage
+```redis:[run_confirmation=true] INCR usage
 SET bikes:total_number 10
 INCR bikes:total_number
 INCR bikes:total_number
 ```
 
-```redis Use INCR to set a key to 1
+```redis:[run_confirmation=true] Use INCR to set a key to 1
 DEL bikes:total_number
 INCR bikes:total_number
 ```
 
 Note how the `INCR bikes:total_number` command that follows the `DEL` command re-creates the `bikes:total_number` key and sets its value to `1`.
 
-```redis INCRBY usage
+```redis:[run_confirmation=true] INCRBY usage
 INCRBY bikes:total_number 100
 ```
 
-```redis DECR and DECRBY usage
+```redis:[run_confirmation=true] DECR and DECRBY usage
 DECR bikes:total_number
 DECRBY bikes:total_number 10
 ```
@@ -67,7 +67,7 @@ All the Redis operations implemented by single commands are atomic, including th
 
 When keys are created without constraints, they live for the full lifespan of the Redis server to which they are attached. However, if you want a key to live for only a specific amount of time, you can use the `EXPIRE` command to alter its lifespan. To find out how much time is left before a key expires, use the `TTL` command.
 
-```redis EXPIRE usage
+```redis:[run_confirmation=true] EXPIRE usage
 SET bike:1:lock_status "LOCKED"
 EXPIRE bike:1:lock_status 20
 ```
@@ -85,7 +85,7 @@ You'll see one of the two return values:
 
 If you try to use the `TTL` command on a key that does not have an expiration set, it will return `-1`.
 
-```redis TTL on a non-expiring key
+```redis:[run_confirmation=true] TTL on a non-expiring key
 SET bike:2:lock_status "LOCKED"
 TTL bike:2:lock_status
 ```
@@ -94,13 +94,13 @@ TTL bike:2:lock_status
 
 The `SET` command can take additional arguments, one of which allows you to set the value of a key and its time to live value directly in a single, atomic operation. The `EX` and `PX` arguments allow you to specify the TTL value as either seconds or milliseconds, respectively.
 
-```redis SET with time to live
+```redis:[run_confirmation=true] SET with time to live
 SET bike:1:lock_status "LOCKED" PX 1
 ```
 
 It's possible to cancel a key's timeout using the `PERSIST` command.
 
-```redis PERSIST usage
+```redis:[run_confirmation=true] PERSIST usage
 SET bike:1:lock_status "LOCKED" EX 120
 PERSIST bike:1:lock_status
 TTL bike:1:lock_status
