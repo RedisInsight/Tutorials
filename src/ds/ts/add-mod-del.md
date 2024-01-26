@@ -2,7 +2,7 @@
 
 To add new samples to a time series, use the `TS.ADD` and `TS.MADD` commands. Note that if the series does not exist, it will be automatically created.
 
-```redis Add data points to a time series
+```redis:[run_confirmation=true] Add data points to a time series
 TS.ADD // adds a new data point
     bike_sales_1 // new key name
     1000 // timestamp, simplified for these examples
@@ -29,7 +29,7 @@ TS.MGET FILTER region=east // returns the last sample from all time series with 
 
 You can also add to or update an existing time series using the `TS.ADD` command.
 
-```redis Update a time series sample
+```redis:[run_confirmation=true] Update a time series sample
 TS.ADD // use TS.ADD to update an existing sample
     bike_sales_1 // key name for the time series you would like to update
     1000 // existing timestamp
@@ -39,7 +39,7 @@ TS.ADD // use TS.ADD to update an existing sample
 
 To delete samples, specify the interval (inclusive) between two timestamps for a given time series.
 
-```redis Delete
+```redis:[run_confirmation=true] Delete
 TS.DEL bike_sales_1 999 1000 // deletes all the data points between two timestamps (inclusive)
  
 TS.DEL bike_sales_2 1000 1000 // to delete a single timestamp, use it as both the "from" and the "to" timestamp
@@ -49,12 +49,12 @@ TS.DEL bike_sales_2 1000 1000 // to delete a single timestamp, use it as both th
 
 Increase (`TS.INCRBY`) or decrease (`TS.DECRBY`) the value of the sample with the maximum existing timestamp, or create a new sample with a value equal to the value of the sample with the maximum existing timestamp with a given increment.
 
-```redis TS.INCRBY example
+```redis:[run_confirmation=true] TS.INCRBY example
 TS.INCRBY bike_sales_3 1 // increases the latest sample by one to 173
 TS.GET bike_sales_3
 ```
 
-```redis TS.DECRBY example
+```redis:[run_confirmation=true] TS.DECRBY example
 TS.DECRBY bike_sales_3 1 // decreases the latest sample by one to 172
 TS.GET bike_sales_3
 ```
