@@ -1,6 +1,6 @@
 In this section of the JSONPath tutorial, filter and deep scan expressions will be presented using a set of simple documents.
 
-```redis Load documents
+```redis:[run_confirmation=true] Load documents
 JSON.SET lit1 $ 5
 JSON.SET lit2 $ '"abc"'
 JSON.SET lit3 $ true
