@@ -18,7 +18,7 @@ The examples in this article use the following schema:
 **Note**:
 > Redis Stack version 7.2.0 or higher is required to use the `GEOSHAPE` field type.
 
-```redis Create the bike shop idx:bicycle
+```redis:[run_confirmation=true] Create the bike shop idx:bicycle
 FT.CREATE
     idx:bicycle ON JSON
         PREFIX 1 bicycle:
@@ -32,7 +32,7 @@ FT.CREATE
         $.condition AS condition TAG SEPARATOR ,
 ```
 
-```redis Load the JSON data
+```redis:[run_confirmation=true] Load the JSON data
 JSON.SET "bicycle:0" "." "{\"pickup_zone\": \"POLYGON((-74.0610 40.7578, -73.9510 40.7578, -73.9510 40.6678, -74.0610 40.6678, -74.0610 40.7578))\", \"store_location\": \"-74.0060,40.7128\", \"brand\": \"Velorim\", \"model\": \"Jigger\", \"price\": 270, \"description\": \"Small and powerful, the Jigger is the best ride for the smallest of tikes! This is the tiniest kids\\u2019 pedal bike on the market available without a coaster brake, the Jigger is the vehicle of choice for the rare tenacious little rider raring to go.\", \"condition\": \"new\"}"
 JSON.SET "bicycle:1" "." "{\"pickup_zone\": \"POLYGON((-118.2887 34.0972, -118.1987 34.0972, -118.1987 33.9872, -118.2887 33.9872, -118.2887 34.0972))\", \"store_location\": \"-118.2437,34.0522\", \"brand\": \"Bicyk\", \"model\": \"Hillcraft\", \"price\": 1200, \"description\": \"Kids want to ride with as little weight as possible. Especially on an incline! They may be at the age when a 27.5\\\" wheel bike is just too clumsy coming off a 24\\\" bike. The Hillcraft 26 is just the solution they need!\", \"condition\": \"used\"}"
 JSON.SET "bicycle:2" "." "{\"pickup_zone\": \"POLYGON((-87.6848 41.9331, -87.5748 41.9331, -87.5748 41.8231, -87.6848 41.8231, -87.6848 41.9331))\", \"store_location\": \"-87.6298,41.8781\", \"brand\": \"Nord\", \"model\": \"Chook air 5\", \"price\": 815, \"description\": \"The Chook Air 5  gives kids aged six years and older a durable and uberlight mountain bike for their first experience on tracks and easy cruising through forests and fields. The lower  top tube makes it easy to mount and dismount in any situation, giving your kids greater safety on the trails.\", \"condition\": \"used\"}"
