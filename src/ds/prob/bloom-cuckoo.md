@@ -18,13 +18,13 @@ Another use case is targeting ads to users. A per-user Bloom filter can be creat
 First, create a bloom filter and configure an acceptable false positive rate for your use case.
 You can also specify an initial capacity; the size of the dataset that you expect to add to the filter. Bloom filters can be configured to expand when this capacity is reached - [see the `BF.RESERVE` documentation for details](https://redis.io/commands/bf.reserve/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
 
-```redis Create a Bloom filter
+```redis:[run_confirmation=true] Create a Bloom filter
 BF.RESERVE user:778:bought_products 0.001 50 // create new bloom filter at key "user:778:bought_products" with a desired false positive rate of 0.1% (0.001) and anticipated data set size of 50 entries
 ```
 
 Next, add some products for user 778.
 
-```redis Add all bought product IDs to a Bloom filter
+```redis:[run_confirmation=true] Add all bought product IDs to a Bloom filter
 BF.MADD user:778:bought_products 4545667 9026875 3178945 4848754 1242449 // Add five items to user 778's list
 ```
 
@@ -44,7 +44,7 @@ BF.INFO user:778:bought_products // returns information about the bloom filter a
 
 Inserting items into a Bloom filter that doesn't yet exist will create the filter for you.
 
-```redis Create and add items simultaneously
+```redis:[run_confirmation=true] Create and add items simultaneously
 BF.INSERT bloomFilter ITEMS foo bar baz // creates the "bloomFilter" key and adds three items to it, if the filter does not already exist
 BF.INSERT newBloomFilter CAPACITY 10000 ITEMS hello waves goodbye // creates the "newBloomFilter" key and adds three items to it, if the filter does not already exist
 BF.INSERT bloomF NOCREATE ITEMS foo bar // tries to add 2 items to a filter with an error if the filter does not already exist
@@ -58,7 +58,7 @@ You can read more about Bloom filters and their use cases [here](https://redis.i
 
 To begin, create a cuckoo filter with estimated capacity, defined bucket size (the number of items in each bucket), and maximum number of iterations (number of attempts to swap items between buckets).
 
-```redis Create a cuckoo filter
+```redis:[run_confirmation=true] Create a cuckoo filter
 CF.RESERVE bikes:models 100 BUCKETSIZE 10 MAXITERATIONS 2 // creates a “cuckoo” filter for the initial amount of 100 items, 10 items per bucket and 2 iterations to swap items before creating an additional filter
 ```
 
@@ -68,7 +68,7 @@ CF.RESERVE bikes:models 100 BUCKETSIZE 10 MAXITERATIONS 2 // creates a “cuckoo
 Next, add items to the cuckoo filter.
 Note that `CF.ADD` creates a new filter if one doesn't already exist.
 
-```redis Add Items
+```redis:[run_confirmation=true] Add Items
 CF.ADD bikes:models "Smokey Mountain Striker"
 CF.ADD bikes:models "Cloudy City Cruiser"
 CF.ADD bikes:models "Rocky Mountain Racer"
@@ -84,7 +84,7 @@ CF.EXISTS bikes:models "Non-existant model" // returns “0”, the item certain
 
 Cuckoo filters support deletion. Here's an example.
 
-```redis Delete an item
+```redis:[run_confirmation=true] Delete an item
 CF.DEL bikes:models "Smokey Mountain Striker" // delete the "Smokey Mountain Striker" item once from the filter
 ```
 
