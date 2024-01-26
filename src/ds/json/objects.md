@@ -1,6 +1,6 @@
 Redis provides two commands that operate specifically on JSON objects. A simple document will be used to demonstrate each of the two commands.
 
-```redis Create document
+```redis:[run_confirmation=true] Create document
 JSON.SET doc $ '{"a":1,"b":2,"o":{"c":3,"d":4}}'
 ```
 
