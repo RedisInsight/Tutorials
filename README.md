@@ -15,7 +15,7 @@ If you want to share your own tutorials - add the `redis-tutorials` label to you
 5. [Manifest](#Manifest)
 6. [Bulk Upload From Tutorials](#bulk-upload-from-tutorials)
 7. [Advanced button parameters](#Advanced)
-7. [Links configuration](#links-configuration)
+8. [Internal links](#internal-links)
 
 ## Structure
 
@@ -203,10 +203,8 @@ redis:[results=group;mode=ascii]
 redis:[auto=true;pipeline=8;mode=raw;results=single;]
 ```
 
-### Links configuration
-
-#### Internal links
-You can insert links that lead to a specific page. The syntax for these links is following:
+### Internal links
+You can insert links that lead to a specific page inside RedisInsight. The syntax for these links is following:
 ```
 [{text}](redisinsight:{path})
 ```
@@ -232,21 +230,5 @@ The full list of pages:
 | Libraries                                   | triggered-functions/libraries |
 | Functions                                   | triggered-functions/functions |
 | Settings                                    | settings                      |
-
-#### Create a free Cloud database link
-
-Also, there is a possibility to insert link which opens Create Free Database dialog inside RedisInsight
-
-> *Note*: For Docker builds these links will work as pure external links
-
-Syntax:
-```
-[{title}]({link} 'Redis Cloud')
-```
-
-For example:
-```
-[Create a free database](https://redis.com/try-free 'Redis Cloud')
-```
 
 
