@@ -15,6 +15,7 @@ If you want to share your own tutorials - add the `redis-tutorials` label to you
 5. [Manifest](#Manifest)
 6. [Bulk Upload From Tutorials](#bulk-upload-from-tutorials)
 7. [Advanced button parameters](#Advanced)
+7. [Links configuration](#links-configuration)
 
 ## Structure
 
@@ -76,24 +77,25 @@ If you would like to customize or prettify the archive name, page names, or the 
 Manifest file should start with single Node and should have properties described 
 below (it will be displayed as type "group"):
 
-| Prop                    | Type                     | Description                                                                                                                   |
-|-------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| label (**required**)    | string                   | Label that will be displayed on UI for Node                                                                                   |
-| children (**required**) | Node[]                   | List of Nodes (nested groups or markdown files)                                                                               |
-| type                    |  | Can be skipped - RedisInsight will always use the "group" parameter                                                                            |
-| author                  | string                   | Not required, Author name                                                                                                                   |
-| URL                     | string                   | Not required, link to repository/web-site                                                                                                   |
-| industry                | string[]                 | Not required, tags to show relevant industry                                                                                                |
-| description             | string                   | Not required, short description of tutorials                                                                                                |
+| Prop                    | Type     | Description                                                         |
+|-------------------------|----------|---------------------------------------------------------------------|
+| label (**required**)    | string   | Label that will be displayed on UI for Node                         |
+| children (**required**) | Node[]   | List of Nodes (nested groups or markdown files)                     |
+| type                    |          | Can be skipped - RedisInsight will always use the "group" parameter |
+| author                  | string   | Not required, Author name                                           |
+| URL                     | string   | Not required, link to repository/web-site                           |
+| industry                | string[] | Not required, tags to show relevant industry                        |
+| description             | string   | Not required, short description of tutorials                        |
 
 Each Node requires a `label`,`type` (all available properties are described in the table below).
 
 | Prop                 | Type                     | Description                                                                            |
 |----------------------|--------------------------|----------------------------------------------------------------------------------------|
-| id                   | string                   |                                                                                        |
+| id (**required**)    | string                   |                                                                                        |
 | type (**required**)  | "group", "internal-link" |                                                                                        |
 | label (**required**) | string                   | Label that will be displayed on UI for Node                                            |
-| children             | Node[]                   | Use only for the "group" type                                                              |
+| summary              | string                   | Short summary for the document (applied only for "internal-link" type)                 |
+| children             | Node[]                   | Use only for the "group" type                                                          |
 | args                 | Record<string, any>      | A special set of parameters required by a certain type of node (each type has its own) |
 
 A Node can be represented by various UI components and is specified by `type` prop. Supported types are listed below.
@@ -165,7 +167,7 @@ as an absolute path from the tutorial folder.
 
 You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
 the configuration set in RedisInsight. If not specified - the behaviour will be defined by parameters set in RedisInsight.
-To specify the parameters, insert them after the `redis-auto:` and add the parameters in square brackets separated with a semicolon (`;`) in
+To specify the parameters, insert them after the `redis:` and add the parameters in square brackets separated with a semicolon (`;`) in
 the following way:
 
 ```
@@ -176,12 +178,12 @@ Ensure that all the parameters are listed **without spaces**, ordering does not 
 
 _Supported parameters:_
 
-| Name     | Values                   | Notes                                     | Description                                                                                                                                              |
-|----------|--------------------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| results  | * _single_<br/>* _group_<br/>* _silent_ | If enabled, then pipeline mode is ignored | * _single_ - Disable the group mode to display the command results in a batch or as separate ones.<br/>* _group_ - Enable the group mode <br/>* _silent_:  <br/>&emsp; 1. Enable the group mode <br/>&emsp; 2. Auto collapse the result <br/>&emsp; 3. Show only error commands in the results|
-| mode     | * _ascii_<br/>* _raw_    |                                           | Enable/disable the raw mode to display command results.                                                                                                                        |
-| pipeline | any integer number       |                                           | Configure the number of commands in the pipeline. 0 or 1 pipelines every command.                                                     |
-| auto | * _true_<br/>* _false_       |                                           | Configure the auto execute commands after click on the button |
+| Name             | Values                                  | Notes                                                                       | Description                                                                                                                                                                                                                                                                                    |
+|------------------|-----------------------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| results          | * _single_<br/>* _group_<br/>* _silent_ | If enabled, then pipeline mode is ignored                                   | * _single_ - Disable the group mode to display the command results in a batch or as separate ones.<br/>* _group_ - Enable the group mode <br/>* _silent_:  <br/>&emsp; 1. Enable the group mode <br/>&emsp; 2. Auto collapse the result <br/>&emsp; 3. Show only error commands in the results |
+| mode             | * _ascii_<br/>* _raw_                   |                                                                             | Enable/disable the raw mode to display command results.                                                                                                                                                                                                                                        |
+| pipeline         | any integer number                      |                                                                             | Configure the number of commands in the pipeline. 0 or 1 pipelines every command.                                                                                                                                                                                                              |
+| run_confirmation | * _true_                                | If _true_ RedisInsight will display confirmation dialog to run the commands | Enabling this parameter shows for particular query confirmation dialog                                                                                                                                                                                                                         |
 
 
 _Notes:_
@@ -200,3 +202,51 @@ redis:[results=single;pipeline=4]
 redis:[results=group;mode=ascii]
 redis:[auto=true;pipeline=8;mode=raw;results=single;]
 ```
+
+### Links configuration
+
+#### Internal links
+You can insert links that lead to a specific page. The syntax for these links is following:
+```
+[{text}](redisinsight:{path})
+```
+
+For example:
+```
+[Browser](redisinsight:browser)
+```
+
+The full list of pages:
+
+| Page                                        | path                          |
+|---------------------------------------------|-------------------------------|
+| Home Page (List of databases)               | /                             |
+| Browser                                     | browser                       |
+| Workbench                                   | workbench                     |
+| Analytics (will be redirected to first tab) | analytics                     |
+| Cluster Details                             | analytics/cluster-details     |
+| Database Analysis                           | analytics/database-analysis   |
+| Slow Log                                    | analytics/slowlog             |
+| Pub Sub                                     | pub-sub                       |
+| Triggers and Functions                      | triggered-functions           |
+| Libraries                                   | triggered-functions/libraries |
+| Functions                                   | triggered-functions/functions |
+| Settings                                    | settings                      |
+
+#### Create a free Cloud database link
+
+Also, there is a possibility to insert link which opens Create Free Database dialog inside RedisInsight
+
+> *Note*: For Docker builds these links will work as pure external links
+
+Syntax:
+```
+[{title}]({link} 'Redis Cloud')
+```
+
+For example:
+```
+[Create a free database](https://redis.com/try-free 'Redis Cloud')
+```
+
+
