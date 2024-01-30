@@ -24,9 +24,16 @@ Tutorials should be combined into a .zip archive that contains the following:
 2. [manifest.json](#Manifest) that describes the structure and behavior of Tutorials
 
 ## Examples
-If you would like to start with Tutorials, download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in RedisInsight Workbench so you can view and understand the overall logic.
+If you are interested in creating your own tutorials and would like to understand how they work, you can start with the following steps:
+- download this example
+- open RedisInsight
+- navigate to the Insights panel (top right corner)
+- find the "My Tutorials" section on the "Explore" tab
+- click the "Upload Tutorial" button and select the example
 
-[Redis-Tutorials.zip](https://github.com/RedisInsight/Tutorials/files/11092920/Redis-Tutorials.zip)
+Your first custom Tutorials are uploaded, and you can open and explore them.
+
+[Tutorials Example](https://github.com/RedisInsight/Tutorials/releases/download/2.42/data.zip)
 
 ## Markdown
 
@@ -82,10 +89,10 @@ below (it will be displayed as type "group"):
 | label (**required**)    | string   | Label that will be displayed on UI for Node                         |
 | children (**required**) | Node[]   | List of Nodes (nested groups or markdown files)                     |
 | type                    |          | Can be skipped - RedisInsight will always use the "group" parameter |
-| author                  | string   | Not required, Author name                                           |
-| URL                     | string   | Not required, link to repository/web-site                           |
-| industry                | string[] | Not required, tags to show relevant industry                        |
-| description             | string   | Not required, short description of tutorials                        |
+| author                  | string   | _Not required, not displayed_<br/> Author name                      |
+| URL                     | string   | _Not required, not displayed_<br/> link to repository/web-site      |
+| industry                | string[] | _Not required, not displayed_<br/> tags to show relevant industry   |
+| description             | string   | _Not required, not displayed_<br/> short description of tutorials   |
 
 Each Node requires a `label`,`type` (all available properties are described in the table below).
 
@@ -195,12 +202,12 @@ _Examples:_
 
 ```
 redis:[results=single]
-redis:[auto=true;mode=raw]
+redis:[mode=raw]
 redis:[pipeline=1]
 redis:[results=silent;mode=raw]
 redis:[results=single;pipeline=4]
 redis:[results=group;mode=ascii]
-redis:[auto=true;pipeline=8;mode=raw;results=single;]
+redis:[pipeline=8;mode=raw;results=single;]
 ```
 
 ### Internal links
