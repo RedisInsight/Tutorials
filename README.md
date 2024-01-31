@@ -1,10 +1,11 @@
 ## Introduction
-Tutorials are documents that contain helpful use cases, comments and interesting experience about Redis and Redis Stack capabilities.
-It is a perfect tool to present your use cases and experience using RedisInsight Workbench and share them with others!
 
-This page provides an overview of the Tutorials structure, its elements and contains instructions, recommendations, and best practices for updating and sharing Tutorials.
+Tutorials are interactive documents that contain helpful use cases, comments and interesting experience about Redis to level up your Redis game.
+You can use tutorials already embedded in RedisInsight to explore powerful Redis capabilities, or create your own custom tutorials to present your experience using RedisInsight and share them with others!
 
-If you want to share your own tutorials - add the `redis-tutorials` label to your GitHub repository and other GitHub users will be able to see and share your experience!
+This page provides an overview of the Tutorials structure and its elements. It also contains instructions, recommendations, and best practices for creating, updating and sharing Tutorials.
+
+If you want to share your own tutorials - add the `redis-tutorials` label to your GitHub repository so other other GitHub users can find and learn your experience.
 
 ## Navigation
 
@@ -38,7 +39,7 @@ Your first custom Tutorials are uploaded, and you can open and explore them.
 ## Markdown
 
 In short, Tutorials support the basic [Markdown syntax](https://www.markdownguide.org/basic-syntax/) that you can use to specify your information.
-If you would like to add a button that will insert Redis commands to the Workbench Editor, use Redis Code block that is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), but you need to specify `redis` as language and the label next to it (see the `Create` button example below).
+If you would like to add a button to run commands, use Redis Code block that is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), but you need to specify `redis` as language and the label next to it (see the `Create` button example below).
 
 ````
  ```redis Create
@@ -58,7 +59,7 @@ If you would like to add a button that will insert Redis commands to the Workben
 Basic [markdown syntax](https://www.markdownguide.org/basic-syntax/#images-1) provides the ability to render images.
 
 To render images, you need to provide either an external URL to these images or a relative path to a folder inside of your tutorials.
-The folder with images can have any name, but it is recommended to start it with an underscore (_) or a dot (.) to avoid displaying it in Workbench when the [manifest](#Manifest) is automatically generated.
+The folder with images can have any name, but it is recommended to start it with an underscore (_) or a dot (.) to avoid displaying it in RedisInsight in cases when the [manifest](#Manifest) is automatically generated.
 
 Use the following logic to specify a relative path:
 
