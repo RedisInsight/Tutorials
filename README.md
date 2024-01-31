@@ -26,11 +26,11 @@ Tutorials should be combined into a .zip archive that contains the following:
 
 ## Examples
 If you are interested in creating your own tutorials and would like to understand how they work, you can start with the following steps:
-- download this example
-- open RedisInsight
-- navigate to the Insights panel (top right corner)
-- find the "My Tutorials" section on the "Explore" tab
-- click the "Upload Tutorial" button and select the example
+- Download this example.
+- Open RedisInsight.
+- Navigate to the Insights panel (top right corner).
+- Find the "My Tutorials" section on the "Explore" tab.
+- Click the "Upload Tutorial" button and select the example.
 
 Your first custom Tutorials are uploaded, and you can open and explore them.
 
