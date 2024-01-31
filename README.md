@@ -75,14 +75,16 @@ For example:
 
 ## Manifest
 
-Manifest.json is not required and can be skipped, in the case of missing manifest.json, RedisInsight will:
-1. Take the Tutorial name from the .zip archive
-2. All the pages will have names the same as file names in the .zip archive
-3. The order of pages will be the same as in the .zip archive
+`manifest.json` is an optional file that describes the structure and behavior of Tutorials.
+If not specified, then RedisInsight will use the following logic:
 
-If you would like to customize or prettify the archive name, page names, or the order, you can use the manifest.json. This JSON file is described as simple [Objects](https://javascript.info/object) which represents tree node and might have children nodes inside.
+1. the tutorial name is defined based on the name of the `.zip` archive
+2. Page names are defined based on the file names in the `.zip` archive
+3. The order of pages is defined based on the order in the `.zip` archive
 
-Manifest file should start with single Node and should have properties described 
+If you would like to customize or prettify the archive name, page names, or the order, you can use the `manifest.json`. This JSON file is described as simple [Objects](https://javascript.info/object) which represents tree node and might have children nodes inside.
+
+The `manifest.json` file should start with single Node and should have properties described 
 below (it will be displayed as type "group"):
 
 | Prop                    | Type     | Description                                                         |
@@ -137,7 +139,7 @@ The following syntax describes the `redis-upload` button:
 **Notes:**
 
 * use only a relative path to the text file inside the tutorial folder
-* it is recommended to start the folder name with the text file from a dot (*.*) or underscore (*_*), so in the cases when the manifest file is automatically generated, RedisInsight will ignore this folder and not display it in your custom tutorial
+* it is recommended to start the folder name with the text file from a dot (*.*) or underscore (*_*), so in the cases when the `manifest,json` file is automatically generated, RedisInsight will ignore this folder and not display it in your custom tutorial
 * all the files included in your custom tutorials will be stored inside the RedisInsight folder as long as the tutorials exist in RedisInsight, so instead of including large text files in your custom tutorials, consider using Bulk Upload in Browser
 
 **Example:**
