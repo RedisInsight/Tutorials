@@ -5,7 +5,7 @@ You can use RedisInsight's built-in tutorials to explore powerful Redis capabili
 
 This page provides an overview of the Tutorials structure and its elements. It also contains instructions, recommendations, and best practices for creating, updating and sharing Tutorials.
 
-If you want to share your own tutorials - add the `redis-tutorials` label to your GitHub repository so other other GitHub users can find and learn your experience.
+If you want to share your custom tutorials with others, add the `redis-tutorials` label to your GitHub repository so other GitHub users can find them and learn your experience.
 
 ## Navigation
 
