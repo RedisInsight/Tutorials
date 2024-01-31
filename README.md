@@ -39,7 +39,7 @@ Your first custom Tutorials are uploaded, and you can open and explore them.
 ## Markdown
 
 In short, Tutorials support the basic [Markdown syntax](https://www.markdownguide.org/basic-syntax/) that you can use to specify your information.
-If you would like to add a button to run commands, use Redis Code block that is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), but you need to specify `redis` as language and the label next to it (see the `Create` button example below).
+If you would like to add a button to run commands, use a Redis Code block that is almost the same as a [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), but you need to specify `redis` as the language and write a label next to it (see the `Create` button example below).
 
 ````
  ```redis Create
