@@ -1,7 +1,7 @@
 ## Introduction
 
-Tutorials are interactive documents that contain helpful use cases, comments and interesting experience about Redis to level up your Redis game.
-You can use tutorials already embedded in RedisInsight to explore powerful Redis capabilities, or create your own custom tutorials to present your experience using RedisInsight and share them with others!
+Tutorials are interactive documents that contain helpful use cases, comments, and related demonstrations of Redis features to help you level up your Redis game.
+You can use RedisInsight's built-in tutorials to explore powerful Redis capabilities or create custom tutorials to present your experience using RedisInsight and share them with others.
 
 This page provides an overview of the Tutorials structure and its elements. It also contains instructions, recommendations, and best practices for creating, updating and sharing Tutorials.
 
