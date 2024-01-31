@@ -92,10 +92,10 @@ below (it will be displayed as type "group"):
 | label (**required**)    | string   | Label that will be displayed on UI for Node                         |
 | children (**required**) | Node[]   | List of Nodes (nested groups or markdown files)                     |
 | type                    |          | Can be skipped - RedisInsight will always use the "group" parameter |
-| author                  | string   | _Not required, not displayed_<br/> Author name                      |
-| URL                     | string   | _Not required, not displayed_<br/> link to repository/web-site      |
-| industry                | string[] | _Not required, not displayed_<br/> tags to show relevant industry   |
-| description             | string   | _Not required, not displayed_<br/> short description of tutorials   |
+| author                  | string   | _Not required, not displayed in RedisInsight_<br/> Author name                      |
+| URL                     | string   | _Not required, not displayed in RedisInsight_<br/> link to repository/web-site      |
+| industry                | string[] | _Not required, not displayed in RedisInsight_<br/> tags to show relevant industry   |
+| description             | string   | _Not required, not displayed in RedisInsight_<br/> short description of tutorials   |
 
 Each Node requires a `label`,`type` (all available properties are described in the table below).
 
