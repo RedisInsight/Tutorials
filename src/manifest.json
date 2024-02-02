@@ -318,7 +318,7 @@
           "type": "internal-link",
           "id": "sq-range",
           "label": "Range queries",
-         "summary": "Query on numeric fields that returns the values that are in between a given start and end value, such as prices, dates.",
+         "summary": "Perform queries on numeric fields to return the values that are between a start and end value, such as prices and dates.",
           "args": {
             "path": "/sq/range.md"
           }
