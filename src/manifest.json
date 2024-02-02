@@ -291,7 +291,7 @@
           "type": "internal-link",
           "id": "sq-intro",
           "label": "Introduction",
-          "summary": "Try real-time searching and perform complex structured queries without compromising the database performance.",
+          "summary": "Enable Redis as your main database performing structured queries without compromising performance and simplicity.",
           "args": {
             "path": "/sq/intro.md"
           }
@@ -300,6 +300,7 @@
           "type": "internal-link",
           "id": "sq-exact-match",
           "label": "Exact match",
+          "summary": "Matching values in your datasets' attributes for secondary index use cases.",
           "args": {
             "path": "/sq/exact-match.md"
           }
@@ -308,6 +309,7 @@
           "type": "internal-link",
           "id": "sq-full-text",
           "label": "Full-text search",
+          "summary": "Leveraging advanced text search capabilities to retrieve the most relevant datasets.",
           "args": {
             "path": "/sq/full-text.md"
           }
@@ -316,6 +318,7 @@
           "type": "internal-link",
           "id": "sq-range",
           "label": "Range queries",
+         "summary": "Query on numeric fields that returns the values that are in between a given start and end value, such as prices, dates.",
           "args": {
             "path": "/sq/range.md"
           }
@@ -324,6 +327,7 @@
           "type": "internal-link",
           "id": "sq-geospatial",
           "label": "Geospatial queries",
+          "summary": "Simple point-based queries and beyond including complex geometries for more detailed querying of spatial data.",
           "args": {
             "path": "/sq/geospatial.md"
           }
@@ -332,6 +336,7 @@
           "type": "internal-link",
           "id": "sq-combined",
           "label": "Combined queries",
+          "summary": "Combine different query terms and options to create more complex and nuanced queries.",
           "args": {
             "path": "/sq/combined.md"
           }
@@ -340,6 +345,7 @@
           "type": "internal-link",
           "id": "sq-aggregations",
           "label": "Analytic and transformative queries",
+          "summary": "Aggregations in Redis allow you to group, sort, and modify your result data, extracting analytical insights from it.",
           "args": {
             "path": "/sq/aggregations.md"
           }
