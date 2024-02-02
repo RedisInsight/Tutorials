@@ -309,7 +309,7 @@
           "type": "internal-link",
           "id": "sq-full-text",
           "label": "Full-text search",
-          "summary": "Leveraging advanced text search capabilities to retrieve the most relevant datasets.",
+          "summary": "Leverage advanced text search capabilities to retrieve the most relevant datasets.",
           "args": {
             "path": "/sq/full-text.md"
           }
