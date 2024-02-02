@@ -291,7 +291,7 @@
           "type": "internal-link",
           "id": "sq-intro",
           "label": "Introduction",
-          "summary": "Enable Redis as your main database performing structured queries without compromising performance and simplicity.",
+          "summary": "Use Redis as your main database to perform structured queries without compromising performance and simplicity.",
           "args": {
             "path": "/sq/intro.md"
           }
