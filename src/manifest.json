@@ -327,7 +327,7 @@
           "type": "internal-link",
           "id": "sq-geospatial",
           "label": "Geospatial queries",
-          "summary": "Simple point-based queries and beyond including complex geometries for more detailed querying of spatial data.",
+          "summary": "Perform geometric queries on spatial data.",
           "args": {
             "path": "/sq/geospatial.md"
           }
