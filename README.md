@@ -34,7 +34,7 @@ If you are interested in creating your own tutorials and would like to understan
 
 Your first custom Tutorials are uploaded, and you can open and explore them.
 
-[Tutorials Example](https://github.com/Redis-Insight/Tutorials/releases/download/2.42/data.zip)
+[Tutorials Example](https://github.com/RedisInsight/Tutorials/releases/download/2.42/data.zip)
 
 ## Markdown
 
