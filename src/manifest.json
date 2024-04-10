@@ -346,6 +346,22 @@
         },
         {
           "type": "internal-link",
+          "id": "sq-vectors-basic",
+          "label": "Vector search (basic)",
+          "args": {
+            "path": "/sq/vectors-basic.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "sq-vectors-adv-hash",
+          "label": "Vector search (advanced)",
+          "args": {
+            "path": "/sq/vectors-adv-hash.md"
+          }
+        },
+        {
+          "type": "internal-link",
           "id": "sq-learn-more",
           "label": "Learn more",
           "args": {
