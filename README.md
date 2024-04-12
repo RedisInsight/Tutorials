@@ -1,7 +1,7 @@
 ## Introduction
 
 Tutorials are interactive documents that contain helpful use cases, comments, and related demonstrations of Redis features to help you level up your Redis game.
-You can use RedisInsight's built-in tutorials to explore powerful Redis capabilities or create custom tutorials to present your experience using RedisInsight and share them with others.
+You can use Redis Insight built-in tutorials to explore powerful Redis capabilities or create custom tutorials to present your experience using Redis Insight and share them with others.
 
 This page provides an overview of the Tutorials structure and its elements. It also contains instructions, recommendations, and best practices for creating, updating and sharing Tutorials.
 
@@ -27,7 +27,7 @@ Tutorials should be combined into a .zip archive that contains the following:
 ## Examples
 If you are interested in creating your own tutorials and would like to understand how they work, you can start with the following steps:
 - Download this example.
-- Open RedisInsight.
+- Open Redis Insight.
 - Navigate to the Insights panel (top right corner).
 - Find the "My Tutorials" section on the "Explore" tab.
 - Click the "Upload Tutorial" button and select the example.
@@ -59,7 +59,7 @@ If you would like to add a button to run commands, use a Redis Code block that i
 Basic [markdown syntax](https://www.markdownguide.org/basic-syntax/#images-1) provides the ability to render images.
 
 To render images, you need to provide either an external URL to these images or a relative path to a folder inside of your tutorials.
-The folder with images can have any name, but it is recommended to start it with an underscore (_) or a dot (.) to avoid displaying it in RedisInsight in cases when the [manifest](#Manifest) is automatically generated.
+The folder with images can have any name, but it is recommended to start it with an underscore (_) or a dot (.) to avoid displaying it in Redis Insight in cases when the [manifest](#Manifest) is automatically generated.
 
 Use the following logic to specify a relative path:
 
@@ -76,7 +76,7 @@ For example:
 ## Manifest
 
 `manifest.json` is an optional file that describes the structure and behavior of Tutorials.
-If not specified, then RedisInsight will use the following logic:
+If not specified, then Redis Insight will use the following logic:
 
 1. the tutorial name is defined based on the name of the `.zip` archive
 2. Page names are defined based on the file names in the `.zip` archive
@@ -91,11 +91,11 @@ below (it will be displayed as type "group"):
 |-------------------------|----------|---------------------------------------------------------------------|
 | label (**required**)    | string   | Label that will be displayed on UI for Node                         |
 | children (**required**) | Node[]   | List of Nodes (nested groups or markdown files)                     |
-| type                    |          | Can be skipped - RedisInsight will always use the "group" parameter |
-| author                  | string   | _Not required, not displayed in RedisInsight_<br/> Author name                      |
-| URL                     | string   | _Not required, not displayed in RedisInsight_<br/> link to repository/web-site      |
-| industry                | string[] | _Not required, not displayed in RedisInsight_<br/> tags to show relevant industry   |
-| description             | string   | _Not required, not displayed in RedisInsight_<br/> short description of tutorials   |
+| type                    |          | Can be skipped - Redis Insight will always use the "group" parameter |
+| author                  | string   | _Not required, not displayed in Redis Insight_<br/> Author name                      |
+| URL                     | string   | _Not required, not displayed in Redis Insight_<br/> link to repository/web-site      |
+| industry                | string[] | _Not required, not displayed in Redis Insight_<br/> tags to show relevant industry   |
+| description             | string   | _Not required, not displayed in Redis Insight_<br/> short description of tutorials   |
 
 Each Node requires a `label`,`type` (all available properties are described in the table below).
 
@@ -120,7 +120,7 @@ A Node can be represented by various UI components and is specified by `type` pr
 
 ## Bulk Upload From Tutorials
 
-You can upload sample data sets in bulk from your custom RedisInsight tutorials.
+You can upload sample data sets in bulk from your custom Redis Insight tutorials.
 To do so, you will need to:
 - create a text file with the list of Redis commands
 - add this file to the archive with your custom tutorials
@@ -139,8 +139,8 @@ The following syntax describes the `redis-upload` button:
 **Notes:**
 
 * use only a relative path to the text file inside the tutorial folder
-* it is recommended to start the folder name with the text file from a dot (*.*) or underscore (*_*), so in the cases when the `manifest,json` file is automatically generated, RedisInsight will ignore this folder and not display it in your custom tutorial
-* all the files included in your custom tutorials will be stored inside the RedisInsight folder as long as the tutorials exist in RedisInsight, so instead of including large text files in your custom tutorials, consider using Bulk Upload in Browser
+* it is recommended to start the folder name with the text file from a dot (*.*) or underscore (*_*), so in the cases when the `manifest,json` file is automatically generated, Redis Insight will ignore this folder and not display it in your custom tutorial
+* all the files included in your custom tutorials will be stored inside the Redis Insight folder as long as the tutorials exist in Redis Insight, so instead of including large text files in your custom tutorials, consider using Bulk Upload in Browser
 
 **Example:**
 
@@ -176,7 +176,7 @@ as an absolute path from the tutorial folder.
 ## Advanced
 
 You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
-the configuration set in RedisInsight. If not specified - the behaviour will be defined by parameters set in RedisInsight.
+the configuration set in Redis Insight. If not specified - the behaviour will be defined by parameters set in Redis Insight.
 To specify the parameters, insert them after the `redis:` and add the parameters in square brackets separated with a semicolon (`;`) in
 the following way:
 
@@ -193,8 +193,8 @@ _Supported parameters:_
 | results          | * _single_<br/>* _group_<br/>* _silent_ | If enabled, then pipeline mode is ignored                                   | * _single_ - Disable the group mode to display the command results in a batch or as separate ones.<br/>* _group_ - Enable the group mode <br/>* _silent_:  <br/>&emsp; 1. Enable the group mode <br/>&emsp; 2. Auto collapse the result <br/>&emsp; 3. Show only error commands in the results. |
 | mode             | * _ascii_<br/>* _raw_                   |                                                                             | Enable/disable the raw mode to display command results.                                                                                                                                                                                                                                        |
 | pipeline         | any integer number                      |                                                                             | Configure the number of commands in the pipeline. 0 or 1 pipelines every command.                                                                                                                                                                                                              |
-| run_confirmation | * _true_                                | If set to _true_, RedisInsight will display confirmation dialog to run the commands | Enabling this parameter shows for particular query confirmation dialog.       |
-| executable | * _false_                                | If set to _false_, RedisInsight will not display the "Run" button and will not the command to be executed, although the syntax will be highlighted. | Defines if the "Run" button will be displayed to run the command. |
+| run_confirmation | * _true_                                | If set to _true_, Redis Insight will display confirmation dialog to run the commands | Enabling this parameter shows for particular query confirmation dialog.       |
+| executable | * _false_                                | If set to _false_, Redis Insight will not display the "Run" button and will not the command to be executed, although the syntax will be highlighted. | Defines if the "Run" button will be displayed to run the command. |
 
 _Notes:_
 
@@ -215,7 +215,7 @@ redis:[pipeline=8;mode=raw;results=single;]
 ### Links configuration
 
 #### Internal links
-You can insert links that lead to a specific page inside RedisInsight. The syntax for these links is following:
+You can insert links that lead to a specific page inside Redis Insight. The syntax for these links is following:
 ```
 [{text}](redisinsight:{path})
 ```
@@ -245,7 +245,7 @@ The full list of pages:
 
 #### Create a free Cloud database link
 
-Also, there is a possibility to insert link which opens Create Free Database dialog inside RedisInsight
+Also, there is a possibility to insert link which opens Create Free Database dialog inside Redis Insight
 
 > *Note*: For Docker builds these links will work as pure external links
 Syntax:
