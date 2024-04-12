@@ -346,22 +346,6 @@
         },
         {
           "type": "internal-link",
-          "id": "sq-vectors-basic",
-          "label": "Vector search (basic)",
-          "args": {
-            "path": "/sq/vectors-basic.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "sq-vectors-adv-hash",
-          "label": "Vector search (advanced)",
-          "args": {
-            "path": "/sq/vectors-adv-hash.md"
-          }
-        },
-        {
-          "type": "internal-link",
           "id": "sq-learn-more",
           "label": "Learn more",
           "args": {
@@ -409,6 +393,32 @@
           "label": "Learn more",
           "args": {
             "path": "/tf/learn-more.md"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "vss",
+      "label": "Vector similarity search explained",
+      "args": {
+        "initialIsOpen": false
+      },
+      "children": [
+        {
+          "type": "internal-link",
+          "id": "vss-vectors-basic",
+          "label": "Vector search (basic)",
+          "args": {
+            "path": "/vss/vectors-basic.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "vss-vectors-adv-hash",
+          "label": "Vector search (advanced)",
+          "args": {
+            "path": "/vss/vectors-adv-hash.md"
           }
         }
       ]
