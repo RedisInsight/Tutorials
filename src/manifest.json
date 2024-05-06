@@ -1,7 +1,7 @@
 {
   "type": "group",
   "id": "tutorials",
-  "label": "TUTORIALS",
+  "label": "Redis tutorials",
   "args": {
     "withBorder": true,
     "initialIsOpen": true
