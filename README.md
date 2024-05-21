@@ -71,7 +71,11 @@ For example:
 ```
 ![RedisInsight Browser screenshot](./_images/aggregations.png)
 ```
+## Reference other tutorials
 
+You can reference other tutorial pages or other tutorials. To do this, use the markdown syntax described below and specify the ID of the tutorial you want to link to.
+
+[link](redisinsight:_?tutorialId={tutorialId})
 
 ## Manifest
 
