@@ -7,11 +7,11 @@ If you haven't done so already, you can upload the sample data related to this t
 
 ### Matchmaking
 
-Redis serves as a powerful document store, well-suited for matchmaking use cases. For instance, consider a bike shop where you need to pair shoppers with bikes based on their preferences and budget.
+Redis serves as a powerful document store that is well-suited for matchmaking use cases. For instance, consider a bike shop where you need to pair shoppers with bikes based on their preferences and budget.
 
 You can store your bike inventory using the JSON data structure, where bikes have attributes such as type (e.g., mountain, road, electric), condition (new or used), price, etc. 
 
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Add a bike as JSON
 // Add a bike as JSON
 JSON.SET sample_bicycle:2048 $ '{
   "model": "Ranger",
@@ -33,7 +33,7 @@ JSON.SET sample_bicycle:2048 $ '{
 
 In Redis, you can easily index these attributes and perform complex queries efficiently.
 
-```redis:[run_confirmation=true] 
+```redis:[run_confirmation=true] Create a bike index
 // Create a secondary index of your bike data
 FT.CREATE idx:smpl_bicycle 
     ON JSON 
@@ -52,7 +52,7 @@ FT.CREATE idx:smpl_bicycle
 
 You can then easily match a user to their preferred type of bike within a requested price bracket.
 
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Search for a match
 // Match leisure bikes within a price of 200 and 300
 FT.SEARCH idx:smpl_bicycle "@type:{mountain} @price:[400 450]" RETURN 4 brand model type price
 ```
@@ -61,7 +61,7 @@ FT.SEARCH idx:smpl_bicycle "@type:{mountain} @price:[400 450]" RETURN 4 brand mo
 
 Location-based search involves finding and retrieving data that is relevant to a specific geographic location. Redis can be used to power location-based search applications by storing and indexing geospatial data, such as latitude and longitude coordinates, and providing fast and efficient search capabilities
 
-```redis:[run_confirmation=true] 
+```redis:[run_confirmation=true] Add a restaurant
 // Add a restaurant as JSON
 JSON.SET sample_restaurant:341 $ '{
   "name": "Zen Galushca",
@@ -69,27 +69,27 @@ JSON.SET sample_restaurant:341 $ '{
   "location": "-98.1221,30.8232"
   }'
 ```
-```redis:[run_confirmation=true] 
+```redis:[run_confirmation=true] Create a restaurant index
 //Create an index of your restaurant data
 FT.CREATE "idx:smpl_restaurant"
   ON JSON
     PREFIX 1 "sample_restaurant:"
   SCHEMA
     "$.cuisine" AS "cuisine" TAG
-    "$.name" AS "restaunt_name" TEXT
+    "$.name" AS "restaurant_name" TEXT
     "$.location" AS "location" GEO
 ```
 
-```redis:[run_confirmation=true] 
+```redis:[run_confirmation=true] Search for a restaurant
 // Find a Japanese restaurant within a 50 mile radius
-FT.SEARCH idx:smpl_restaurant  "@cuisine:{japanese} @location:[-98.1179,30.671 50 mi]" RETURN 2 restaunt_name location
+FT.SEARCH idx:smpl_restaurant  "@cuisine:{japanese} @location:[-98.1179,30.671 50 mi]" RETURN 2 restaurant_name location
 ```
 
 ### Session store
 
-Redis shines as a session store, offering speed and scalability for web applications. Using commands like HSET to store session data as Hash and HGET to retrieve it, Redis ensures rapid access to user sessions.
+Redis shines as a session store, offering speed and scalability for web applications. Using commands like HSET to store session data as hashes and HGET to retrieve it, Redis ensures rapid access to user sessions.
 
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Create a session hash with expiration
 // Store new session
 HSET sample_session:074529275 user_id 7254 username gabe_jones email gabe@example.com last_activity "2024-06-01 10:24:00"
 
@@ -97,29 +97,29 @@ HSET sample_session:074529275 user_id 7254 username gabe_jones email gabe@exampl
 EXPIRE sample_session:074529275 7344000
 ```
 
-```redis:[run_confirmation=true] 
+```redis:[run_confirmation=true] Retrieve a session
 // Retrieve an existing session
 HGETALL sample_session:074529275
 ```
 
 ### Job queue
 
-In many applications, tasks need to be processed asynchronously, such as maintaining a waiting list for a helpdesk where incoming support tickets are queued for processing. A job queue helps manage these tasks efficiently. In Redis, a [job queue](https://redis.io/glossary/redis-queue/) can be implemented using the List data structure. When a new task needs to be queued, it is added to the left end of the list (using LPUSH command). When a worker is ready to process a task, it dequeues it from the right end of the list (using RPOP command). 
+In many applications, tasks need to be processed asynchronously, such as maintaining a waiting list for a helpdesk where incoming support tickets are queued for processing. A job queue helps manage these tasks efficiently. In Redis, a [job queue](https://redis.io/glossary/redis-queue/) can be implemented using the List data structure. When a new task needs to be queued, it is added to the left end of the list (using the LPUSH command). When a worker is ready to process a task, it dequeues it from the right end of the list (using the RPOP command). 
 
 
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Create a job ticket
 // Create a new job as a Hash
 HSET sample_jobQueue:ticket:199 id 199 user_id 723 description "Unable to access console" priority "High" created_at "2024-04-20T12:00:00Z"
 ```
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Enqueue job
 // Enqueue the new job to the waiting list
 LPUSH sample_jobQueue:waitingList sample_jobQueue:ticket:199
 ```
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Show all jobs
 // Show the full list of jobs
 LRANGE sample_jobQueue:waitingList 0 -1
 ```
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Dequeue a job
 // Dequeue a job from the list
 RPOP sample_jobQueue:waitingList
 ```
@@ -128,12 +128,12 @@ RPOP sample_jobQueue:waitingList
 
 [Leaderboards](https://redis.io/solutions/leaderboards/) are crucial for gaming applications to display rankings based on scores. Sorted Sets in Redis are perfect for this purpose due to their ability to store elements with associated scores, which can be easily queried and sorted.
 
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Create a leaderboard score
 // Add a new score to leaderboard
 ZADD sample_leaderboard:tetris 670000 "user100"
 ```
 
-```redis:[run_confirmation=true]
+```redis:[run_confirmation=true] Get users with scores
 // Get the top 5 users on the leaderboard, with scores
 ZRANGE sample_leaderboard:tetris 0 4 REV WITHSCORES
 ```
