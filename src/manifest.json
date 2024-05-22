@@ -8,6 +8,16 @@
   },
   "children": [
     {
+      "type": "internal-link",
+      "id": "redis_use_cases",
+      "label": "Redis Use Cases",
+      "summary": "A collection of several common use cases for Redis.",
+      "args": {
+        "initialIsOpen": true,
+        "path": "/uc/intro.md"
+      }
+    },
+    {
       "type": "group",
       "id": "ds",
       "label": "Data structures explained",
