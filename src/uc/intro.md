@@ -54,7 +54,7 @@ You can then easily match a user to their preferred type of bike within a reques
 
 ```redis:[run_confirmation=true]
 // Match leisure bikes within a price of 200 and 300
-FT.SEARCH idx:smpl_bicycle "@type:{leisure} @price:[200 300]" RETURN 4 brand model type price
+FT.SEARCH idx:smpl_bicycle "@type:{mountain} @price:[400 450]" RETURN 4 brand model type price
 ```
 
 ### Location-based search
@@ -64,12 +64,11 @@ Location-based search involves finding and retrieving data that is relevant to a
 ```redis:[run_confirmation=true] 
 // Add a restaurant as JSON
 JSON.SET sample_restaurant:341 $ '{
-  "name": "Galusca",
-  "cuisine": "Moldovan",
-  "location": "47.0159,28.8107"
+  "name": "Zen Galushca",
+  "cuisine": "Japanese",
+  "location": "-98.1221,30.8232"
   }'
 ```
-
 ```redis:[run_confirmation=true] 
 //Create an index of your restaurant data
 FT.CREATE "idx:smpl_restaurant"
@@ -82,8 +81,8 @@ FT.CREATE "idx:smpl_restaurant"
 ```
 
 ```redis:[run_confirmation=true] 
-// Find a Japanese restaurant within a 20 mile radius
-FT.SEARCH idx:smpl_restaurant  "@cuisine:{japanese} @location:[-98.1179,30.671 20 mi]" RETURN 2 restaunt_name location
+// Find a Japanese restaurant within a 50 mile radius
+FT.SEARCH idx:smpl_restaurant  "@cuisine:{japanese} @location:[-98.1179,30.671 50 mi]" RETURN 2 restaunt_name location
 ```
 
 ### Session store
