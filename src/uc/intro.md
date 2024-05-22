@@ -110,15 +110,19 @@ In many applications, tasks need to be processed asynchronously, such as maintai
 
 ```redis:[run_confirmation=true]
 // Create a new job as a Hash
-HSET sample_jobQueue:ticket:101 id 101 user_id 123 description "Unable to access console" priority "High" created_at "2024-04-20T12:00:00Z"
-
-// Enqueue the new job
-LPUSH sample_jobQueue:helpdesk uuid86106205
+HSET sample_jobQueue:ticket:199 id 199 user_id 723 description "Unable to access console" priority "High" created_at "2024-04-20T12:00:00Z"
 ```
-
 ```redis:[run_confirmation=true]
-// Dequeue a job
-RPOP sample_jobQueue:helpdesk 
+// Enqueue the new job to the waiting list
+LPUSH sample_jobQueue:waitingList sample_jobQueue:ticket:199
+```
+```redis:[run_confirmation=true]
+// Show the full list of jobs
+LRANGE sample_jobQueue:waitingList 0 -1
+```
+```redis:[run_confirmation=true]
+// Dequeue a job from the list
+RPOP sample_jobQueue:waitingList
 ```
 
 ### Leaderboard
