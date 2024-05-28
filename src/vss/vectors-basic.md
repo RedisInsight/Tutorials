@@ -1,13 +1,3 @@
-## Vector search
-
-Data is often unstructured, which means that it isn't described by a well-defined schema. Examples of unstructured data include text passages, images, videos, and music titles. One approach to dealing with unstructured data is to vectorize it. Vectorizing means mapping unstructured data to a flat sequence of numbers. Vectors represent the data embedded in an N-dimensional space. Machine learning models have facilitated the rise of embeddings as a widely embraced method for generating dense, low-dimensional vector representations. Given a suitable machine learning model, the generated embeddings can encapsulate complex patterns and semantic meanings inherent in data.
-
-You can use Redis Stack as a vector database, which allows you to:
-
-- Store vectors and the associated metadata within hashes or JSON documents.
-- Retrieve vectors.
-- Perform vector searches.
-
 The following JSON data model will be used in this tutorial. The data represents user preferences that a hypothetical bike shop might use to target ads to its customers.
 
 ```
@@ -90,9 +80,3 @@ Now you can perform your search using the byte string you obtained from Python a
 ```redis Search
 FT.SEARCH idx:user_prefs "(*)=>[KNN 2 @vector $input_vector]" PARAMS 2 input_vector "fff?333?\xcd\xccL>" DIALECT 2
 ```
-
-### Resources
-
-[Redis as a vector database quick start guide](https://redis.io/docs/latest/develop/get-started/vector-database/)
-
-[Redis University course number RU402](https://university.redis.com/): "Redis as a vector database".
