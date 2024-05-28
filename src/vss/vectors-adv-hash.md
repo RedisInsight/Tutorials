@@ -192,9 +192,3 @@ FT.SEARCH idx:bikes_vss
     SORTBY score
     DIALECT 2
 ```
-
-### Resources
-
-[Redis as a vector database quick start guide](https://redis.io/docs/latest/develop/get-started/vector-database/)
-
-[Redis University course number RU402](https://university.redis.com/): "Redis as a vector database".
