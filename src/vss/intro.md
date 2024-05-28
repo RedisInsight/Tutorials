@@ -6,11 +6,15 @@ Examples of unstructured data include:
 - Text passages
 - Images
 - Videos
-- Music titles.
+- Music titles
 
 One approach to dealing with unstructured data is to vectorize it. Vectorizing means mapping unstructured data to a flat sequence of numbers.
 
-Vectors represent the data embedded in an N-dimensional space. Machine learning models have facilitated the rise of embeddings as a widely embraced method for generating dense, low-dimensional vector representations. Given a suitable machine learning model, the generated embeddings can encapsulate complex patterns and semantic meanings inherent in data.
+Vectors represent the data embedded in an N-dimensional space.
+
+Machine learning models have facilitated the rise of embeddings as a widely embraced method for generating dense, low-dimensional vector representations.
+
+Given a suitable machine learning model, the generated embeddings can encapsulate complex patterns and semantic meanings inherent in data.
 
 You can use Redis Stack as a vector database, which allows you to:
 
