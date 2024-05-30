@@ -8,6 +8,16 @@
   },
   "children": [
     {
+      "type": "internal-link",
+      "id": "redis_use_cases",
+      "label": "Redis Use Cases",
+      "summary": "A collection of several common use cases for Redis.",
+      "args": {
+        "initialIsOpen": true,
+        "path": "/uc/intro.md"
+      }
+    },
+    {
       "type": "group",
       "id": "ds",
       "label": "Data structures explained",
@@ -407,6 +417,15 @@
       "children": [
         {
           "type": "internal-link",
+          "id": "vss-intro",
+          "label": "Introduction",
+          "summary": "Understand how to use Redis as a vector database.",
+          "args": {
+            "path": "/vss/intro.md"
+          }
+        },
+        {
+          "type": "internal-link",
           "id": "vss-vectors-basic",
           "label": "Vector search (basic)",
           "args": {
@@ -419,6 +438,14 @@
           "label": "Vector search (advanced)",
           "args": {
             "path": "/vss/vectors-adv-hash.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "vss-learn-more",
+          "label": "Learn more",
+          "args": {
+            "path": "/vss/learn-more.md"
           }
         }
       ]

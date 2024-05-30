@@ -214,6 +214,19 @@ redis:[pipeline=8;mode=raw;results=single;]
 ```
 ### Links configuration
 
+#### Reference other tutorials
+You can reference other tutorial pages. 
+To do this, use the markdown syntax described below and specify the ID of the tutorial you want to link to:
+```
+[{text}](redisinsight:_?tutorialId={tutorialId})
+```
+
+For example:
+```
+[Create JSON Documents](redisinsight:_?tutorialId=ds-json-create)
+```
+
+
 #### Internal links
 You can insert links that lead to a specific page inside Redis Insight. The syntax for these links is following:
 ```
@@ -241,7 +254,6 @@ The full list of pages:
 | Libraries                                   | triggered-functions/libraries |
 | Functions                                   | triggered-functions/functions |
 | Settings                                    | settings                      |
-
 
 #### Create a free Cloud database link
 
