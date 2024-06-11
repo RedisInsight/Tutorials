@@ -23,11 +23,17 @@ Here are some key features and components of Redis that make it suitable for RAG
 
 1. **Spring AI and Redis**: Using Spring AI with Redis simplifies the process of building RAG applications. Spring AI provides a structured approach to integrating AI capabilities into applications, while Redis handles the data management aspect, ensuring that the RAG pipeline is efficient and scalable.
 
-### Building a RAG application with Redis
+### Benefits of Using Redis for RAG
+
+- **Efficiency**: The in-memory data store of Redis ensures that retrieval operations are performed with minimal latency, which is crucial for real-time applications.
+- **Scalability**: Redis can handle large volumes of data and scale horizontally, making it suitable for applications with growing data needs.
+- **Flexibility**: The support for various data structures and integration with different AI frameworks in Redis allows for flexible and adaptable RAG pipelines.
+
+### Build a RAG application with Redis
 
 To build a RAG application with Redis, the following are some general steps:
 
-1. **Set up Redis**: Start by setting up a Redis instance and configuring it to handle vector data. The RedisVL library will be instrumental here, as it provides the necessary tools for storing and querying vector embeddings.
+1. **Set up Redis**: Start by setting up a Redis instance and configuring it to handle vector data. [Redis Cloud](https://redis.io/try-free/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) is a great way to get started quickly. The RedisVL library will be instrumental here, as it provides the necessary tools for storing vector embeddings and simplifying vector search.
 
 1. **Embed and store data**: Convert your data into vector embeddings using a suitable model (e.g., BERT, GPT). Store these embeddings in Redis, where they can be quickly retrieved based on vector searches.
 
@@ -35,17 +41,11 @@ To build a RAG application with Redis, the following are some general steps:
 
 1. **Query and generate**: Implement the query logic that retrieves relevant vectors from Redis based on the input prompt. Feed these vectors into the generative model to produce augmented outputs.
 
-### Benefits of Using Redis for RAG
-
-- **Efficiency**: The in-memory data store of Redis ensures that retrieval operations are performed with minimal latency, which is crucial for real-time applications.
-- **Scalability**: Redis can handle large volumes of data and scale horizontally, making it suitable for applications with growing data needs.
-- **Flexibility**: The support for various data structures and integration with different AI frameworks in Redis allows for flexible and adaptable RAG pipelines.
-
 In summary, Redis offers a powerful and efficient platform for implementing Retrieval Augmented Generation. Its vector management capabilities, high performance, and seamless integration with AI frameworks make it an ideal choice if you are looking to enhance your generative AI applications with real-time data retrieval.
 
 ### Resources
 
-- [RAG defined](https://redis.io/glossary/retrieval-augmented-generation/).
-- [RAG overview](https://redis.io/kb/doc/2ok7xd1drq/how-to-perform-retrieval-augmented-generation-rag-with-redis).
-- [Redis Vector Library (RedisVL)](https://redis.io/docs/latest/integrate/redisvl/) and [introductory article](https://redis.io/blog/introducing-the-redis-vector-library-for-enhancing-genai-development/).
-- [RAG with Redis and SpringAI](https://redis.io/blog/building-a-rag-application-with-redis-and-spring-ai/)
+- [RAG defined](https://redis.io/glossary/retrieval-augmented-generation/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- [RAG overview](https://redis.io/kb/doc/2ok7xd1drq/how-to-perform-retrieval-augmented-generation-rag-with-redis?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- [Redis Vector Library (RedisVL)](https://redis.io/docs/latest/integrate/redisvl/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) and [introductory article](https://redis.io/blog/introducing-the-redis-vector-library-for-enhancing-genai-development/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- [RAG with Redis and SpringAI](https://redis.io/blog/building-a-rag-application-with-redis-and-spring-ai/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
