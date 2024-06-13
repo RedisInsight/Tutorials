@@ -14,6 +14,7 @@
 
 ### Tutorials
 
+* [Redis and RAG](redisinsight:_?tutorialId=redis_use_cases_rag)
 * [Redis as a vector database quick start guide](https://redis.io/docs/latest/develop/get-started/vector-database/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
 * [Redis University course number RU402: Redis as a vector database](https://redis.io/university/courses/ru402/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
 
