@@ -8,14 +8,34 @@
   },
   "children": [
     {
-      "type": "internal-link",
+      "type": "group",
       "id": "redis_use_cases",
-      "label": "Redis Use Cases",
-      "summary": "A collection of several common use cases for Redis.",
+      "label": "Redis basic and RAG use cases",
       "args": {
-        "initialIsOpen": true,
-        "path": "/uc/intro.md"
-      }
+        "initialIsOpen": false
+      },
+      "children": [
+        {
+          "type": "internal-link",
+          "id": "redis_use_cases_basic",
+          "label": "Basic Redis use cases",
+          "summary": "A collection of common use cases for Redis.",
+          "args": {
+            "initialIsOpen": true,
+            "path": "/uc/intro.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "redis_use_cases_rag",
+          "label": "Redis and RAG use cases",
+          "summary": "A get started guide to using Redis as part of a RAG use case.",
+          "args": {
+            "initialIsOpen": true,
+            "path": "/uc/rag.md"
+          }
+        }
+      ]
     },
     {
       "type": "group",
