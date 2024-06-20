@@ -386,49 +386,6 @@
     },
     {
       "type": "group",
-      "id": "tf",
-      "label": "Triggers and functions explained",
-      "args": {
-        "initialIsOpen": false
-      },
-      "children": [
-        {
-          "type": "internal-link",
-          "id": "tf-intro",
-          "label": "Introduction",
-          "summary": "Trigger and execute JavaScript functions in the Redis process.",
-          "args": {
-            "path": "/tf/intro.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "tf-load",
-          "label": "Load a library",
-          "args": {
-            "path": "/tf/load.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "tf-triggers",
-          "label": "Keyspace triggers",
-          "args": {
-            "path": "/tf/triggers.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "tf-learn-more",
-          "label": "Learn more",
-          "args": {
-            "path": "/tf/learn-more.md"
-          }
-        }
-      ]
-    },
-    {
-      "type": "group",
       "id": "vss",
       "label": "Vector search explained",
       "args": {
