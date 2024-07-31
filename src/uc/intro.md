@@ -13,7 +13,7 @@ You can store your bike inventory using the JSON data structure, where bikes hav
 
 ```redis:[run_confirmation=true] Add a bike as JSON
 // Add a bike as JSON
-JSON.SET bicycle:2048 $ '{
+JSON.SET sample_bicycle:2048 $ '{
   "model": "Ranger",
   "brand": "TrailBlazer",
   "price": 450,
@@ -35,9 +35,9 @@ In Redis, you can easily index these attributes and perform complex queries effi
 
 ```redis:[run_confirmation=true] Create a bike index
 // Create a secondary index of your bike data
-FT.CREATE idx:bicycle 
+FT.CREATE idx:smpl_bicycle
     ON JSON 
-      PREFIX 1 bicycle: 
+      PREFIX 1 sample_bicycle: 
     SCHEMA 
       $.brand AS brand TEXT
       $.model AS model TEXT  
@@ -54,7 +54,7 @@ You can then easily match a user to their preferred type of bike within a reques
 
 ```redis:[run_confirmation=true] Search for a match
 // Match leisure bikes within a price of 200 and 300
-FT.SEARCH idx:bicycle "@type:{mountain} @price:[400 450]" RETURN 4 brand model type price
+FT.SEARCH idx:smpl_bicycle "@type:{mountain} @price:[400 450]" RETURN 4 brand model type price
 ```
 
 ### Session store
@@ -63,15 +63,15 @@ Redis shines as a session store, offering speed and scalability for web applicat
 
 ```redis:[run_confirmation=true] Create a session hash with expiration
 // Store new session
-HSET session:074529275 user_id 7254 username gabe_jones email gabe@example.com last_activity "2024-06-01 10:24:00"
+HSET sample_session:074529275 user_id 7254 username gabe_jones email gabe@example.com last_activity "2024-06-01 10:24:00"
 
 // Set an expiration time for the new session entry
-EXPIRE session:074529275 7344000
+EXPIRE sample_session:074529275 7344000
 ```
 
 ```redis:[run_confirmation=true] Retrieve a session
 // Retrieve an existing session
-HGETALL session:074529275
+HGETALL sample_session:074529275
 ```
 
 ### Job queue
@@ -81,19 +81,19 @@ In many applications, tasks need to be processed asynchronously, such as maintai
 
 ```redis:[run_confirmation=true] Create a job ticket
 // Create a new job as a Hash
-HSET jobQueue:ticket:199 id 199 user_id 723 description "Unable to access console" priority "High" created_at "2024-04-20T12:00:00Z"
+HSET sample_jobQueue:ticket:199 id 199 user_id 723 description "Unable to access console" priority "High" created_at "2024-04-20T12:00:00Z"
 ```
 ```redis:[run_confirmation=true] Enqueue job
 // Enqueue the new job to the waiting list
-LPUSH jobQueue:waitingList jobQueue:ticket:199
+LPUSH sample_jobQueue:waitingList jobQueue:ticket:199
 ```
 ```redis:[run_confirmation=true] Show all jobs
 // Show the full list of jobs
-LRANGE jobQueue:waitingList 0 -1
+LRANGE sample_jobQueue:waitingList 0 -1
 ```
 ```redis:[run_confirmation=true] Dequeue a job
 // Dequeue a job from the list
-RPOP jobQueue:waitingList
+RPOP sample_jobQueue:waitingList
 ```
 
 ### Leaderboard
@@ -102,10 +102,10 @@ RPOP jobQueue:waitingList
 
 ```redis:[run_confirmation=true] Create a leaderboard score
 // Add a new score to leaderboard
-ZADD leaderboard:tetris 670000 "user100"
+ZADD sample_leaderboard:tetris 670000 "user100"
 ```
 
 ```redis:[run_confirmation=true] Get users with scores
 // Get the top 5 users on the leaderboard, with scores
-ZRANGE leaderboard:tetris 0 4 REV WITHSCORES
+ZRANGE sample_leaderboard:tetris 0 4 REV WITHSCORES
 ```
