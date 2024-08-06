@@ -74,6 +74,7 @@ TS.CREATE bike_sales_5 DUPLICATE_POLICY SUM LABELS region west
 Next, create compaction rules for each shop that will aggregate total daily bike sales using the `sum` aggregator.
 
 ```redis:[run_confirmation=true] Create compaction rules
+TS.CREATE bike_sales_1_per_day LABELS region east compacted yes
 TS.CREATERULE
     bike_sales_1 // source key
     bike_sales_1_per_day // destination key
