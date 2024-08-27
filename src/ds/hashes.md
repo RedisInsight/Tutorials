@@ -44,4 +44,39 @@ HINCRBY bike:1 price 100
 HINCRBY bike:1 price -100
 ```
 
+New in [Redis Community Edition version 7.4](https://hub.docker.com/layers/redis/redis-stack/7.4.0-v0/images/sha256-3e3c86603a81712d1311bc619ad124de15b2dca2b50722f23a4502b4d4054ba8) is the ability set the expiration time or the remaining time-to-live (TTL) for individual hash fields. This is called hash field expiration (HFE). HFE works just like [key expiration](https://redis.io/docs/latest/develop/use/keyspace/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials#key-expiration) and includes the following commands:
+
+- `hexpire` - set an expiration (time-to-live or TTL) in seconds on a hash key's field(s).
+- `hexpireat` - set a TTL as an absolute Unix timestamp (seconds since Unix epoch) on a hash key's field(s).
+- `hexpiretime` - returns the absolute Unix timestamp (seconds since Unix epoch) at which the hash key's field(s) will expire.
+- `hpersist` - remove expirations from a hash key's field(s).
+- `hpexpire` - set an expiration (time-to-live or TTL) in milliseconds on a hash key's field(s).
+- `hpexpireat` - set a TTL as an absolute Unix timestamp (milliseconds since Unix epoch) on a hash key's field(s).
+- `hpexpiretime` - returns the absolute Unix timestamp (milliseconds since Unix epoch) at which the the hash key's field(s) will expire.
+- `hpttl` - returns the remaining TTL in milliseconds of a hash key's field(s).
+- `httl` - returns the remaining TTL in seconds of a hash key's field(s).
+
+```redis HFE example 1
+HSET hash field1 "foo" field2 "bar" field3 "baz"
+HEXPIRE hash 10 FIELDS 1 field2
+HTTL hash FIELDS 1 field2
+```
+
+```redis HFE example 1 cont'd
+HTTL hash FIELDS 1 field2
+HGETALL hash
+```
+
+```redis HFE example 2
+HSET hash field1 "foo" field2 "bar" field3 "baz"
+HEXPIRE hash 10 FIELDS 2 field1 field3
+HTTL hash FIELDS 2 field1 field3
+HPERSIST hash FIELDS 1 field3
+HTTL hash FIELDS 2 field1 field3
+```
+
+```redis HFE example 2 cont'd
+HGETALL hash
+```
+
 See [here](https://redis.io/docs/data-types/hashes?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the hash type reference page, and [here](https://redis.io/commands/?group=hash?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis hash commands.
