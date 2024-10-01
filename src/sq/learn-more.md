@@ -1,6 +1,7 @@
 ### Documentation
 
 * [Query Engine home](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [Best practices for scalable Redis Query Engine](https://redis.io/docs/latest/operate/oss_and_stack/stack-with-enterprise/search/scalable-query-best-practices/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
 
 ### Social
 
