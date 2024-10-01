@@ -16,8 +16,8 @@ The Query Engine features of Redis Stack allow you to use Redis as a:
 
 ### Prerequisites
 
-[Redis Stack](https://redis.io/download?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) >=7.2.0-v7 \
+[Redis Stack](https://redis.io/download?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) >=7.4.0-v0 \
 OR \
-[Query Engine](https://github.com/RediSearch/RediSearch/) >=2.8.11 \
+[Query Engine](https://github.com/RediSearch/RediSearch/) >=2.10.5 \
 OR \
 A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_vecsim_guide "Redis Cloud").
