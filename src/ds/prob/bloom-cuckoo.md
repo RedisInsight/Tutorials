@@ -100,5 +100,5 @@ CF.COUNT bikes:models "Smokey Mountain Striker"
 Use the `CF.INFO` command to retrieve information about your cuckoo filter:
 
 ```redis Information about the filter
-CF.INFO cuckoo
+CF.INFO bikes:models
 ```
