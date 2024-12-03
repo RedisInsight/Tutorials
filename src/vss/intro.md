@@ -25,8 +25,8 @@ You can use Redis Stack as a vector database, which allows you to:
 
 ### Prerequisites
 
-[Redis Stack](https://redis.io/downloads/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) >=7.2.0-v7 \
+[Redis Stack](https://redis.io/downloads/?utm_source=redisinsight&utm_medium=app&utm_campaign=vss_tutorial) >=7.2.0-v7 \
 OR \
 [RediSearch](https://github.com/RediSearch/RediSearch/) >=2.8.11 \
 OR \
-A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_vecsim_guide "Redis Cloud").
+A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redisinsight&utm_medium=app&utm_campaign=vss_tutorial).

@@ -1,7 +1,7 @@
 ### Documentation
 
-* [Redis Query Engine home](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
-* [Best practices for scalable Redis Query Engine](https://redis.io/docs/latest/operate/oss_and_stack/stack-with-enterprise/search/scalable-query-best-practices/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [Redis Query Engine home](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=app&utm_campaign=query_engine_tutorial)
+* [Best practices for scalable Redis Query Engine](https://redis.io/docs/latest/operate/oss_and_stack/stack-with-enterprise/search/scalable-query-best-practices/?utm_source=redisinsight&utm_medium=app&utm_campaign=tutorials)
 
 ### Social
 
@@ -11,8 +11,8 @@
 
 ### Blogs
 
-* [Indexing, Querying, and Full-Text Search of JSON Documents with Redis](https://redis.com/blog/index-and-query-json-docs-with-redis/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [Indexing, Querying, and Full-Text Search of JSON Documents with Redis](https://redis.com/blog/index-and-query-json-docs-with-redis/?utm_source=redisinsight&utm_medium=app&utm_campaign=query_engine_tutorial)
 
 ### Tutorials
 
-* [Examples](https://redis.io/docs/interact/search-and-query/query/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [Examples](https://redis.io/docs/interact/search-and-query/query/?utm_source=redisinsight&utm_medium=app&utm_campaign=query_engine_tutorial)
