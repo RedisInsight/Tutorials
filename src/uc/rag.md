@@ -33,7 +33,7 @@ Here are some key features and components of Redis that make it suitable for RAG
 
 To build a RAG application with Redis, the following are some general steps:
 
-1. **Set up Redis**: Start by setting up a Redis instance and configuring it to handle vector data. [Redis Cloud](https://redis.io/try-free/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) is a great way to get started quickly. The RedisVL library will be instrumental here, as it provides the necessary tools for storing vector embeddings and simplifying vector search.
+1. **Set up Redis**: Start by setting up a Redis instance and configuring it to handle vector data. [Redis Cloud](https://redis.io/try-free/?utm_source=redisinsight&utm_medium=app&utm_campaign=RAG_tutorial) is a great way to get started quickly. The RedisVL library will be instrumental here, as it provides the necessary tools for storing vector embeddings and simplifying vector search.
 
 1. **Embed and store data**: Convert your data into vector embeddings using a suitable model (e.g., BERT, GPT). Store these embeddings in Redis, where they can be quickly retrieved based on vector searches.
 
