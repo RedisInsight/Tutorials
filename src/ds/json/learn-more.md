@@ -1,6 +1,6 @@
 ### Documentation
 
-* [JSON capability home](https://redis.io/docs/data-types/json/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [JSON capability home](https://redis.io/docs/data-types/json/?utm_source=redisinsight&utm_medium=app&utm_campaign=json_tutorial)
 
 ### Social
 
@@ -9,6 +9,6 @@
 
 ### Blogs
 
-* [RedisJSON: Public Preview & Performance Benchmarking](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
+* [RedisJSON: Public Preview & Performance Benchmarking](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/?utm_source=redisinsight&utm_medium=app&utm_campaign=json_tutorial)
 * [Indexing, Querying, and Full-Text Search of JSON Documents with Redis](https://redis.com/blog/index-and-query-json-docs-with-redis/)
 
