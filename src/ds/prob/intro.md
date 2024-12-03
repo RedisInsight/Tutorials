@@ -48,7 +48,7 @@ The following data structures trade perfect accuracy for extreme memory efficien
 
 ### Prerequisites
 
-[Redis Stack Server](https://redis.io/downloads/?utm_source=redisinsight&utm_medium=main&utm_campaign=probabilistic_tutorial) >=7.2.0-v7 \
+[Redis Stack Server](https://redis.io/downloads/?utm_source=redisinsight&utm_medium=app&utm_campaign=probabilistic_tutorial) >=7.2.0-v7 \
 OR \
 [RedisBloom](https://oss.redis.com/redisbloom/) >=2.6.10 \
 OR \
