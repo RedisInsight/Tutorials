@@ -1,6 +1,6 @@
 **Redis** is a powerful in-memory data structure store that can be used for various use cases due to its speed, simplicity, and versatility. In this tutorial, we'll explore several common use cases: matchmaking, job queue, leaderboard, and session store.
 
-If you haven't done so already, you can upload the sample data related to this tutorial by clicking the button below. You will also need support for [JSON](https://redis.io/docs/latest/develop/data-types/json/) and [Search & query](https://redis.io/docs/latest/develop/interact/search-and-query/) in your database to take advantage of this tutorial fully.
+If you haven't done so already, you can upload the sample data related to this tutorial by clicking the button below. You will also need support for [JSON](https://redis.io/docs/latest/develop/data-types/json/?utm_source=redisinsight&utm_medium=app&utm_campaign=RAG_tutorial) and [Search & query](https://redis.io/docs/latest/develop/interact/search-and-query/?utm_source=redisinsight&utm_medium=app&utm_campaign=RAG_tutorial) in your database to take advantage of this tutorial fully.
 
 ```redis:[run_confirmation=true] Upload Sample Data
 
@@ -291,7 +291,7 @@ RPOP sample_jobQueue:waitingList
 
 ### Leaderboard
 
-[Leaderboards](https://redis.io/solutions/leaderboards/) are crucial for gaming applications to display rankings based on scores. Sorted Sets in Redis are perfect for this purpose due to their ability to store elements with associated scores, which can be easily queried and sorted.
+[Leaderboards](https://redis.io/solutions/leaderboards/?utm_source=redisinsight&utm_medium=app&utm_campaign=RAG_tutorial) are crucial for gaming applications to display rankings based on scores. Sorted Sets in Redis are perfect for this purpose due to their ability to store elements with associated scores, which can be easily queried and sorted.
 
 ```redis:[run_confirmation=true] Create a leaderboard score
 // Add a new score to leaderboard
