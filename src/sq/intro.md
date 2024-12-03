@@ -20,4 +20,4 @@ The Redis Query Engine features of Redis Stack allow you to use Redis as a:
 OR \
 [Redis Query Engine](https://github.com/RediSearch/RediSearch/) >=2.10.5 \
 OR \
-A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_vecsim_guide "Redis Cloud").
+A free Redis Stack instance on [Redis Cloud](https://redis.io/try-free/?utm_source=redisinsight&utm_medium=app&utm_campaign=redisinsight_vecsim_guide).
