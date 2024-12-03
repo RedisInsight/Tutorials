@@ -14,4 +14,4 @@ Primary features include:
 OR \
 [RedisJSON](https://github.com/RedisJSON/RedisJSON/) >=2.6.8 \
 OR \
-A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_vecsim_guide "Redis Cloud").
+A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redisinsight&utm_medium=app&utm_campaign=json_guide).
