@@ -52,4 +52,4 @@ The following data structures trade perfect accuracy for extreme memory efficien
 OR \
 [RedisBloom](https://oss.redis.com/redisbloom/) >=2.6.10 \
 OR \
-A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_probabilistic_guide "Redis Cloud").
+A free Redis Stack instance on [Redis Cloud](https://redis.io/try-free/?utm_source=redisinsight&utm_medium=app&utm_campaign=probabilistic_tutorial).
