@@ -10,7 +10,7 @@ Primary features include:
 
 ### Prerequisites
 
-[Redis Stack](https://redis.io/downloads/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) >=7.2.0-v7 \
+[Redis Stack](https://redis.io/downloads/?utm_source=redisinsight&utm_medium=app&utm_campaign=json_tutorial) >=7.2.0-v7 \
 OR \
 [RedisJSON](https://github.com/RedisJSON/RedisJSON/) >=2.6.8 \
 OR \
