@@ -3,6 +3,9 @@
 * [Redis Query Engine home](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=app&utm_campaign=query_engine_tutorial)
 * [Best practices for scalable Redis Query Engine](https://redis.io/docs/latest/operate/oss_and_stack/stack-with-enterprise/search/scalable-query-best-practices/?utm_source=redisinsight&utm_medium=app&utm_campaign=tutorials)
 
+### Redis University
+* Take the [Redis Insight](https://university.redis.io/course/ibjgkshzhox41u?utm_source=redisinsight&utm_medium=app&utm_campaign=tutorials) course in Redis University for a deeper dive on querying your data in Redis Insight or check out the [Redis Query Engine](https://university.redis.io/learningpath/pdkbr7xdv3miym?utm_source=redisinsight&utm_medium=app&utm_campaign=tutorials) learning path for a full exploration of search and query capabilities in Redis
+
 ### Social
 
 * [Redis Query Engine on GitHub](https://github.com/RediSearch/RediSearch)
