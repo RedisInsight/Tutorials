@@ -81,5 +81,5 @@ HGETALL hash
 ### Resources
 
 - Hash type [reference page](https://redis.io/docs/data-types/hashes?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
-- Entire set of [Redis hash commands](https://redis.io/commands/?group=hash?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis hash commands.
+- Entire set of [Redis hash commands](https://redis.io/commands/?group=hash?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
 - Check out [Get started with Redis](https://university.redis.io/learningpath/14q8m6gilfwltm?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) learning path on Redis University for an introduction to working with all core data structures in Redis.
