@@ -105,5 +105,8 @@ SET bike:1:lock_status "LOCKED" EX 120
 PERSIST bike:1:lock_status
 TTL bike:1:lock_status
 ```
+### Resources
 
-See [here](https://redis.io/docs/data-types/strings?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the string type reference page, and [here](https://redis.io/commands/?group=string&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis string commands.
+- String type [reference page](https://redis.io/docs/data-types/strings?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- Entire set of [Redis string commands](https://redis.io/commands/?group=string&utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- Check out [Get started with Redis](https://university.redis.io/learningpath/14q8m6gilfwltm?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) learning path on Redis University for an introduction to working with all core data structures in Redis.
