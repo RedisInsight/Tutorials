@@ -304,4 +304,5 @@ ZRANGE sample_leaderboard:tetris 0 4 REV WITHSCORES
 ```
 
 ### Resources
+
 Check out [Redis for AI learning](https://university.redis.io/learningpath/hbykf3qrnhwccy?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) path on Redis University to go deeper on this topic and get hands on experience.
