@@ -2,6 +2,9 @@
 
 * [Vector search home](https://redis.io/docs/latest/develop/interact/search-and-query/query/vector-search/?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials)
 
+### Redis University
+* Take the [Introduction to Vector Search](https://university.redis.io/course/yz1lretjfpdlew?utm_source=redisinsight&utm_medium=app&utm_campaign=tutorials) course in Redis University for a deeper dive on Vector Search
+
 ### Social
 
 * [Vector search on GitHub](https://github.com/RediSearch/RediSearch)
