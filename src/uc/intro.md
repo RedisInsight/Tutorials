@@ -302,3 +302,7 @@ ZADD sample_leaderboard:tetris 670000 "user100"
 // Get the top 5 users on the leaderboard, with scores
 ZRANGE sample_leaderboard:tetris 0 4 REV WITHSCORES
 ```
+
+### Resources
+
+Check out the [Redis for AI learning](https://university.redis.io/learningpath/hbykf3qrnhwccy?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) path on Redis University to go deeper on this topic and get hands on experience.

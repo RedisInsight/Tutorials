@@ -78,5 +78,8 @@ HTTL hash FIELDS 2 field1 field3
 ```redis HFE example 2 cont'd
 HGETALL hash
 ```
+### Resources
 
-See [here](https://redis.io/docs/data-types/hashes?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the hash type reference page, and [here](https://redis.io/commands/?group=hash?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) for the entire set of Redis hash commands.
+- Hash type [reference page](https://redis.io/docs/data-types/hashes?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- Entire set of [Redis hash commands](https://redis.io/commands/?group=hash?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials).
+- Check out [Get started with Redis](https://university.redis.io/learningpath/14q8m6gilfwltm?utm_source=redisinsight&utm_medium=main&utm_campaign=tutorials) learning path on Redis University for an introduction to working with all core data structures in Redis.
